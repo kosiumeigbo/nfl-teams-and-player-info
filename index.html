@@ -8,8 +8,8 @@
   </head>
   <body>
     <!-- Header Section -->
-    <div class="header">
-      <video src="./landingPage.mov" autoplay loop muted>
+    <section class="header">
+      <video autoplay loop muted>
         <source src="./landingPage.mp4" type="video/mp4" />
       </video>
       <div class="overlay-container">
@@ -18,14 +18,14 @@
           <button class="player-stats-data">Explore Players</button>
         </div>
       </div>
-    </div>
+    </section>
     <!-- Cards Section -->
-    <div class="info-cards-conatiner">
-      <div class="team-info-cards"></div>
-      <div class="player-info-cards"></div>
-    </div>
-    <div></div>
-    <!-- To fix the push issue -->
+    <section class="info-cards">
+      <section class="info-cards-container">
+        <div class="team-info-cards"></div>
+        <div class="player-info-cards"></div>
+      </section>
+    </section>
     <script src="./script.js"></script>
   </body>
 </html>
