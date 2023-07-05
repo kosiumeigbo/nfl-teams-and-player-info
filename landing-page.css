@@ -10,30 +10,38 @@
   width: 100%;
   position: relative;
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .header video {
   width: 100%;
   height: 100%;
   position: absolute;
-  z-index: -1;
+  left: 0;
+  top: 0;
+  z-index: -2;
   -o-object-fit: cover;
      object-fit: cover;
 }
 .header .overlay-container {
   width: 100%;
   height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
   background-color: rgb(2, 7, 36);
   opacity: 0.8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .header .stats-data-buttons {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20rem;
-  padding-top: 5rem;
+  background-color: transparent;
+  width: 100%;
+  margin: auto;
 }
 .header .stats-data-buttons button {
   font-size: 2rem;
@@ -53,8 +61,8 @@
 }
 
 .info-cards {
+  margin: 3rem;
   width: 100%;
-  height: 97vh;
   padding: 5rem 0rem;
   display: flex;
   align-items: center;
@@ -76,45 +84,38 @@
 .info-cards .info-cards-container .afc-logo img {
   width: 100%;
 }
-.info-cards .info-cards-container .nfc-divisions {
+.info-cards .info-cards-container .nfc-divisions,
+.info-cards .info-cards-container .afc-divisions {
   display: grid;
   background-color: red;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(4, 1fr);
 }
-.info-cards .info-cards-container .nfc-teams {
-  display: grid;
-  background-color: blue;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(4, 1fr);
-}
-.info-cards .info-cards-container .afc-divisions {
-  display: grid;
-  background-color: green;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(4, 1fr);
-}
+.info-cards .info-cards-container .nfc-teams,
 .info-cards .info-cards-container .afc-teams {
   display: grid;
-  background-color: yellow;
-  grid-template-columns: 1fr;
+  background-color: blue;
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
 }
-.info-cards .info-cards-container .division {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr;
-}
-.info-cards .info-cards-container .division .team {
+.info-cards .info-cards-container .nfc-teams .team,
+.info-cards .info-cards-container .afc-teams .team {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.info-cards .info-cards-container .division .team img {
+.info-cards .info-cards-container .nfc-teams .team img,
+.info-cards .info-cards-container .afc-teams .team img {
   width: 100%;
 }
 
 /* Hidden Class */
 .hidden {
   display: none;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*------------------- Media Queries --------------------*/
+/*------------------- Max Width: 1440px --------------------*/
+/*------------------- Max Width: 1024px --------------------*/
+/*------------------- Max Width: 768px --------------------*/
+/*------------------- Max Width: 375px --------------------*//*# sourceMappingURL=landing-page.css.map */

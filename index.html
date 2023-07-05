@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./landing-page.css" />
     <title>NFL Stats & Data API</title>
   </head>
   <body>
@@ -13,15 +13,17 @@
         <source src="./landingPage.mp4" type="video/mp4" />
       </video>
       <div class="overlay-container">
-        <div class="stats-data-buttons">
-          <button class="team-stats-data">Explore Teams</button>
-          <button class="player-stats-data">Explore Players</button>
-        </div>
-        <div class="player-form"></div>
+        <!-- <div class="player-form"></div> -->
+      </div>
+      <div class="stats-data-buttons">
+        <button class="team-stats-data">Explore Teams</button>
+        <button class="player-stats-data">Explore Players</button>
       </div>
     </section>
+
     <!-- Cards Section -->
-    <section class="info-cards">
+
+    <section class="info-cards hidden">
       <div class="info-cards-container">
         <div class="nfc-logo">
           <img src="./images/NFClogo.png" alt="" />
@@ -34,29 +36,60 @@
           <h2>West</h2>
         </div>
         <div class="nfc-teams">
-          <div class="nfc-north division">
-            <div class="team"><img src="" alt="" /></div>
-            <div class="team"><img src="" alt="" /></div>
-            <div class="team"><img src="" alt="" /></div>
-            <div class="team"><img src="" alt="" /></div>
+          <!-- NFC North -->
+          <div class="team">
+            <img src="https://upload.wikimedia.org/wikipedia/en/7/72/Arizona_Cardinals_logo.svg" alt="" />
           </div>
-          <div class="nfc-south division">
-            <div class="team"><img src="" alt="" /></div>
-            <div class="team"><img src="" alt="" /></div>
-            <div class="team"><img src="" alt="" /></div>
-            <div class="team"><img src="" alt="" /></div>
+          <div class="team">
+            <img src="https://upload.wikimedia.org/wikipedia/en/7/72/Arizona_Cardinals_logo.svg" alt="" />
           </div>
-          <div class="nfc-east division">
-            <div class="team"><img src="" alt="" /></div>
-            <div class="team"><img src="" alt="" /></div>
-            <div class="team"><img src="" alt="" /></div>
-            <div class="team"><img src="" alt="" /></div>
+          <div class="team">
+            <img src="https://upload.wikimedia.org/wikipedia/en/7/72/Arizona_Cardinals_logo.svg" alt="" />
           </div>
-          <div class="nfc-west division">
-            <div class="team"><img src="" alt="" /></div>
-            <div class="team"><img src="" alt="" /></div>
-            <div class="team"><img src="" alt="" /></div>
-            <div class="team"><img src="" alt="" /></div>
+          <div class="team">
+            <img src="https://upload.wikimedia.org/wikipedia/en/7/72/Arizona_Cardinals_logo.svg" alt="" />
+          </div>
+
+          <!-- NFC South -->
+          <div class="team">
+            <img src="https://upload.wikimedia.org/wikipedia/en/7/72/Arizona_Cardinals_logo.svg" alt="" />
+          </div>
+          <div class="team">
+            <img src="https://upload.wikimedia.org/wikipedia/en/7/72/Arizona_Cardinals_logo.svg" alt="" />
+          </div>
+          <div class="team">
+            <img src="https://upload.wikimedia.org/wikipedia/en/7/72/Arizona_Cardinals_logo.svg" alt="" />
+          </div>
+          <div class="team">
+            <img src="https://upload.wikimedia.org/wikipedia/en/7/72/Arizona_Cardinals_logo.svg" alt="" />
+          </div>
+
+          <!-- NFC East -->
+          <div class="team">
+            <img src="https://upload.wikimedia.org/wikipedia/en/7/72/Arizona_Cardinals_logo.svg" alt="" />
+          </div>
+          <div class="team">
+            <img src="https://upload.wikimedia.org/wikipedia/en/7/72/Arizona_Cardinals_logo.svg" alt="" />
+          </div>
+          <div class="team">
+            <img src="https://upload.wikimedia.org/wikipedia/en/7/72/Arizona_Cardinals_logo.svg" alt="" />
+          </div>
+          <div class="team">
+            <img src="https://upload.wikimedia.org/wikipedia/en/7/72/Arizona_Cardinals_logo.svg" alt="" />
+          </div>
+
+          <!-- NFC West -->
+          <div class="team">
+            <img src="https://upload.wikimedia.org/wikipedia/en/7/72/Arizona_Cardinals_logo.svg" alt="" />
+          </div>
+          <div class="team">
+            <img src="https://upload.wikimedia.org/wikipedia/en/7/72/Arizona_Cardinals_logo.svg" alt="" />
+          </div>
+          <div class="team">
+            <img src="https://upload.wikimedia.org/wikipedia/en/7/72/Arizona_Cardinals_logo.svg" alt="" />
+          </div>
+          <div class="team">
+            <img src="https://upload.wikimedia.org/wikipedia/en/7/72/Arizona_Cardinals_logo.svg" alt="" />
           </div>
         </div>
         <div class="afc-logo">
@@ -70,30 +103,29 @@
           <h1>West</h1>
         </div>
         <div class="afc-teams">
-          <div class="afc-north division">
-            <div class="team"><img src="" alt="" /></div>
-            <div class="team"><img src="" alt="" /></div>
-            <div class="team"><img src="" alt="" /></div>
-            <div class="team"><img src="" alt="" /></div>
-          </div>
-          <div class="afc-south division">
-            <div class="team"><img src="" alt="" /></div>
-            <div class="team"><img src="" alt="" /></div>
-            <div class="team"><img src="" alt="" /></div>
-            <div class="team"><img src="" alt="" /></div>
-          </div>
-          <div class="afc-east division">
-            <div class="team"><img src="" alt="" /></div>
-            <div class="team"><img src="" alt="" /></div>
-            <div class="team"><img src="" alt="" /></div>
-            <div class="team"><img src="" alt="" /></div>
-          </div>
-          <div class="afc-west division">
-            <div class="team"><img src="" alt="" /></div>
-            <div class="team"><img src="" alt="" /></div>
-            <div class="team"><img src="" alt="" /></div>
-            <div class="team"><img src="" alt="" /></div>
-          </div>
+          <!-- AFC North -->
+          <div class="team"><img src="" alt="" /></div>
+          <div class="team"><img src="" alt="" /></div>
+          <div class="team"><img src="" alt="" /></div>
+          <div class="team"><img src="" alt="" /></div>
+
+          <!-- AFC South -->
+          <div class="team"><img src="" alt="" /></div>
+          <div class="team"><img src="" alt="" /></div>
+          <div class="team"><img src="" alt="" /></div>
+          <div class="team"><img src="" alt="" /></div>
+
+          <!-- AFC East -->
+          <div class="team"><img src="" alt="" /></div>
+          <div class="team"><img src="" alt="" /></div>
+          <div class="team"><img src="" alt="" /></div>
+          <div class="team"><img src="" alt="" /></div>
+
+          <!-- AFC West -->
+          <div class="team"><img src="" alt="" /></div>
+          <div class="team"><img src="" alt="" /></div>
+          <div class="team"><img src="" alt="" /></div>
+          <div class="team"><img src="" alt="" /></div>
         </div>
       </div>
     </section>
