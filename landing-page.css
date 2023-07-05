@@ -61,16 +61,16 @@
 }
 
 .info-cards {
-  margin: 3rem;
+  margin: 10rem 0;
   width: 100%;
-  padding: 5rem 0rem;
+  padding: 0rem 0rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .info-cards .info-cards-container {
   display: grid;
-  grid-template-columns: 30rem 15rem 30rem;
+  grid-template-columns: 30rem 15rem 60rem;
   grid-template-rows: 30rem 30rem;
   -moz-column-gap: 5rem;
        column-gap: 5rem;
@@ -97,8 +97,8 @@
   background-color: blue;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  -moz-column-gap: 0.5rem;
-       column-gap: 0.5rem;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
 }
 .info-cards .info-cards-container .nfc-teams .team,
 .info-cards .info-cards-container .afc-teams .team {
