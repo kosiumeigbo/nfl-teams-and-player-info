@@ -7,7 +7,7 @@
 }
 
 .header {
-  width: 100%;
+  width: 100vw;
   position: relative;
   height: 100vh;
   display: flex;
@@ -38,7 +38,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20rem;
+  gap: 15rem;
   background-color: transparent;
   width: 100%;
   margin: auto;
@@ -97,6 +97,8 @@
   background-color: blue;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
 }
 .info-cards .info-cards-container .nfc-teams .team,
 .info-cards .info-cards-container .afc-teams .team {
@@ -112,10 +114,4 @@
 /* Hidden Class */
 .hidden {
   display: none;
-}
-
-/*------------------- Media Queries --------------------*/
-/*------------------- Max Width: 1440px --------------------*/
-/*------------------- Max Width: 1024px --------------------*/
-/*------------------- Max Width: 768px --------------------*/
-/*------------------- Max Width: 375px --------------------*//*# sourceMappingURL=landing-page.css.map */
+}/*# sourceMappingURL=landing-page.css.map */
