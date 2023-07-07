@@ -8,6 +8,7 @@
   </head>
   <body>
     <!-- Header Section -->
+
     <section class="header">
       <video autoplay loop muted>
         <source src="./landingPage.mp4" type="video/mp4" />
@@ -15,135 +16,145 @@
       <div class="overlay-container">
         <!-- <div class="player-form"></div> -->
       </div>
-      <div class="stats-data-buttons">
-        <button class="team-stats-data">Explore Teams</button>
-        <button class="player-stats-data">Explore Players</button>
+      <div class="header-container">
+        <div class="stats-data-buttons">
+          <button class="team-stats-data">Explore Teams</button>
+          <button class="player-stats-data">Explore Players</button>
+        </div>
       </div>
     </section>
 
     <!-- Cards Section -->
 
-    <section class="info-cards">
+    <section class="info-cards hidden">
       <div class="info-cards-container">
-        <div class="nfc-logo">
-          <img src="./images/NFClogo.png" alt="" />
-          <h2>NFC</h2>
-        </div>
-        <div class="nfc-divisions">
-          <h2>North</h2>
-          <h2>South</h2>
-          <h2>East</h2>
-          <h2>West</h2>
-        </div>
-        <div class="nfc-teams">
-          <!-- NFC North -->
-          <div class="team">
-            <img src="./images/teamsNFC/NFC-North/CHI.svg" alt="Chicago Bears" data-key="CHI" />
+        <div class="teams-table">
+          <div class="nfc-logo">
+            <img src="./images/NFClogo.png" alt="" />
+            <h2>NFC</h2>
           </div>
-          <div class="team">
-            <img src="./images/teamsNFC/NFC-North/DET.svg" alt="Detroit Lions" data-key="DET" />
+          <div class="nfc-divisions">
+            <h2>North</h2>
+            <h2>South</h2>
+            <h2>East</h2>
+            <h2>West</h2>
           </div>
-          <div class="team">
-            <img src="./images/teamsNFC/NFC-North/GB.svg" alt="Green Bay Packers" data-key="GB" />
-          </div>
-          <div class="team">
-            <img src="./images/teamsNFC/NFC-North/MIN.svg" alt="Minnesota Vikings" data-key="MIN" />
-          </div>
+          <div class="nfc-teams">
+            <!-- NFC North -->
+            <div class="team">
+              <img src="./images/teamsNFC/NFC-North/CHI.svg" alt="Chicago Bears" data-key="CHI" />
+            </div>
+            <div class="team">
+              <img src="./images/teamsNFC/NFC-North/DET.svg" alt="Detroit Lions" data-key="DET" />
+            </div>
+            <div class="team">
+              <img src="./images/teamsNFC/NFC-North/GB.svg" alt="Green Bay Packers" data-key="GB" />
+            </div>
+            <div class="team">
+              <img src="./images/teamsNFC/NFC-North/MIN.svg" alt="Minnesota Vikings" data-key="MIN" />
+            </div>
 
-          <!-- NFC South -->
-          <div class="team">
-            <img src="./images/teamsNFC/NFC-South/ATL.svg" alt="Atlanta Falcons" data-key="ATL" />
-          </div>
-          <div class="team">
-            <img src="./images/teamsNFC/NFC-South/CAR.svg" alt="Carolina Panthers" data-key="CAR" />
-          </div>
-          <div class="team">
-            <img src="./images/teamsNFC/NFC-South/NO.png" alt="New Orleans Saint" data-key="NO" />
-          </div>
-          <div class="team">
-            <img src="./images/teamsNFC/NFC-South/TB.svg" alt="Tampa Bay Buccaneers" data-key="TB" />
-          </div>
+            <!-- NFC South -->
+            <div class="team">
+              <img src="./images/teamsNFC/NFC-South/ATL.svg" alt="Atlanta Falcons" data-key="ATL" />
+            </div>
+            <div class="team">
+              <img src="./images/teamsNFC/NFC-South/CAR.svg" alt="Carolina Panthers" data-key="CAR" />
+            </div>
+            <div class="team">
+              <img src="./images/teamsNFC/NFC-South/NO.png" alt="New Orleans Saint" data-key="NO" />
+            </div>
+            <div class="team">
+              <img src="./images/teamsNFC/NFC-South/TB.svg" alt="Tampa Bay Buccaneers" data-key="TB" />
+            </div>
 
-          <!-- NFC East -->
-          <div class="team">
-            <img src="./images/teamsNFC/NFC-East/DAL.svg" alt="Dallas Cowboys" data-key="DAL" />
-          </div>
-          <div class="team">
-            <img src="./images/teamsNFC/NFC-East/NYG.png" alt="New York Giants" data-key="NYG" />
-          </div>
-          <div class="team">
-            <img src="./images/teamsNFC/NFC-East/PHI.png" alt="Philadelphia Eagles" data-key="PHI" />
-          </div>
-          <div class="team">
-            <img src="./images/teamsNFC/NFC-East/WAS.svg" alt="Washington Commanders" data-key="WAS" />
-          </div>
+            <!-- NFC East -->
+            <div class="team">
+              <img src="./images/teamsNFC/NFC-East/DAL.svg" alt="Dallas Cowboys" data-key="DAL" />
+            </div>
+            <div class="team">
+              <img src="./images/teamsNFC/NFC-East/NYG.png" alt="New York Giants" data-key="NYG" />
+            </div>
+            <div class="team">
+              <img src="./images/teamsNFC/NFC-East/PHI.png" alt="Philadelphia Eagles" data-key="PHI" />
+            </div>
+            <div class="team">
+              <img src="./images/teamsNFC/NFC-East/WAS.svg" alt="Washington Commanders" data-key="WAS" />
+            </div>
 
-          <!-- NFC West -->
-          <div class="team">
-            <img src="./images/teamsNFC/NFC-West/ARI.svg" alt="Arizonal Cardinals" data-key="ARI" />
+            <!-- NFC West -->
+            <div class="team">
+              <img src="./images/teamsNFC/NFC-West/ARI.svg" alt="Arizonal Cardinals" data-key="ARI" />
+            </div>
+            <div class="team">
+              <img src="./images/teamsNFC/NFC-West/LAR.svg" alt="Los Angeles Rams" data-key="LAR" />
+            </div>
+            <div class="team">
+              <img src="./images/teamsNFC/NFC-West/SEA.svg" alt="Seattle Seahawks" data-key="SEA" />
+            </div>
+            <div class="team">
+              <img src="./images/teamsNFC/NFC-West/SF.svg" alt="San Francisco 49ers" data-key="SF" />
+            </div>
           </div>
-          <div class="team">
-            <img src="./images/teamsNFC/NFC-West/LAR.svg" alt="Los Angeles Rams" data-key="LAR" />
+          <div class="afc-logo">
+            <img src="./images/AFClogo.png" alt="" />
+            <h2>AFC</h2>
           </div>
-          <div class="team">
-            <img src="./images/teamsNFC/NFC-West/SEA.svg" alt="Seattle Seahawks" data-key="SEA" />
+          <div class="afc-divisions">
+            <h1>North</h1>
+            <h1>South</h1>
+            <h1>East</h1>
+            <h1>West</h1>
           </div>
-          <div class="team">
-            <img src="./images/teamsNFC/NFC-West/SF.svg" alt="San Francisco 49ers" data-key="SF" />
-          </div>
-        </div>
-        <div class="afc-logo">
-          <img src="./images/AFClogo.png" alt="" />
-          <h2>AFC</h2>
-        </div>
-        <div class="afc-divisions">
-          <h1>North</h1>
-          <h1>South</h1>
-          <h1>East</h1>
-          <h1>West</h1>
-        </div>
-        <div class="afc-teams">
-          <!-- AFC North -->
-          <div class="team">
-            <img src="./images/teamsAFC/AFC-North/BAL.svg" alt="Baltimore Ravens" data-key="BAL" />
-          </div>
-          <div class="team">
-            <img src="./images/teamsAFC/AFC-North/CIN.svg" alt="Cincinnati Bengals" data-key="CIN" />
-          </div>
-          <div class="team">
-            <img src="./images/teamsAFC/AFC-North/CLE.svg" alt="Cleveland Browns" data-key="CLE" />
-          </div>
-          <div class="team">
-            <img src="./images/teamsAFC/AFC-North/PIT.svg" alt="Pittsburgh Steelers" data-key="PIT" />
-          </div>
+          <div class="afc-teams">
+            <!-- AFC North -->
+            <div class="team">
+              <img src="./images/teamsAFC/AFC-North/BAL.svg" alt="Baltimore Ravens" data-key="BAL" />
+            </div>
+            <div class="team">
+              <img src="./images/teamsAFC/AFC-North/CIN.svg" alt="Cincinnati Bengals" data-key="CIN" />
+            </div>
+            <div class="team">
+              <img src="./images/teamsAFC/AFC-North/CLE.svg" alt="Cleveland Browns" data-key="CLE" />
+            </div>
+            <div class="team">
+              <img src="./images/teamsAFC/AFC-North/PIT.svg" alt="Pittsburgh Steelers" data-key="PIT" />
+            </div>
 
-          <!-- AFC South -->
-          <div class="team"><img src="./images/teamsAFC/AFC-South/HOU.svg" alt="Houston Texans" data-key="HOU" /></div>
-          <div class="team">
-            <img src="./images/teamsAFC/AFC-South/IND.svg" alt="Indianapolis Colts" data-key="IND" />
-          </div>
-          <div class="team">
-            <img src="./images/teamsAFC/AFC-South/JAX.svg" alt="Jacksonville Jaguars" data-key="JAX" />
-          </div>
-          <div class="team">
-            <img src="./images/teamsAFC/AFC-South/TEN.svg" alt="Tennessee Titans" data-key="TEN" />
-          </div>
+            <!-- AFC South -->
+            <div class="team">
+              <img src="./images/teamsAFC/AFC-South/HOU.svg" alt="Houston Texans" data-key="HOU" />
+            </div>
+            <div class="team">
+              <img src="./images/teamsAFC/AFC-South/IND.svg" alt="Indianapolis Colts" data-key="IND" />
+            </div>
+            <div class="team">
+              <img src="./images/teamsAFC/AFC-South/JAX.svg" alt="Jacksonville Jaguars" data-key="JAX" />
+            </div>
+            <div class="team">
+              <img src="./images/teamsAFC/AFC-South/TEN.svg" alt="Tennessee Titans" data-key="TEN" />
+            </div>
 
-          <!-- AFC East -->
-          <div class="team"><img src="./images/teamsAFC/AFC-East/BUF.svg" alt="Buffalo Bills" data-key="BUF" /></div>
-          <div class="team"><img src="./images/teamsAFC/AFC-East/MIA.png" alt="Miami Dolphins" data-key="MIA" /></div>
-          <div class="team">
-            <img src="./images/teamsAFC/AFC-East/NE.svg" alt="New England Patriots" data-key="NE" />
-          </div>
-          <div class="team"><img src="./images/teamsAFC/AFC-East/NYJ.svg" alt="New York Jets" data-key="NYJ" /></div>
+            <!-- AFC East -->
+            <div class="team"><img src="./images/teamsAFC/AFC-East/BUF.svg" alt="Buffalo Bills" data-key="BUF" /></div>
+            <div class="team"><img src="./images/teamsAFC/AFC-East/MIA.png" alt="Miami Dolphins" data-key="MIA" /></div>
+            <div class="team">
+              <img src="./images/teamsAFC/AFC-East/NE.svg" alt="New England Patriots" data-key="NE" />
+            </div>
+            <div class="team"><img src="./images/teamsAFC/AFC-East/NYJ.svg" alt="New York Jets" data-key="NYJ" /></div>
 
-          <!-- AFC West -->
-          <div class="team"><img src="./images/teamsAFC/AFC-West/DEN.png" alt="Denver Broncos" data-key="DEN" /></div>
-          <div class="team"><img src="./images/teamsAFC/AFC-West/KC.svg" alt="Kansas City Chiefs" data-key="KC" /></div>
-          <div class="team">
-            <img src="./images/teamsAFC/AFC-West/LAC.svg" alt="Los Angeles Chargers" data-key="LAC" />
+            <!-- AFC West -->
+            <div class="team"><img src="./images/teamsAFC/AFC-West/DEN.png" alt="Denver Broncos" data-key="DEN" /></div>
+            <div class="team">
+              <img src="./images/teamsAFC/AFC-West/KC.svg" alt="Kansas City Chiefs" data-key="KC" />
+            </div>
+            <div class="team">
+              <img src="./images/teamsAFC/AFC-West/LAC.svg" alt="Los Angeles Chargers" data-key="LAC" />
+            </div>
+            <div class="team">
+              <img src="./images/teamsAFC/AFC-West/LV.svg" alt="Las Vegas Raiders" data-key="LV" />
+            </div>
           </div>
-          <div class="team"><img src="./images/teamsAFC/AFC-West/LV.svg" alt="Las Vegas Raiders" data-key="LV" /></div>
         </div>
       </div>
     </section>
