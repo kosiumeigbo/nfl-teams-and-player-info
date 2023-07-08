@@ -13,10 +13,11 @@
 .header {
   width: 100%;
   position: relative;
-  height: 80rem;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 .header video {
   width: 100%;
@@ -71,23 +72,37 @@
   width: 100%;
 }
 .info-cards .info-cards-container {
-  width: min(90%, 90rem);
+  width: min(95%, 90rem);
   margin-inline: auto;
 }
 .info-cards .info-cards-container .teams-table {
   display: grid;
   grid-template-columns: 2fr 1fr 5fr;
-  grid-template-rows: 30rem 30rem;
+  grid-template-rows: 40rem 40rem;
+  row-gap: 5rem;
+  -moz-column-gap: 5rem;
+       column-gap: 5rem;
   width: 100%;
 }
 .info-cards .info-cards-container .teams-table .nfc-logo,
 .info-cards .info-cards-container .teams-table .afc-logo {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 .info-cards .info-cards-container .teams-table .nfc-logo img,
 .info-cards .info-cards-container .teams-table .afc-logo img {
   width: 100%;
+}
+.info-cards .info-cards-container .teams-table .nfc-logo h2,
+.info-cards .info-cards-container .teams-table .afc-logo h2 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 400;
 }
 .info-cards .info-cards-container .teams-table .nfc-divisions,
 .info-cards .info-cards-container .teams-table .afc-divisions {
@@ -95,6 +110,16 @@
   background-color: transparent;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(4, 1fr);
+}
+.info-cards .info-cards-container .teams-table .nfc-divisions h2,
+.info-cards .info-cards-container .teams-table .afc-divisions h2 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .info-cards .info-cards-container .teams-table .nfc-teams,
 .info-cards .info-cards-container .teams-table .afc-teams {
@@ -110,6 +135,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: transparent;
+  transition: background-color 0.2s;
+}
+.info-cards .info-cards-container .teams-table .nfc-teams .team:hover,
+.info-cards .info-cards-container .teams-table .afc-teams .team:hover {
+  cursor: pointer;
+  background-color: rgb(242, 237, 237);
 }
 .info-cards .info-cards-container .teams-table .nfc-teams .team img,
 .info-cards .info-cards-container .teams-table .afc-teams .team img {
