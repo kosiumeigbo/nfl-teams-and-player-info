@@ -881,3 +881,18 @@ console.log(
   `AFC West`,
   teams.filter((obj) => obj.Conference === "AFC" && obj.Division === "West")
 );
+
+const explorePlayers = document.querySelector(".team-stats-data");
+const infoCardsSection = document.querySelector(".info-cards");
+console.log(explorePlayers);
+
+explorePlayers.addEventListener("click", function () {
+  infoCardsSection.classList.remove("hidden");
+  infoCardsSection.scrollIntoView({ behavior: "smooth" });
+  // window.open("./teamStatsInformation/index.html", "_blank");
+});
+
+const teamsTable = document.querySelector(".teams-table");
+teamsTable.addEventListener("click", function (e) {
+  console.log(e.target);
+});
