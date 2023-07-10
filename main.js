@@ -882,17 +882,27 @@ console.log(
   teams.filter((obj) => obj.Conference === "AFC" && obj.Division === "West")
 );
 
-const explorePlayers = document.querySelector(".team-stats-data");
-const infoCardsSection = document.querySelector(".info-cards");
-console.log(explorePlayers);
+/* ----------------- Landing Page Logic and Functionality ------------------- */
 
-explorePlayers.addEventListener("click", function () {
-  infoCardsSection.classList.remove("hidden");
-  infoCardsSection.scrollIntoView({ behavior: "smooth" });
-  // window.open("./teamStatsInformation/index.html", "_blank");
-});
+if (document.body.classList.contains("landing-page-body")) {
+  const explorePlayers = document.querySelector(".team-stats-data");
+  const infoCardsSection = document.querySelector(".info-cards");
+  console.log(explorePlayers);
 
-const teamsTable = document.querySelector(".teams-table");
-teamsTable.addEventListener("click", function (e) {
-  console.log(e.target);
-});
+  explorePlayers.addEventListener("click", function () {
+    infoCardsSection.classList.remove("hidden");
+    infoCardsSection.scrollIntoView({ behavior: "smooth" });
+  });
+
+  const teamsTable = document.querySelector(".teams-table");
+  teamsTable.addEventListener("click", function (e) {
+    console.log(e.target.dataset.key);
+  });
+}
+
+/* ----------------- Team Stats and Information Page Logic and Functionality ------------------- */
+
+if (document.body.classList.contains("team-stats-information-page")) {
+  document.querySelector(".team-stats-information-page").textContent = `Yellow`;
+  console.log("hello");
+}
