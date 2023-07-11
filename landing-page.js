@@ -1,5 +1,14 @@
 "use strict";
 
+// Team Information and Player Information Web Pages Locations
+const playerStatsInformationPage = "./player-stats-information/player-stats-information.html";
+const teamStatsInformationPage = "./team-stats-information/team-stats-information.html";
+
+// Landing Page Sections
+const explorePlayers = document.querySelector(".team-stats-data");
+const infoCardsSection = document.querySelector(".info-cards");
+const teamsTable = document.querySelector(".teams-table");
+
 /* 
 const request1 = new XMLHttpRequest();
 
@@ -12439,57 +12448,16 @@ const playerDetailsByPlayer = {
 
 /* ------------ Test Data from API End --------------- */
 
-console.log(allTeamsBasic);
-
-console.log(
-  `NFC North`,
-  allTeamsBasic.filter((obj) => obj.Conference === "NFC" && obj.Division === "North")
-);
-console.log(
-  `NFC South`,
-  allTeamsBasic.filter((obj) => obj.Conference === "NFC" && obj.Division === "South")
-);
-console.log(
-  `NFC East`,
-  allTeamsBasic.filter((obj) => obj.Conference === "NFC" && obj.Division === "East")
-);
-console.log(
-  `NFC West`,
-  allTeamsBasic.filter((obj) => obj.Conference === "NFC" && obj.Division === "West")
-);
-console.log(
-  `AFC North`,
-  allTeamsBasic.filter((obj) => obj.Conference === "AFC" && obj.Division === "North")
-);
-console.log(
-  `AFC South`,
-  allTeamsBasic.filter((obj) => obj.Conference === "AFC" && obj.Division === "South")
-);
-console.log(
-  `AFC East`,
-  allTeamsBasic.filter((obj) => obj.Conference === "AFC" && obj.Division === "East")
-);
-console.log(
-  `AFC West`,
-  allTeamsBasic.filter((obj) => obj.Conference === "AFC" && obj.Division === "West")
-);
-
-// /* ----------------- Landing Page Logic and Functionality ------------------- */
-
-const explorePlayers = document.querySelector(".team-stats-data");
-const infoCardsSection = document.querySelector(".info-cards");
-console.log(explorePlayers);
-
 explorePlayers.addEventListener("click", function () {
   infoCardsSection.classList.remove("hidden");
   infoCardsSection.scrollIntoView({ behavior: "smooth" });
-  localStorage.setItem("count", JSON.stringify(count));
-  window.open("./teamStatsInformation/teamStatsInformation.html");
 });
 
-const teamsTable = document.querySelector(".teams-table");
 teamsTable.addEventListener("click", function (e) {
-  console.log(e.target.dataset.key);
+  if (e.target.dataset.key) {
+    console.log(e.target);
+    window.open(teamStatsInformationPage);
+  }
 });
 
 // /* ----------------- Team Stats and Information Page Logic and Functionality ------------------- */
