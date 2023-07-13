@@ -12460,6 +12460,3 @@ teamsTable.addEventListener("click", function (e) {
     window.open(teamStatsInformationPage);
   }
 });
-
-console.log(egg);
-// /* ----------------- Team Stats and Information Page Logic and Functionality ------------------- */
