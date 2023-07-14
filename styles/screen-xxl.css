@@ -43,12 +43,14 @@
 .header .header-container {
   width: min(90%, 90rem);
   margin-inline: auto;
+  height: 100%;
 }
 .header .header-container .stats-data-buttons {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: transparent;
+  height: 100%;
 }
 .header .header-container .stats-data-buttons button {
   font-size: 2rem;
