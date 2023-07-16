@@ -1,3 +1,8 @@
+$screen-xl: 5px;
+$screen-l: 4px;
+$screen-m: 3px;
+$screen-s: 2px;
+
 * {
   margin: 0;
   padding: 0;
@@ -43,7 +48,7 @@
   }
 
   .header-container {
-    width: min(90%, 90rem);
+    width: min(95%, 90rem);
     margin-inline: auto;
     height: 100%;
 
