@@ -41,7 +41,7 @@
   opacity: 0.8;
 }
 .header .header-container {
-  width: min(90%, 90rem);
+  width: min(95%, 90rem);
   margin-inline: auto;
   height: 100%;
 }
@@ -154,4 +154,4 @@
 /* Hidden Class */
 .hidden {
   display: none;
-}/*# sourceMappingURL=screen-xxl.css.map */
+}/*# sourceMappingURL=landing-page.css.map */
