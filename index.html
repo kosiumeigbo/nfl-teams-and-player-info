@@ -4,12 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/landing-page.css" />
-    <!-- <link rel="stylesheet" media="(max-width: 1440px)" href="./styles/screen-xl.css" /> -->
-    <!-- <link rel="stylesheet" media="(max-width: 1024px)" href="./styles/screen-l.css" /> -->
-    <!-- <link rel="stylesheet" media="(max-width: 768px)" href="./styles/screen-m.css" /> -->
-    <!-- <link rel="stylesheet" media="(max-width: 375px)" href="./styles/screen-s.css" /> -->
     <title>NFL Stats & Data API</title>
-    <script src="./scripts/landing-page.js" defer></script>
+    <script src="./scripts/landing-page.js" type="module" defer></script>
   </head>
   <body id="landing-page">
     <!-- Header Section -->
@@ -18,21 +14,19 @@
       <video autoplay loop muted>
         <source src="./landingPage.mp4" type="video/mp4" />
       </video>
-      <div class="overlay-container">
-        <!-- <div class="player-form"></div> -->
-      </div>
+      <div class="overlay-container"></div>
       <div class="header-container">
         <div class="stats-data-buttons">
-          <button class="team-stats-data">Explore Teams</button>
-          <button class="player-stats-data">Explore Players</button>
+          <button class="team-stats-data-btn">Explore Teams</button>
+          <button class="player-stats-data-btn">Explore Players</button>
         </div>
       </div>
     </section>
 
     <!-- Cards Section -->
 
-    <section class="info-cards hidden">
-      <div class="info-cards-container">
+    <section class="info-cards-player-form-section hidden">
+      <div class="info-cards-container hidden">
         <div class="teams-table">
           <div class="nfc-logo">
             <img src="./images/NFClogo.png" alt="" />
@@ -169,6 +163,9 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="player-form-container hidden">
+        <form class="player-form" action=""></form>
       </div>
     </section>
   </body>
