@@ -1,7 +1,31 @@
-$screen-xl: 5px;
-$screen-l: 4px;
-$screen-m: 3px;
-$screen-s: 2px;
+$screen-xl: 90rem; // 1440px
+$screen-l: 64rem; // 1024px
+$screen-m: 48rem; // 768px
+$screen-s: 23.4375rem; // 375px
+
+@mixin respond-xl {
+  @media (max-width: $screen-xl) {
+    @content;
+  }
+}
+
+@mixin respond-l {
+  @media (max-width: $screen-l) {
+    @content;
+  }
+}
+
+@mixin respond-m {
+  @media (max-width: $screen-m) {
+    @content;
+  }
+}
+
+@mixin respond-s {
+  @media (max-width: $screen-s) {
+    @content;
+  }
+}
 
 * {
   margin: 0;
@@ -11,10 +35,6 @@ $screen-s: 2px;
   letter-spacing: 0.1rem;
 }
 
-.body {
-  width: 100vw;
-}
-
 .header {
   width: 100%;
   position: relative;
@@ -22,7 +42,6 @@ $screen-s: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 
   video {
     width: 100%;
@@ -51,13 +70,21 @@ $screen-s: 2px;
     width: min(95%, 90rem);
     margin-inline: auto;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     .stats-data-buttons {
       display: flex;
       align-items: center;
       justify-content: space-between;
       background-color: transparent;
-      height: 100%;
+      height: 50%;
+      width: 100%;
+
+      @include respond-m() {
+        flex-direction: column;
+      }
 
       button {
         font-size: 2rem;
@@ -82,7 +109,7 @@ $screen-s: 2px;
 
 /* ------------ Info Cards Section -------------- */
 
-.info-cards {
+.info-cards-player-form-section {
   margin: 10rem 0;
   width: 100%;
   // display: flex;
@@ -168,60 +195,14 @@ $screen-s: 2px;
       }
     }
   }
+
+  .player-form-container {
+    width: min(95%, 90rem);
+    margin-inline: auto;
+  }
 }
 
 /* Hidden Class */
 .hidden {
   display: none;
 }
-
-// /*------------------- Media Queries --------------------*/
-// /*------------------- Max Width: 1440px --------------------*/
-
-// @media screen and (max-width: 1440px) {
-//   .header {
-//     padding: 0 2rem;
-//   }
-// }
-
-// /*------------------- Max Width: 1024px --------------------*/
-
-// @media screen and (max-width: 1024px) {
-//   /* .header {
-//     .stats-data-buttons {
-//       button {
-//         font-size: 1.5rem;
-//         padding: 1.5rem 1.5rem;
-//       }
-//     }
-//   } */
-
-//   button {
-//     font-size: 1.5rem;
-//     padding: 1.5rem 1.5rem;
-//   }
-// }
-
-// /*------------------- Max Width: 768px --------------------*/
-
-// @media screen and (max-width: 768px) {
-//   .stats-data-buttons {
-//     flex-direction: column;
-//   }
-// }
-
-// /*------------------- Max Width: 375px --------------------*/
-
-// @media screen and (max-width: 375px) {
-//   /* .stats-data-buttons {
-//     button {
-//       font-size: 1rem;
-//       padding: 1rem 1rem;
-//     }
-//   } */
-
-//   button {
-//     font-size: 1rem;
-//     padding: 1rem 1rem;
-//   }
-// }
