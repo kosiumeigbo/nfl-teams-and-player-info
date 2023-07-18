@@ -10,7 +10,7 @@ const exploreTeams = document.querySelector(".team-stats-data-btn");
 const explorePlayers = document.querySelector(".player-stats-data-btn");
 const infoCardsPlayerFormSection = document.querySelector(".info-cards-player-form-section");
 const infoCardsContainer = document.querySelector(".info-cards-container");
-const playerFormContainer = document.querySelector(".player-form-container");
+const playerFormListContainer = document.querySelector(".player-form-list-container");
 const teamsTable = document.querySelector(".teams-table");
 
 /* 
@@ -27,7 +27,7 @@ request1.addEventListener("load", function () {
 */
 
 exploreTeams.addEventListener("click", function () {
-  playerFormContainer.classList.add("hidden");
+  playerFormListContainer.classList.add("hidden");
   infoCardsContainer.classList.remove("hidden");
   infoCardsPlayerFormSection.classList.remove("hidden");
   infoCardsPlayerFormSection.scrollIntoView({ behavior: "smooth" });
@@ -35,7 +35,7 @@ exploreTeams.addEventListener("click", function () {
 
 explorePlayers.addEventListener("click", function () {
   infoCardsContainer.classList.add("hidden");
-  playerFormContainer.classList.remove("hidden");
+  playerFormListContainer.classList.remove("hidden");
   infoCardsPlayerFormSection.classList.remove("hidden");
   infoCardsPlayerFormSection.scrollIntoView({ behavior: "smooth" });
 });
