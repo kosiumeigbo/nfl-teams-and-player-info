@@ -35,6 +35,8 @@ $screen-s: 23.4375rem; // 375px
   letter-spacing: 0.1rem;
 }
 
+/* ------------ Header Section -------------- */
+
 .header {
   width: 100%;
   position: relative;
@@ -102,6 +104,16 @@ $screen-s: 23.4375rem; // 375px
           color: black;
           cursor: pointer;
         }
+
+        @include respond-m() {
+          font-size: 1.5rem;
+          padding: 1.5rem 1.5rem;
+        }
+
+        @include respond-s() {
+          font-size: 1rem;
+          padding: 1rem 1rem;
+        }
       }
     }
   }
@@ -112,9 +124,6 @@ $screen-s: 23.4375rem; // 375px
 .info-cards-player-form-section {
   margin: 10rem 0;
   width: 100%;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
 
   .info-cards-container {
     width: min(95%, 90rem);
@@ -122,81 +131,151 @@ $screen-s: 23.4375rem; // 375px
 
     .teams-table {
       display: grid;
-      grid-template-columns: 2fr 1fr 5fr;
-      grid-template-rows: 40rem 40rem;
+      grid-template-columns: 1fr;
+      grid-template-rows: 30rem 30rem;
       row-gap: 5rem;
-      column-gap: 5rem;
       width: 100%;
 
-      .nfc-logo,
-      .afc-logo {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
+      .nfc {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
 
-        img {
+        .nfc-logo {
           width: 100%;
-        }
-
-        h2 {
-          text-align: center;
-          font-size: 3rem;
-          font-weight: 400;
-        }
-      }
-
-      .nfc-divisions,
-      .afc-divisions {
-        display: grid;
-        background-color: transparent;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(4, 1fr);
-
-        h2 {
-          text-align: center;
-          font-size: 3rem;
-          font-weight: 400;
-          text-transform: uppercase;
+          height: 100%;
           display: flex;
+          flex-direction: column;
           align-items: center;
           justify-content: center;
-        }
-      }
-
-      .nfc-teams,
-      .afc-teams {
-        display: grid;
-        background-color: transparent;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(4, 1fr);
-        column-gap: 1rem;
-
-        .team {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: transparent;
-          transition: background-color 0.2s;
-
-          &:hover {
-            cursor: pointer;
-            background-color: rgb(242, 237, 237);
-          }
+          gap: 1rem;
 
           img {
-            width: 95%;
-            // height: 100%;
+            width: 100%;
+          }
+
+          h2 {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 400;
+          }
+        }
+
+        .nfc-divisions {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(4, 1fr);
+          row-gap: 1rem;
+
+          .nfc-north,
+          .nfc-south,
+          .nfc-east,
+          .nfc-west {
+            display: grid;
+            grid-template-columns: 20% 2fr 2fr 2fr 2fr;
+            column-gap: 1rem;
+
+            h2 {
+              text-align: center;
+              font-size: 3rem;
+              font-weight: 400;
+              text-transform: uppercase;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .team {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-color: transparent;
+              transition: background-color 0.2s;
+
+              &:hover {
+                cursor: pointer;
+                background-color: rgb(242, 237, 237);
+              }
+
+              img {
+                width: 95%;
+              }
+            }
+          }
+        }
+      }
+
+      .afc {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+
+        .afc-logo {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 1rem;
+
+          img {
+            width: 100%;
+          }
+
+          h2 {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 400;
+          }
+        }
+
+        .afc-divisions {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(4, 1fr);
+          row-gap: 1rem;
+          
+
+          .afc-north,
+          .afc-south,
+          .afc-east,
+          .afc-west {
+            display: grid;
+            grid-template-columns: 20% 2fr 2fr 2fr 2fr;
+            column-gap: 1rem;
+
+            h2 {
+              text-align: center;
+              font-size: 3rem;
+              font-weight: 400;
+              text-transform: uppercase;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .team {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-color: transparent;
+              transition: background-color 0.2s;
+
+              &:hover {
+                cursor: pointer;
+                background-color: rgb(242, 237, 237);
+              }
+
+              img {
+                width: 95%;
+              }
+            }
           }
         }
       }
     }
   }
 
-  .player-form-container {
+  .player-form-list-container {
     width: min(95%, 90rem);
     margin-inline: auto;
   }
