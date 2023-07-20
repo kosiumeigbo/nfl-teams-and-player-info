@@ -132,7 +132,7 @@ $screen-s: 23.4375rem; // 375px
     .teams-table {
       display: grid;
       grid-template-columns: 1fr;
-      grid-template-rows: 30rem 30rem;
+      grid-template-rows: 30rem 0.001rem 30rem;
       row-gap: 5rem;
       width: 100%;
 
