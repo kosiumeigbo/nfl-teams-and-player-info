@@ -179,6 +179,10 @@ $screen-s: 23.4375rem; // 375px
           grid-template-rows: repeat(4, 1fr);
           row-gap: 1rem;
 
+          @include respond-s() {
+            row-gap: 3rem;
+          }
+
           .nfc-north,
           .nfc-south,
           .nfc-east,
@@ -190,6 +194,11 @@ $screen-s: 23.4375rem; // 375px
             @include respond-m() {
               grid-template-columns: 15% 2fr 2fr 2fr 2fr;
               column-gap: 0.2rem;
+            }
+
+            @include respond-s() {
+              grid-template-columns: 1fr;
+              row-gap: 1rem;
             }
 
             h2 {
@@ -211,6 +220,11 @@ $screen-s: 23.4375rem; // 375px
 
               @include respond-m() {
                 font-size: 1.1rem;
+              }
+
+              @include respond-s() {
+                font-size: 4rem;
+                border-bottom: 0.4rem solid #bbb;
               }
             }
 
@@ -277,6 +291,10 @@ $screen-s: 23.4375rem; // 375px
           grid-template-rows: repeat(4, 1fr);
           row-gap: 1rem;
 
+          @include respond-s() {
+            row-gap: 3rem;
+          }
+
           .afc-north,
           .afc-south,
           .afc-east,
@@ -288,6 +306,11 @@ $screen-s: 23.4375rem; // 375px
             @include respond-m() {
               grid-template-columns: 15% 2fr 2fr 2fr 2fr;
               column-gap: 0.2rem;
+            }
+
+            @include respond-s() {
+              grid-template-columns: 1fr;
+              row-gap: 1rem;
             }
 
             h2 {
@@ -309,6 +332,11 @@ $screen-s: 23.4375rem; // 375px
 
               @include respond-m() {
                 font-size: 1.1rem;
+              }
+
+              @include respond-s() {
+                font-size: 4rem;
+                border-bottom: 0.4rem solid #bbb;
               }
             }
 
