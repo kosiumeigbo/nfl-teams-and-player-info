@@ -98,13 +98,18 @@
 .info-cards-player-form-section .info-cards-container .teams-table {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 30rem 0.001rem 30rem;
   row-gap: 5rem;
   width: 100%;
 }
 .info-cards-player-form-section .info-cards-container .teams-table .nfc {
   display: grid;
   grid-template-columns: 1fr 3fr;
+}
+@media (max-width: 48rem) {
+  .info-cards-player-form-section .info-cards-container .teams-table .nfc {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
 }
 .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-logo {
   width: 100%;
@@ -118,10 +123,20 @@
 .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-logo img {
   width: 100%;
 }
+@media (max-width: 48rem) {
+  .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-logo img {
+    width: 50%;
+  }
+}
 .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-logo h2 {
   text-align: center;
   font-size: 3rem;
   font-weight: 400;
+}
+@media (max-width: 90rem) {
+  .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-logo h2 {
+    font-size: 2rem;
+  }
 }
 .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions {
   display: grid;
@@ -138,6 +153,16 @@
   -moz-column-gap: 1rem;
        column-gap: 1rem;
 }
+@media (max-width: 48rem) {
+  .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions .nfc-north,
+  .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions .nfc-south,
+  .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions .nfc-east,
+  .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions .nfc-west {
+    grid-template-columns: 15% 2fr 2fr 2fr 2fr;
+    -moz-column-gap: 0.2rem;
+         column-gap: 0.2rem;
+  }
+}
 .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions .nfc-north h2,
 .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions .nfc-south h2,
 .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions .nfc-east h2,
@@ -149,6 +174,30 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media (max-width: 90rem) {
+  .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions .nfc-north h2,
+  .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions .nfc-south h2,
+  .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions .nfc-east h2,
+  .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions .nfc-west h2 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 64rem) {
+  .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions .nfc-north h2,
+  .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions .nfc-south h2,
+  .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions .nfc-east h2,
+  .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions .nfc-west h2 {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 48rem) {
+  .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions .nfc-north h2,
+  .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions .nfc-south h2,
+  .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions .nfc-east h2,
+  .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions .nfc-west h2 {
+    font-size: 1.1rem;
+  }
 }
 .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions .nfc-north .team,
 .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions .nfc-south .team,
@@ -177,6 +226,12 @@
   display: grid;
   grid-template-columns: 1fr 3fr;
 }
+@media (max-width: 48rem) {
+  .info-cards-player-form-section .info-cards-container .teams-table .afc {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+}
 .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-logo {
   width: 100%;
   height: 100%;
@@ -189,10 +244,20 @@
 .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-logo img {
   width: 100%;
 }
+@media (max-width: 48rem) {
+  .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-logo img {
+    width: 50%;
+  }
+}
 .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-logo h2 {
   text-align: center;
   font-size: 3rem;
   font-weight: 400;
+}
+@media (max-width: 90rem) {
+  .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-logo h2 {
+    font-size: 2rem;
+  }
 }
 .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions {
   display: grid;
@@ -209,6 +274,16 @@
   -moz-column-gap: 1rem;
        column-gap: 1rem;
 }
+@media (max-width: 48rem) {
+  .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions .afc-north,
+  .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions .afc-south,
+  .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions .afc-east,
+  .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions .afc-west {
+    grid-template-columns: 15% 2fr 2fr 2fr 2fr;
+    -moz-column-gap: 0.2rem;
+         column-gap: 0.2rem;
+  }
+}
 .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions .afc-north h2,
 .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions .afc-south h2,
 .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions .afc-east h2,
@@ -220,6 +295,30 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media (max-width: 90rem) {
+  .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions .afc-north h2,
+  .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions .afc-south h2,
+  .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions .afc-east h2,
+  .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions .afc-west h2 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 64rem) {
+  .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions .afc-north h2,
+  .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions .afc-south h2,
+  .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions .afc-east h2,
+  .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions .afc-west h2 {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 48rem) {
+  .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions .afc-north h2,
+  .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions .afc-south h2,
+  .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions .afc-east h2,
+  .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions .afc-west h2 {
+    font-size: 1.1rem;
+  }
 }
 .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions .afc-north .team,
 .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions .afc-south .team,
