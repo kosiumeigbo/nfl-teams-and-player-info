@@ -1,7 +1,7 @@
 $screen-xl: 90rem; // 1440px
 $screen-l: 64rem; // 1024px
 $screen-m: 48rem; // 768px
-$screen-s: 23.4375rem; // 375px
+$screen-s: 26.25rem; // 420px
 
 @mixin respond-xl {
   @media (max-width: $screen-xl) {
