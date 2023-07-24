@@ -113,7 +113,7 @@
 }
 @media (max-width: 48rem) {
   .info-cards-player-form-section .info-cards-container .teams-table .nfc {
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
     row-gap: 2rem;
   }
 }
@@ -156,7 +156,7 @@
 }
 .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 100%;
   grid-template-rows: repeat(4, 1fr);
   row-gap: 1rem;
 }
@@ -284,7 +284,7 @@
 }
 @media (max-width: 48rem) {
   .info-cards-player-form-section .info-cards-container .teams-table .afc {
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
     row-gap: 2rem;
   }
 }
@@ -327,7 +327,7 @@
 }
 .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 100%;
   grid-template-rows: repeat(4, 1fr);
   row-gap: 1rem;
 }
