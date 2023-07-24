@@ -180,7 +180,7 @@ $screen-s: 26.25rem; // 420px
             }
 
             @include respond-s() {
-              font-size: 3.5rem;
+              font-size: 3rem;
             }
           }
         }
@@ -235,7 +235,7 @@ $screen-s: 26.25rem; // 420px
               }
 
               @include respond-s() {
-                font-size: 2.5rem;
+                font-size: 1.8rem;
                 border-bottom: 0.2rem solid #003069;
               }
             }
@@ -308,7 +308,7 @@ $screen-s: 26.25rem; // 420px
             }
 
             @include respond-s() {
-              font-size: 3.5rem;
+              font-size: 3rem;
             }
           }
         }
@@ -363,7 +363,7 @@ $screen-s: 26.25rem; // 420px
               }
 
               @include respond-s() {
-                font-size: 2.5rem;
+                font-size: 1.8rem;
                 border-bottom: 0.2rem solid #d60303;
               }
             }
