@@ -151,7 +151,7 @@
 }
 @media (max-width: 26.25rem) {
   .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-logo h2 {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 }
 .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions {
@@ -191,7 +191,6 @@
   .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions .nfc-west {
     grid-template-columns: 100%;
     grid-template-rows: 5rem 4rem 4rem 4rem 4rem;
-    row-gap: 0.5rem;
   }
 }
 .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions .nfc-north h2,
@@ -235,7 +234,7 @@
   .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions .nfc-south h2,
   .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions .nfc-east h2,
   .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions .nfc-west h2 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     border-bottom: 0.2rem solid #003069;
   }
 }
@@ -322,7 +321,7 @@
 }
 @media (max-width: 26.25rem) {
   .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-logo h2 {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 }
 .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions {
@@ -362,7 +361,6 @@
   .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions .afc-west {
     grid-template-columns: 100%;
     grid-template-rows: 5rem 4rem 4rem 4rem 4rem;
-    row-gap: 0.5rem;
   }
 }
 .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions .afc-north h2,
@@ -406,7 +404,7 @@
   .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions .afc-south h2,
   .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions .afc-east h2,
   .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions .afc-west h2 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     border-bottom: 0.2rem solid #d60303;
   }
 }
