@@ -129,10 +129,14 @@ $screen-s: 26.25rem; // 420px
     width: min(95%, 90rem);
     margin-inline: auto;
 
+    @include respond-s() {
+      width: 60%;
+      margin-inline: auto;
+    }
+
     .teams-table {
       display: grid;
-      grid-template-columns: 1fr;
-      // grid-template-rows: 30rem 0.001rem 30rem;
+      grid-template-columns: 100%;
       row-gap: 5rem;
       width: 100%;
 
@@ -160,6 +164,10 @@ $screen-s: 26.25rem; // 420px
             @include respond-m() {
               width: 70%;
             }
+
+            @include respond-s() {
+              width: 100%;
+            }
           }
 
           h2 {
@@ -171,7 +179,7 @@ $screen-s: 26.25rem; // 420px
               font-size: 2rem;
             }
 
-            @include respond-s(){
+            @include respond-s() {
               font-size: 3.5rem;
             }
           }
@@ -201,8 +209,8 @@ $screen-s: 26.25rem; // 420px
             }
 
             @include respond-s() {
-              grid-template-columns: 1fr;
-              grid-template-rows: 3rem 2rem 2rem 2rem 2rem;
+              grid-template-columns: 100%;
+              grid-template-rows: 5rem 4rem 4rem 4rem 4rem;
               row-gap: 0.5rem;
             }
 
@@ -253,8 +261,7 @@ $screen-s: 26.25rem; // 420px
                 width: 95%;
 
                 @include respond-s() {
-                  width: auto;
-                  height: 90%;
+                  width: 50%;
                 }
               }
             }
@@ -286,6 +293,10 @@ $screen-s: 26.25rem; // 420px
             @include respond-m() {
               width: 70%;
             }
+
+            @include respond-s() {
+              width: 100%;
+            }
           }
 
           h2 {
@@ -297,7 +308,7 @@ $screen-s: 26.25rem; // 420px
               font-size: 2rem;
             }
 
-            @include respond-s(){
+            @include respond-s() {
               font-size: 3.5rem;
             }
           }
@@ -327,8 +338,8 @@ $screen-s: 26.25rem; // 420px
             }
 
             @include respond-s() {
-              grid-template-columns: 1fr;
-              grid-template-rows: 3rem 2rem 2rem 2rem 2rem;
+              grid-template-columns: 100%;
+              grid-template-rows: 5rem 4rem 4rem 4rem 4rem;
               row-gap: 0.5rem;
             }
 
@@ -379,8 +390,7 @@ $screen-s: 26.25rem; // 420px
                 width: 95%;
 
                 @include respond-s() {
-                  width: auto;
-                  height: 90%;
+                  width: 50%;
                 }
               }
             }
