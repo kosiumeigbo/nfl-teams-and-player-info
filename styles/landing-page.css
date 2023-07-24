@@ -95,9 +95,15 @@
   width: min(95%, 90rem);
   margin-inline: auto;
 }
+@media (max-width: 26.25rem) {
+  .info-cards-player-form-section .info-cards-container {
+    width: 60%;
+    margin-inline: auto;
+  }
+}
 .info-cards-player-form-section .info-cards-container .teams-table {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 100%;
   row-gap: 5rem;
   width: 100%;
 }
@@ -126,6 +132,11 @@
 @media (max-width: 48rem) {
   .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-logo img {
     width: 70%;
+  }
+}
+@media (max-width: 26.25rem) {
+  .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-logo img {
+    width: 100%;
   }
 }
 .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-logo h2 {
@@ -178,8 +189,8 @@
   .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions .nfc-south,
   .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions .nfc-east,
   .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions .nfc-west {
-    grid-template-columns: 1fr;
-    grid-template-rows: 3rem 2rem 2rem 2rem 2rem;
+    grid-template-columns: 100%;
+    grid-template-rows: 5rem 4rem 4rem 4rem 4rem;
     row-gap: 0.5rem;
   }
 }
@@ -264,8 +275,7 @@
   .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions .nfc-south .team img,
   .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions .nfc-east .team img,
   .info-cards-player-form-section .info-cards-container .teams-table .nfc .nfc-divisions .nfc-west .team img {
-    width: auto;
-    height: 90%;
+    width: 50%;
   }
 }
 .info-cards-player-form-section .info-cards-container .teams-table .afc {
@@ -293,6 +303,11 @@
 @media (max-width: 48rem) {
   .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-logo img {
     width: 70%;
+  }
+}
+@media (max-width: 26.25rem) {
+  .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-logo img {
+    width: 100%;
   }
 }
 .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-logo h2 {
@@ -345,8 +360,8 @@
   .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions .afc-south,
   .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions .afc-east,
   .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions .afc-west {
-    grid-template-columns: 1fr;
-    grid-template-rows: 3rem 2rem 2rem 2rem 2rem;
+    grid-template-columns: 100%;
+    grid-template-rows: 5rem 4rem 4rem 4rem 4rem;
     row-gap: 0.5rem;
   }
 }
@@ -431,8 +446,7 @@
   .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions .afc-south .team img,
   .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions .afc-east .team img,
   .info-cards-player-form-section .info-cards-container .teams-table .afc .afc-divisions .afc-west .team img {
-    width: auto;
-    height: 90%;
+    width: 50%;
   }
 }
 .info-cards-player-form-section .player-form-list-container {
