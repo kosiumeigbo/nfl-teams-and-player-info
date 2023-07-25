@@ -181,7 +181,7 @@ $screen-s: 26.25rem; // 420px
             }
 
             @include respond-s() {
-              font-size: 3rem;
+              display: none;
             }
           }
         }
@@ -317,7 +317,7 @@ $screen-s: 26.25rem; // 420px
             }
 
             @include respond-s() {
-              font-size: 3rem;
+              display: none;
             }
           }
         }
