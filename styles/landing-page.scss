@@ -244,7 +244,7 @@ $afc-color: #d60303;
 
               @include respond-s() {
                 font-size: 1.8rem;
-                border-bottom: 0.2rem solid #003069;
+                border-bottom: 0.2rem solid $nfc-color;
               }
             }
 
@@ -380,7 +380,7 @@ $afc-color: #d60303;
 
               @include respond-s() {
                 font-size: 1.8rem;
-                border-bottom: 0.2rem solid #d60303;
+                border-bottom: 0.2rem solid $afc-color;
               }
             }
 
