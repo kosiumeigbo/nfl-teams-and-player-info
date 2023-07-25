@@ -2,6 +2,13 @@ $screen-xl: 90rem; // 1440px
 $screen-l: 64rem; // 1024px
 $screen-m: 48rem; // 768px
 $screen-s: 26.25rem; // 420px
+$nfc-color: #003069;
+$afc-color: #d60303;
+
+@font-face {
+  font-family: AdidasFont;
+  src: url(../AdihausDIN.ttf);
+}
 
 @mixin respond-xl {
   @media (max-width: $screen-xl) {
