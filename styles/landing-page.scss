@@ -137,6 +137,8 @@ $screen-s: 26.25rem; // 420px
     .teams-table {
       display: grid;
       grid-template-columns: 100%;
+      grid-template-rows: auto 0.05rem auto;
+      justify-items: center;
       row-gap: 5rem;
       width: 100%;
 
@@ -265,6 +267,15 @@ $screen-s: 26.25rem; // 420px
               }
             }
           }
+        }
+      }
+
+      .table-divider {
+        background-color: black;
+        width: 100%;
+
+        @include respond-s() {
+          width: 160%;
         }
       }
 
