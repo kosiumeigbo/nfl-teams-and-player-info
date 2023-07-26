@@ -12,6 +12,8 @@ const infoCardsPlayerFormSection = document.querySelector(".info-cards-player-fo
 const infoCardsContainer = document.querySelector(".info-cards-container");
 const playerSearchForm = document.querySelector(".player-search-form");
 const playerSearchContainer = document.querySelector(".player-search-container");
+const playerSearchArea = document.querySelector("#player-search");
+const playerSearchBtn = document.querySelector("#player-search-btn");
 const teamsTable = document.querySelector(".teams-table");
 
 /* 
@@ -48,4 +50,9 @@ teamsTable.addEventListener("click", function (e) {
     localStorage.setItem("teamKey", e.target.dataset.key);
     window.open(teamStatsInformationPage);
   }
+});
+
+playerSearchBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  console.log(playerSearchArea.value.trim().length);
 });
