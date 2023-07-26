@@ -26,7 +26,7 @@
     <!-- Cards Section -->
 
     <section class="info-cards-player-form-section">
-      <div class="info-cards-container">
+      <div class="info-cards-container hidden">
         <div class="teams-table">
           <div class="nfc">
             <div class="nfc-logo">
@@ -181,8 +181,18 @@
           </div>
         </div>
       </div>
-      <div class="player-form-list-container hidden">
-        <form class="player-form" action=""></form>
+      <div class="player-search-container">
+        <form class="player-search-form">
+          <label for="player-search">Search by player name:</label>
+          <div>
+            <input type="search" id="player-search" name="player-search" />
+            <button type="submit" id="player-search-btn">Search Player</button>
+          </div>
+        </form>
+        <!-- <div class="player-search-results hidden">
+          <div class="player-search-results-headers"></div>
+          <div class="player-search-results-list"></div>
+        </div> -->
       </div>
     </section>
   </body>
