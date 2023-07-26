@@ -414,9 +414,30 @@ $afc-color: #d60303;
     }
   }
 
-  .player-form-list-container {
+  .player-search-container {
     width: min(95%, 90rem);
+    // height: 95vh;
     margin-inline: auto;
+    padding: 10rem 0rem;
+
+    form {
+      label {
+        display: block;
+      }
+
+      div {
+        display: flex;
+
+        #player-search {
+          width: 70%;
+        }
+
+        #player-search-btn {
+          width: 15rem;
+          margin-left: 1rem;
+        }
+      }
+    }
   }
 }
 
