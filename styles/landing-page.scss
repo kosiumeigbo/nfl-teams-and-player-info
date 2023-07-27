@@ -5,6 +5,7 @@ $screen-s: 26.25rem; // 420px
 $nfc-color: #003069;
 $afc-color: #d60303;
 $button-border-color: rgb(171, 103, 146);
+$button-background-image: linear-gradient(to right, $nfc-color, $afc-color);
 
 @font-face {
   font-family: AdidasFont;
