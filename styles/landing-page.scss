@@ -418,25 +418,68 @@ $button-background-image: linear-gradient(to right, $nfc-color, $afc-color);
 
   .player-search-container {
     width: min(95%, 90rem);
-    // height: 95vh;
     margin-inline: auto;
     padding: 10rem 0rem;
 
     form {
+      width: 100%;
+
       label {
         display: block;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
       }
 
       div {
+        width: 100%;
         display: flex;
+        align-items: center;
+
+        @include respond-m() {
+          flex-direction: column;
+        }
 
         #player-search {
           width: 70%;
+          height: 4rem;
+          background-color: transparent;
+          border: 2px solid black;
+          font-size: 1.5rem;
+
+          @include respond-m() {
+            width: 100%;
+            margin-bottom: 1rem;
+          }
+
+          &:focus {
+            outline: 1px solid transparent;
+            outline-offset: -1px;
+            border: 2px solid $button-border-color;
+          }
         }
 
         #player-search-btn {
           width: 15rem;
+          height: 4rem;
           margin-left: 1rem;
+          font-size: 1.5rem;
+          text-transform: uppercase;
+          background-color: transparent;
+          border: 2px solid black;
+          transition: color 0.3s, border 0.3s;
+
+          @include respond-m() {
+            width: 100%;
+            margin-left: 0rem;
+          }
+
+          &:hover,
+          &:focus {
+            cursor: pointer;
+            color: white;
+            background-image: linear-gradient(to right, $nfc-color, $afc-color);
+            border: 2px solid $button-border-color;
+          }
         }
       }
     }
