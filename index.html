@@ -25,7 +25,7 @@
 
     <!-- Cards Section -->
 
-    <section class="info-cards-player-form-section">
+    <section class="info-cards-player-form-section hidden">
       <div class="info-cards-container hidden">
         <div class="teams-table">
           <div class="nfc">
@@ -181,11 +181,11 @@
           </div>
         </div>
       </div>
-      <div class="player-search-container">
-        <form id="player-search-form">
+      <div class="player-search-container hidden">
+        <form id="player-search-form" class="hidden">
           <label for="player-search">Search by player name:</label>
           <div>
-            <input type="text" id="player-search" name="player-search" autocomplete="off"/>
+            <input type="text" id="player-search" name="player-search" autocomplete="off" />
             <button type="submit" id="player-search-btn">Find Players</button>
           </div>
         </form>
