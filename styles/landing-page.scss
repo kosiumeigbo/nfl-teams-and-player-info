@@ -107,7 +107,8 @@ $button-background-image: linear-gradient(to right, $nfc-color, $afc-color);
         border: 4px solid black;
         transition: border 0.3s, color 0.3s;
 
-        &:hover {
+        &:hover,
+        &:focus {
           border: 4px solid $button-border-color;
           background-image: $button-background-image;
           color: white;
@@ -141,6 +142,20 @@ $button-background-image: linear-gradient(to right, $nfc-color, $afc-color);
     @include respond-s() {
       width: 60%;
       margin-inline: auto;
+    }
+
+    .instruction{
+      width: 100%;
+      font-size: 1rem;
+      text-align: center;
+      border-top: 2px solid $afc-color;
+      border-bottom: 2px solid $nfc-color;
+      padding: 0.5rem 0rem;
+      margin-bottom: 3rem;
+
+      @include respond-s(){
+        font-size: 0.8rem;
+      }
     }
 
     .teams-table {
@@ -456,7 +471,7 @@ $button-background-image: linear-gradient(to right, $nfc-color, $afc-color);
             margin-bottom: 1rem;
           }
 
-          @include respond-s(){
+          @include respond-s() {
             height: 3rem;
             margin-bottom: 0.5rem;
           }
@@ -483,7 +498,7 @@ $button-background-image: linear-gradient(to right, $nfc-color, $afc-color);
             margin-left: 0rem;
           }
 
-          @include respond-s(){
+          @include respond-s() {
             height: 3rem;
             font-size: 1rem;
           }
