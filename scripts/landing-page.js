@@ -48,7 +48,7 @@ teamsTable.addEventListener("click", function (e) {
   if (e.target.dataset.key) {
     console.log(e.target);
     localStorage.setItem("teamKey", e.target.dataset.key);
-    window.open(teamStatsInformationPage);
+    window.open(teamStatsInformationPage, '_self');
   }
 });
 
