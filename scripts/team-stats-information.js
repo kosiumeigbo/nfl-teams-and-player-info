@@ -1,24 +1,16 @@
 "use strict";
 import * as apiTestData from "../modules/api-test-data.js";
+const testTeam = apiTestData.allTeamsActive[3];
+let teamKey;
 
-// let teamKey;
+const teamPageQueryList = window.location.search;
+const teamPageQueryParams = new URLSearchParams(teamPageQueryList);
 
-if (
-  window.performance.getEntriesByType("navigation")[0].type === "navigate" ||
-  window.performance.getEntriesByType("navigation")[0].type === "reload"
-) {
-  const teamKey = localStorage.getItem("teamKeyTab");
-  document.body.dataset.key = teamKey;
-  document.body.textContent = teamKey;
+if (teamPageQueryParams.has("key")) {
+  teamKey = teamPageQueryParams.get("key");
+  console.log(teamKey);
+} else {
+  window.location.href = "../index.html";
 }
 
-document.addEventListener("visibilitychange", function () {
-  if (!document.hidden) {
-    localStorage.setItem("teamKeyTab", document.body.dataset.key);
-  }
-});
-// else {
-//   teamKey = localStorage.getItem("teamKeyTab");
-//   document.body.dataset.key = teamKey;
-//   document.body.textContent = teamKey;
-// }
+document.body.textContent = teamKey;
