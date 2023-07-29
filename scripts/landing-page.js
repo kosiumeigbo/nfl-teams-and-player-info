@@ -44,14 +44,6 @@ explorePlayers.addEventListener("click", function () {
   infoCardsPlayerFormSection.scrollIntoView({ behavior: "smooth" });
 });
 
-teamsTable.addEventListener("click", function (e) {
-  if (e.target.dataset.key) {
-    console.log(e.target);
-    localStorage.setItem("teamKeyTab", e.target.dataset.key);
-    window.open(teamStatsInformationPage);
-  }
-});
-
 playerSearchBtn.addEventListener("click", function (e) {
   e.preventDefault();
   console.log(playerSearchArea.value.trim());
