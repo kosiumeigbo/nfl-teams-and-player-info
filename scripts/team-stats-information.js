@@ -1,6 +1,5 @@
 "use strict";
 import * as apiTestData from "../modules/api-test-data.js";
-const testTeam = apiTestData.allTeamsActive[3];
 let teamKey;
 
 const teamPageQueryList = window.location.search;
@@ -13,4 +12,7 @@ if (teamPageQueryParams.has("key")) {
   window.location.href = "../index.html";
 }
 
-document.body.textContent = teamKey;
+const testTeam = apiTestData.allTeamsActive.filter((obj) => obj.Key === teamKey)[0];
+console.log(testTeam.FullName);
+
+document.body.textContent = testTeam.Key + ": " + testTeam.FullName;
