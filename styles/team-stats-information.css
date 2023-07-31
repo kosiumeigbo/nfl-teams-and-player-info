@@ -1,1 +1,22 @@
-/*# sourceMappingURL=team-stats-information.css.map */
+@font-face {
+  font-family: AdidasFont;
+  src: url(../AdihausDIN.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: AdidasFont, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.01rem;
+}
+
+/* -------- Main section -------- */
+main {
+  width: 100%;
+}
+
+/* -------- Error section -------- */
+/* -------- Hidden Class -------- */
+.hidden {
+  display: none;
+}/*# sourceMappingURL=team-stats-information.css.map */

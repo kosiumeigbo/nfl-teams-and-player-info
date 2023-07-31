@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"team-stats-information.css"}
+{"version":3,"sources":["team-stats-information.scss","team-stats-information.css"],"names":[],"mappings":"AAOA;EACE,uBAAA;EACA,2BAAA;ACNF;ADiCA;EACE,SAAA;EACA,UAAA;EACA,sBAAA;EACA,wEAAA;EACA,uBAAA;AC/BF;;ADkCA,mCAAA;AAEA;EACE,WAAA;AChCF;;ADqCA,oCAAA;AAEA,mCAAA;AAEA;EACE,aAAA;ACpCF","file":"team-stats-information.css"}
