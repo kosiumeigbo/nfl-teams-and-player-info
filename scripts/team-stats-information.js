@@ -13,6 +13,6 @@ if (teamPageQueryParams.has("key")) {
 }
 
 const testTeam = apiTestData.allTeamsActive.filter((obj) => obj.Key === teamKey)[0];
-console.log(testTeam.FullName);
+console.log(testTeam);
 
 document.body.textContent = testTeam.Key + ": " + testTeam.FullName;
