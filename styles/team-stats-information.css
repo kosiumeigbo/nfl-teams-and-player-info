@@ -11,8 +11,62 @@
 }
 
 /* -------- Main section -------- */
+body {
+  width: 100%;
+}
+
 main {
   width: 100%;
+}
+main header {
+  height: auto;
+  width: 100%;
+  padding: 5rem 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+main header .header-container {
+  width: min(90%, 90rem);
+  background-color: transparent;
+}
+main header .header-color {
+  position: absolute;
+  z-index: -4;
+  left: 0;
+  background-color: #f3f3f3;
+  width: 100%;
+  height: 100%;
+}
+main header .secondary-color {
+  position: absolute;
+  z-index: -3;
+  left: 59.5%;
+  width: 100%;
+  height: 100%;
+  transform: skewX(-30deg);
+}
+main header .primary-color {
+  position: absolute;
+  z-index: -2;
+  left: 60%;
+  width: 100%;
+  height: 100%;
+  transform: skewX(-30deg);
+}
+main header .team-logo {
+  position: absolute;
+  z-index: -1;
+  left: 56%;
+  bottom: 0%;
+  background-color: transparent;
+  width: 11rem;
+  height: 11rem;
+}
+main header .team-logo img {
+  height: 100%;
 }
 
 /* -------- Error section -------- */
