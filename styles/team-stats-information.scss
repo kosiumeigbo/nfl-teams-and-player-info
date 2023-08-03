@@ -4,6 +4,7 @@ $screen-m: 48rem; // 768px
 $screen-s: 26.25rem; // 420px
 $nfc-color: #003069;
 $afc-color: #d60303;
+$header-background-color: #f3f3f3;
 
 @font-face {
   font-family: AdidasFont;
@@ -44,10 +45,71 @@ $afc-color: #d60303;
 
 /* -------- Main section -------- */
 
+body {
+  width: 100%;
+}
+
 main {
   width: 100%;
 
-  
+  header {
+    height: auto;
+    width: 100%;
+    padding: 5rem 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+
+    .header-container {
+      width: min(80%, 90rem);
+      background-color: transparent;
+    }
+
+    .header-color{
+      position: absolute;
+      z-index: -4;
+      left: 0;
+      background-color: $header-background-color;
+      width: 100%;
+      height: 100%;
+    }
+
+    .secondary-color{
+      position: absolute;
+      z-index: -3;
+      left: 59.5%;
+      background-color: #FFB612;
+      width: 100%;
+      height: 100%;
+      transform: skewX(-30deg);
+    }
+
+    .primary-color{
+      position: absolute;
+      z-index: -2;
+      left: 60%;
+      background-color: #203731;
+      width: 100%;
+      height: 100%;
+      transform: skewX(-30deg);
+    }
+
+    .team-logo{
+      position: absolute;
+      z-index: -1;
+      left: 56%;
+      top: 25%;
+      background-color: transparent;
+      width: 11rem;
+      height: 100%;
+
+      img{
+        width: 100%;
+      }
+    }
+  }
 }
 
 /* -------- Error section -------- */
