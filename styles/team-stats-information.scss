@@ -63,7 +63,7 @@ main {
     overflow: hidden;
 
     .header-container {
-      width: min(80%, 90rem);
+      width: min(90%, 90rem);
       background-color: transparent;
     }
 
@@ -80,7 +80,6 @@ main {
       position: absolute;
       z-index: -3;
       left: 59.5%;
-      background-color: #FFB612;
       width: 100%;
       height: 100%;
       transform: skewX(-30deg);
@@ -90,7 +89,6 @@ main {
       position: absolute;
       z-index: -2;
       left: 60%;
-      background-color: #203731;
       width: 100%;
       height: 100%;
       transform: skewX(-30deg);
@@ -100,13 +98,13 @@ main {
       position: absolute;
       z-index: -1;
       left: 56%;
-      top: 25%;
+      bottom: 0%;
       background-color: transparent;
       width: 11rem;
-      height: 100%;
+      height: 11rem;
 
       img{
-        width: 100%;
+        height: 100%;
       }
     }
   }
