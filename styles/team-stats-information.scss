@@ -169,7 +169,28 @@ header {
   }
 }
 
-/* -------- Nav section -------- */
+/* -------- Nav Links section -------- */
+.nav-links {
+  width: 100%;
+  padding: 5rem 0;
+}
+
+.nav-links-container {
+  width: min(90%, $screen-m);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  button {
+    width: 50%;
+    border: 1px solid blue;
+    border-radius: 0px;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: white;
+  }
+}
 
 /* -------- Error section -------- */
 
