@@ -1,8 +1,4 @@
-/* Main Part of Page */
-export const main = document.createElement("main");
-
 /* Header Section */
-export const header = document.createElement("header");
 
 export const headerHTML = function (teamObj) {
   return `
@@ -22,3 +18,11 @@ export const headerHTML = function (teamObj) {
 };
 
 /* Nav Section */
+export const navLinksHTML = function () {
+  return `
+  <div class="nav-links-container">
+    <button>Team Info</button>
+    <button>Team Roster</button>
+  </div>
+  `;
+};
