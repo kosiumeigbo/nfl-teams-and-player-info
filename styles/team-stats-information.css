@@ -22,11 +22,7 @@ main header {
   height: auto;
   width: 100%;
   padding: 5rem 0rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
-  overflow: hidden;
   border-bottom: 2px solid black;
 }
 @media (max-width: 48rem) {
@@ -40,17 +36,62 @@ main header {
 }
 main header .header-container {
   width: min(90%, 90rem);
+  margin-inline: auto;
+  padding-right: 10rem;
   background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 @media (max-width: 48rem) {
   main header .header-container {
     text-align: center;
     margin-bottom: 1.5rem;
+    flex-direction: column;
+    padding-right: 0rem;
   }
+}
+main header .header-container .name-conference-division {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+@media (max-width: 48rem) {
+  main header .header-container .name-conference-division {
+    align-items: center;
+  }
+}
+main header .header-container .name-conference-division h1 {
+  font-size: 3rem;
+}
+main header .header-container .team-logo {
+  background-color: transparent;
+  width: 10rem;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 48rem) {
+  main header .header-container .team-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+}
+@media (max-width: 26.25rem) {
+  main header .header-container .team-logo {
+    width: 8rem;
+  }
+}
+main header .header-container .team-logo img {
+  width: 100%;
 }
 main header .header-color {
   position: absolute;
-  z-index: -4;
+  z-index: -3;
   left: 0;
   top: 0;
   background-color: #f3f3f3;
@@ -59,12 +100,11 @@ main header .header-color {
 }
 main header .secondary-color {
   position: absolute;
-  z-index: -3;
-  left: 59.5%;
+  z-index: -2;
+  left: 50%;
   top: 0;
-  width: 90rem;
+  width: 50%;
   height: 100%;
-  transform: skewX(-30deg);
 }
 @media (max-width: 48rem) {
   main header .secondary-color {
@@ -76,12 +116,11 @@ main header .secondary-color {
 }
 main header .primary-color {
   position: absolute;
-  z-index: -2;
+  z-index: -1;
   left: 60%;
   top: 0;
-  width: 90rem;
+  width: 40%;
   height: 100%;
-  transform: skewX(-30deg);
 }
 @media (max-width: 48rem) {
   main header .primary-color {
@@ -89,34 +128,6 @@ main header .primary-color {
     transform: none;
     width: 100%;
     height: 1rem;
-  }
-}
-main header .team-logo {
-  position: absolute;
-  z-index: -1;
-  left: 56%;
-  bottom: 1rem;
-  background-color: transparent;
-  width: 10rem;
-  height: 10rem;
-}
-@media (max-width: 48rem) {
-  main header .team-logo {
-    position: static;
-    width: min(10rem, 90%);
-    height: 10rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-  }
-}
-main header .team-logo img {
-  height: 100%;
-}
-@media (max-width: 48rem) {
-  main header .team-logo img {
-    height: 100%;
   }
 }
 
