@@ -18,6 +18,17 @@ console.log(testTeam);
 
 // document.body.textContent = testTeam.Key + ": " + testTeam.FullName;
 
-teamPage.header.innerHTML = teamPage.headerHTML(testTeam);
-teamPage.main.appendChild(teamPage.header);
-document.body.insertAdjacentElement("afterbegin", teamPage.main);
+// Create and Insert Main section to Body
+const main = document.createElement("main");
+document.body.insertAdjacentElement("afterbegin", main);
+
+// Create and fill header and append to main
+const header = document.createElement("header");
+header.innerHTML = teamPage.headerHTML(testTeam);
+main.appendChild(header);
+
+// Create navLinks section with nav-links class, add HTML and append to main
+const navLinks = document.createElement("section");
+navLinks.classList.add("nav-links");
+navLinks.innerHTML = teamPage.navLinksHTML();
+main.appendChild(navLinks);
