@@ -61,50 +61,95 @@ main {
     justify-content: center;
     position: relative;
     overflow: hidden;
+    border-bottom: 2px solid black;
+
+    @include respond-m() {
+      padding-bottom: 0rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
 
     .header-container {
       width: min(90%, 90rem);
       background-color: transparent;
+
+      @include respond-m() {
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
     }
 
-    .header-color{
+    .header-color {
       position: absolute;
       z-index: -4;
       left: 0;
+      top: 0;
       background-color: $header-background-color;
       width: 100%;
       height: 100%;
     }
 
-    .secondary-color{
+    .secondary-color {
       position: absolute;
       z-index: -3;
       left: 59.5%;
-      width: 100%;
+      top: 0;
+      width: 90rem;
       height: 100%;
       transform: skewX(-30deg);
+
+      @include respond-m() {
+        position: static;
+        transform: none;
+        width: 100%;
+        height: 1rem;
+      }
     }
 
-    .primary-color{
+    .primary-color {
       position: absolute;
       z-index: -2;
       left: 60%;
-      width: 100%;
+      top: 0;
+      width: 90rem;
       height: 100%;
       transform: skewX(-30deg);
+
+      @include respond-m() {
+        position: static;
+        transform: none;
+        width: 100%;
+        height: 1rem;
+      }
     }
 
-    .team-logo{
+    .team-logo {
       position: absolute;
       z-index: -1;
       left: 56%;
-      bottom: 0%;
+      bottom: 1rem;
       background-color: transparent;
-      width: 11rem;
-      height: 11rem;
+      width: 10rem;
+      height: 10rem;
 
-      img{
+      @include respond-m() {
+        position: static;
+        width: min(10rem, 90%);
+        height: 10rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+
+      img {
         height: 100%;
+
+        @include respond-m() {
+          height: 100%;
+        }
       }
     }
   }
