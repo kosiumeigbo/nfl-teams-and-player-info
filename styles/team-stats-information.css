@@ -10,15 +10,17 @@
   letter-spacing: 0.01rem;
 }
 
-/* -------- Main section -------- */
 body {
   width: 100%;
 }
 
+/* -------- Main section -------- */
 main {
   width: 100%;
 }
-main header {
+
+/* -------- Header section -------- */
+header {
   height: auto;
   width: 100%;
   padding: 5rem 0rem;
@@ -26,7 +28,7 @@ main header {
   border-bottom: 2px solid black;
 }
 @media (max-width: 48rem) {
-  main header {
+  header {
     padding-bottom: 0rem;
     display: flex;
     flex-direction: column;
@@ -34,7 +36,7 @@ main header {
     justify-content: space-between;
   }
 }
-main header .header-container {
+header .header-container {
   width: min(90%, 90rem);
   margin-inline: auto;
   padding-right: 10rem;
@@ -44,28 +46,28 @@ main header .header-container {
   justify-content: space-between;
 }
 @media (max-width: 48rem) {
-  main header .header-container {
+  header .header-container {
     text-align: center;
     margin-bottom: 1.5rem;
     flex-direction: column;
     padding-right: 0rem;
   }
 }
-main header .header-container .name-conference-division {
+header .header-container .name-conference-division {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
 }
 @media (max-width: 48rem) {
-  main header .header-container .name-conference-division {
+  header .header-container .name-conference-division {
     align-items: center;
   }
 }
-main header .header-container .name-conference-division h1 {
+header .header-container .name-conference-division h1 {
   font-size: 3rem;
 }
-main header .header-container .team-logo {
+header .header-container .team-logo {
   background-color: transparent;
   width: 10rem;
   height: 10rem;
@@ -74,7 +76,7 @@ main header .header-container .team-logo {
   justify-content: center;
 }
 @media (max-width: 48rem) {
-  main header .header-container .team-logo {
+  header .header-container .team-logo {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -82,14 +84,14 @@ main header .header-container .team-logo {
   }
 }
 @media (max-width: 26.25rem) {
-  main header .header-container .team-logo {
+  header .header-container .team-logo {
     width: 8rem;
   }
 }
-main header .header-container .team-logo img {
+header .header-container .team-logo img {
   width: 100%;
 }
-main header .header-color {
+header .header-color {
   position: absolute;
   z-index: -3;
   left: 0;
@@ -98,7 +100,7 @@ main header .header-color {
   width: 100%;
   height: 100%;
 }
-main header .secondary-color {
+header .secondary-color {
   position: absolute;
   z-index: -2;
   left: 50%;
@@ -107,14 +109,14 @@ main header .secondary-color {
   height: 100%;
 }
 @media (max-width: 48rem) {
-  main header .secondary-color {
+  header .secondary-color {
     position: static;
     transform: none;
     width: 100%;
     height: 1rem;
   }
 }
-main header .primary-color {
+header .primary-color {
   position: absolute;
   z-index: -1;
   left: 60%;
@@ -123,12 +125,34 @@ main header .primary-color {
   height: 100%;
 }
 @media (max-width: 48rem) {
-  main header .primary-color {
+  header .primary-color {
     position: static;
     transform: none;
     width: 100%;
     height: 1rem;
   }
+}
+
+/* -------- Nav Links section -------- */
+.nav-links {
+  width: 100%;
+  padding: 5rem 0;
+}
+
+.nav-links-container {
+  width: min(90%, 48rem);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-links-container button {
+  width: 50%;
+  border: 1px solid blue;
+  border-radius: 0px;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: white;
 }
 
 /* -------- Error section -------- */
