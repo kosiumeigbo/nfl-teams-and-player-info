@@ -20,4 +20,4 @@ console.log(testTeam);
 
 teamPage.header.innerHTML = teamPage.headerHTML(testTeam);
 teamPage.main.appendChild(teamPage.header);
-document.body.appendChild(teamPage.main);
+document.body.insertAdjacentElement("afterbegin", teamPage.main);
