@@ -133,10 +133,11 @@ header .primary-color {
   }
 }
 
-/* -------- Nav Links section -------- */
+/* -------- Nav Links Buttons section -------- */
 .nav-links {
   width: 100%;
-  padding: 5rem 0;
+  padding-top: 5rem;
+  padding-bottom: 1rem;
 }
 
 .nav-links-container {
@@ -146,6 +147,11 @@ header .primary-color {
   align-items: center;
   justify-content: space-between;
 }
+@media (max-width: 26.25rem) {
+  .nav-links-container {
+    flex-direction: column;
+  }
+}
 .nav-links-container button {
   width: 50%;
   border: 1px solid blue;
@@ -153,6 +159,63 @@ header .primary-color {
   text-transform: uppercase;
   text-align: center;
   background-color: white;
+  font-size: 0.8rem;
+  padding: 0.8rem 0.5rem;
+  transition: background-color 0.2s, color 0.1s;
+}
+.nav-links-container button:hover, .nav-links-container button:focus {
+  background-color: blue;
+  color: white;
+}
+@media (max-width: 26.25rem) {
+  .nav-links-container button {
+    width: 100%;
+  }
+}
+
+/* -------- Team Info section -------- */
+.team-info {
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.team-info-container {
+  width: min(90%, 90rem);
+  margin-inline: auto;
+}
+
+.cards-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+.cards-section h2 {
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+.cards-section .cards-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 2rem;
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+}
+@media (max-width: 48rem) {
+  .cards-section .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 26.25rem) {
+  .cards-section .cards-container {
+    grid-template-columns: 1fr;
+  }
+}
+.cards-section .cards-container .card h3 {
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
 }
 
 /* -------- Error section -------- */
