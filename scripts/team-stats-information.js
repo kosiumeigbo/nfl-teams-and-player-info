@@ -32,3 +32,7 @@ const navLinks = document.createElement("section");
 navLinks.classList.add("nav-links");
 navLinks.innerHTML = teamPage.navLinksHTML();
 main.appendChild(navLinks);
+
+// Add Team Info Div to Main
+const teamInfo = document.querySelector(".team-info");
+main.appendChild(teamInfo);
