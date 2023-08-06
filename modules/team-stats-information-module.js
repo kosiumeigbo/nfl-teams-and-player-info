@@ -21,8 +21,11 @@ export const headerHTML = function (teamObj) {
 export const navLinksHTML = function () {
   return `
   <div class="nav-links-container">
-    <button>Team Info</button>
-    <button>Team Roster</button>
+    <button data-btn="team-info">Team Info</button>
+    <button data-btn="team-roster">Team Roster</button>
   </div>
   `;
 };
+
+/* Team Info Section */
+
