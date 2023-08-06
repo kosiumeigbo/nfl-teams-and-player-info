@@ -169,10 +169,11 @@ header {
   }
 }
 
-/* -------- Nav Links section -------- */
+/* -------- Nav Links Buttons section -------- */
 .nav-links {
   width: 100%;
-  padding: 5rem 0;
+  padding-top: 5rem;
+  padding-bottom: 1rem;
 }
 
 .nav-links-container {
@@ -182,6 +183,10 @@ header {
   align-items: center;
   justify-content: space-between;
 
+  @include respond-s() {
+    flex-direction: column;
+  }
+
   button {
     width: 50%;
     border: 1px solid blue;
@@ -189,6 +194,67 @@ header {
     text-transform: uppercase;
     text-align: center;
     background-color: white;
+    font-size: 0.8rem;
+    padding: 0.8rem 0.5rem;
+    transition: background-color 0.2s, color 0.1s;
+
+    &:hover,
+    &:focus {
+      background-color: blue;
+      color: white;
+    }
+
+    @include respond-s() {
+      width: 100%;
+    }
+  }
+}
+
+/* -------- Team Info section -------- */
+
+.team-info {
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.team-info-container {
+  width: min(90%, $screen-xl);
+  margin-inline: auto;
+}
+
+.cards-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+
+  h2 {
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+
+  .cards-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 2rem;
+    column-gap: 1.5rem;
+
+    @include respond-m() {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-s() {
+      grid-template-columns: 1fr;
+    }
+
+    .card {
+      h3 {
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+      }
+    }
   }
 }
 
