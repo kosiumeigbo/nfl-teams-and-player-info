@@ -225,13 +225,37 @@ header {
 .cards-section {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
+  padding: 2rem 0;
 
   h2 {
     text-transform: uppercase;
+    text-align: center;
+    font-size: 1.5rem;
     margin-bottom: 2rem;
     width: 100%;
+
+    @include respond-s() {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .stadium {
+    width: 70%;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include respond-m() {
+      width: 90%;
+    }
+
+    img {
+      width: 100%;
+    }
   }
 
   .cards-container {
@@ -253,6 +277,11 @@ header {
       h3 {
         text-transform: uppercase;
         margin-bottom: 0.5rem;
+        font-size: 1.17rem;
+      }
+
+      p {
+        font-size: 1rem;
       }
     }
   }
