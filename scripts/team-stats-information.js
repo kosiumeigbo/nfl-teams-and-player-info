@@ -33,6 +33,21 @@ navLinks.classList.add("nav-links");
 navLinks.innerHTML = teamPage.navLinksHTML();
 main.appendChild(navLinks);
 
-// Add Team Info Div to Main
-const teamInfo = document.querySelector(".team-info");
-main.appendChild(teamInfo);
+const teamInfoSection = document.createElement("section");
+teamInfoSection.classList.add("team-info");
+
+const teamInfoSectionContainer = document.createElement("div");
+teamInfoSectionContainer.classList.add("team-info-container");
+
+const [coachingDetailsSection, stadiumDetailsSection] = [document.createElement("div"), document.createElement("div")];
+coachingDetailsSection.classList.add("cards-section");
+stadiumDetailsSection.classList.add("cards-section");
+
+coachingDetailsSection.insertAdjacentHTML("afterbegin", teamPage.coachingDetailsHTML(testTeam));
+stadiumDetailsSection.insertAdjacentHTML("afterbegin", teamPage.stadiumDetailsHTML(testTeam));
+
+teamInfoSectionContainer.appendChild(coachingDetailsSection);
+teamInfoSectionContainer.appendChild(stadiumDetailsSection);
+teamInfoSection.appendChild(teamInfoSectionContainer);
+teamInfoSection.classList.add("hidden");
+main.appendChild(teamInfoSection);
