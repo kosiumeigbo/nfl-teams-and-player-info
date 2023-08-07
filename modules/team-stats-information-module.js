@@ -94,3 +94,36 @@ export const stadiumDetailsHTML = function (teamObj) {
   </div>
   `;
 };
+
+export const teamRosterHeadings = function () {
+  return `
+  <div class="team-roster-grid headings">
+    <div>Player</div>
+    <div>No</div>
+    <div>Pos</div>
+    <div>Status</div>
+    <div>Height (ft in)</div>
+    <div>Weight (lbs)</div>
+    <div>Experience</div>
+    <div>College</div>
+  </div>
+  `;
+};
+
+export const teamRosterRowHTML = function (playerObj) {
+  return `
+  <a href="../player-stats-information/player-stats-information.html?key=${playerObj}" class="team-roster-grid row">
+    <div class="photo-name">
+      <img src="" alt="" />
+      <p></p>
+    </div>
+    <div>30</div>
+    <div>RB</div>
+    <div>Active</div>
+    <div>6ft 2in</div>
+    <div>287</div>
+    <div>6th Year</div>
+    <div>Georgia State Univeristy</div>
+  </a>
+  `;
+};
