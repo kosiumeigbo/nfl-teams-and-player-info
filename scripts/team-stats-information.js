@@ -51,3 +51,35 @@ teamInfoSectionContainer.appendChild(stadiumDetailsSection);
 teamInfoSection.appendChild(teamInfoSectionContainer);
 teamInfoSection.classList.add("hidden");
 main.appendChild(teamInfoSection);
+
+// Create playerList section and add all necessary HTML
+const teamRosterSection = document.createElement("section");
+teamRosterSection.classList.add("team-roster");
+teamRosterSection.classList.add("hidden");
+const teamRosterSectionContainer = document.createElement("div");
+teamRosterSectionContainer.classList.add("team-roster-container");
+teamRosterSectionContainer.insertAdjacentHTML("afterbegin", teamPage.teamRosterHeadings());
+const teamRosterRows = document.createElement("div");
+teamRosterRows.classList.add("team-roster-grid");
+teamRosterRows.classList.add("rows");
+teamRosterSectionContainer.insertAdjacentElement("beforeend", teamRosterRows);
+teamRosterSection.appendChild(teamRosterSectionContainer);
+main.appendChild(teamRosterSection);
+
+//////////////////////////////////////////////////////////////////
+
+const navButtons = document.querySelector(".nav-links");
+
+navButtons.addEventListener("click", function (e) {
+  if (e.target.dataset.btn === "team-info") {
+    document.querySelector(".team-roster").classList.add("hidden");
+    document.querySelector(".team-info").classList.remove("hidden");
+  }
+
+  if (e.target.dataset.btn === "team-roster") {
+    document.querySelector(".team-info").classList.add("hidden");
+    document.querySelector(".team-roster").classList.remove("hidden");
+  }
+});
+*/
+/* --------- Main Section Ends --------- */
