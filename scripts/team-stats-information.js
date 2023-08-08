@@ -75,7 +75,15 @@ window.addEventListener("DOMContentLoaded", function (e) {
       main.appendChild(teamRosterSection);
 
       return fetch(
-        `https://api.sportsdata.io/v3/nfl/scores/json/Players/${team.Key}?key=ffb7852aadbe4662a351fad874b411ce`
+        `http://api.weatherapi.com/v1/current.json?key=6e08ab4df3fa41fb8e690211230808&q=${team.StadiumDetails.GeoLat},${team.StadiumDetails.GeoLong}`
+      );
+    })
+    .then((res) => res.json())
+    .then((weather) => {
+      console.log(weather);
+
+      return fetch(
+        `https://api.sportsdata.io/v3/nfl/scores/json/Players/${teamKey}?key=ffb7852aadbe4662a351fad874b411ce`
       );
     })
     .then((res) => res.json())
