@@ -89,7 +89,7 @@ export const stadiumDetailsHTML = function (teamObj) {
     </div>
     <div class="card">
       <h3>Current Weather Details</h3>
-      <p>30º</p>
+      <p id="stadium-weather">Weather details are currently unavailable</p>
     </div>
   </div>
   `;
