@@ -35,6 +35,12 @@ $header-background-color: #f3f3f3;
   }
 }
 
+@mixin respond-any($size) {
+  @media (max-width: $size) {
+    @content;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
