@@ -95,35 +95,57 @@ export const stadiumDetailsHTML = function (teamObj) {
   `;
 };
 
-export const teamRosterHeadings = function () {
+export const playerPhotoNameTableHeading = function () {
   return `
-  <div class="team-roster-grid headings">
-    <div>Player</div>
-    <div>No</div>
-    <div>Pos</div>
-    <div>Status</div>
-    <div>Height (ft in)</div>
-    <div>Weight (lbs)</div>
-    <div>Experience</div>
-    <div>College</div>
-  </div>
+  <tr class="heading">
+    <th>Player</th>
+  </tr>
   `;
 };
 
-export const teamRosterRowHTML = function (playerObj) {
+export const playerPhotoNameTableRow = function (playerObj) {
   return `
-  <a href="../player-stats-information/player-stats-information.html?key=${playerObj}" class="team-roster-grid row">
-    <div class="photo-name">
-      <img src="" alt="" />
-      <p></p>
-    </div>
-    <div>30</div>
-    <div>RB</div>
-    <div>Active</div>
-    <div>6ft 2in</div>
-    <div>287</div>
-    <div>6th Year</div>
-    <div>Georgia State Univeristy</div>
-  </a>
+  <tr class="row">
+    <td>
+      <a
+        href="../player-stats-information/player-stats-information.html?key=${playerObj.PlayerID}"
+        target="_blank"
+      >
+        <img
+          src="${playerObj.PhotoUrl}"
+          alt="${playerObj.Name} photo"
+        />
+        <p>${playerObj.Name}</p>
+      </a>
+    </td>
+  </tr>
+  `;
+};
+
+export const otherPlayerInfoTableHeading = function () {
+  return `
+  <tr class="heading">
+    <th>No</th>
+    <th>Pos</th>
+    <th>Status</th>
+    <th>Height</th>
+    <th>Weight</th>
+    <th>Experience</th>
+    <th>College</th>
+  </tr>
+  `;
+};
+
+export const otherPlayerInfoTableRow = function (playerObj) {
+  return `
+  <tr class="row">
+    <td>${playerObj.Number}</td>
+    <td>${playerObj.Position}</td>
+    <td>${playerObj.Active ? "ACT" : "NON-ACT"}</td>
+    <td>${playerObj.HeightFeet}ft ${playerObj.HeightInches}in</td>
+    <td>${playerObj.Weight}lbs</td>
+    <td>${playerObj.ExperienceString}</td>
+    <td>${playerObj.College}</td>
+  </tr>
   `;
 };
