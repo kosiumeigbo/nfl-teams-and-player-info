@@ -14,13 +14,14 @@ if (teamPageQueryParams.has("key")) {
   window.location.href = "../index.html";
 }
 
+/*
 // Event Listener to fetch api to get selected team
 window.addEventListener("DOMContentLoaded", function (e) {
   fetch("https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=ffb7852aadbe4662a351fad874b411ce")
     .then((res) => res.json())
     .then((data) => {
       team = data.find((obj) => obj.Key === teamKey);
-      console.log(team.FullName);
+      console.log(team);
 
       document.querySelector("title").textContent = `${team.FullName}`;
 
@@ -61,18 +62,29 @@ window.addEventListener("DOMContentLoaded", function (e) {
       teamInfoSection.appendChild(teamInfoSectionContainer);
       main.appendChild(teamInfoSection);
 
-      // Create playerList section and add all necessary HTML
+      // Create teamRoster section and add all necessary HTML
+      const photoNameContainer = document.createElement("div");
+      photoNameContainer.classList.add("photo-name-container");
+      const photoNameTable = document.createElement("table");
+      photoNameTable.classList.add("photo-name-table");
+      photoNameContainer.appendChild(photoNameTable);
+
+      const otherPlayerInfoContainer = document.createElement("div");
+      otherPlayerInfoContainer.classList.add("other-player-info-container");
+      const otherPlayerInfoTable = document.createElement("table");
+      otherPlayerInfoTable.classList.add("other-player-info-table");
+      otherPlayerInfoContainer.appendChild(otherPlayerInfoTable);
+
+      const teamRosterSectionContainer = document.createElement("div");
+      teamRosterSectionContainer.classList.add("team-roster-container");
+      teamRosterSectionContainer.appendChild(photoNameContainer);
+      teamRosterSectionContainer.appendChild(otherPlayerInfoContainer);
+
       const teamRosterSection = document.createElement("section");
       teamRosterSection.classList.add("team-roster");
       teamRosterSection.classList.add("hidden");
-      const teamRosterSectionContainer = document.createElement("div");
-      teamRosterSectionContainer.classList.add("team-roster-container");
-      teamRosterSectionContainer.insertAdjacentHTML("afterbegin", teamPage.teamRosterHeadings());
-      const teamRosterRows = document.createElement("div");
-      teamRosterRows.classList.add("team-roster-grid");
-      teamRosterRows.classList.add("rows");
-      teamRosterSectionContainer.insertAdjacentElement("beforeend", teamRosterRows);
       teamRosterSection.appendChild(teamRosterSectionContainer);
+
       main.appendChild(teamRosterSection);
 
       return fetch(
@@ -81,7 +93,11 @@ window.addEventListener("DOMContentLoaded", function (e) {
     })
     .then((res) => res.json())
     .then((weather) => {
-      console.log(weather);
+      // console.log(weather);
+
+      document.querySelector(
+        "#stadium-weather"
+      ).textContent = `${weather.current.temp_c}ºC and ${weather.current.condition.text}`;
 
       return fetch(
         `https://api.sportsdata.io/v3/nfl/scores/json/Players/${teamKey}?key=ffb7852aadbe4662a351fad874b411ce`
@@ -90,6 +106,20 @@ window.addEventListener("DOMContentLoaded", function (e) {
     .then((res) => res.json())
     .then((players) => {
       console.log(players);
+
+      players.forEach((player) => console.log(player));
+
+      const photoNameTable = document.querySelector(".photo-name-table");
+      photoNameTable.insertAdjacentHTML("afterbegin", teamPage.playerPhotoNameTableHeading());
+      players.forEach((player) =>
+        photoNameTable.insertAdjacentHTML("beforeend", teamPage.playerPhotoNameTableRow(player))
+      );
+
+      const otherPlayerInfoTable = document.querySelector(".other-player-info-table");
+      otherPlayerInfoTable.insertAdjacentHTML("afterbegin", teamPage.otherPlayerInfoTableHeading());
+      players.forEach((player) =>
+        otherPlayerInfoTable.insertAdjacentHTML("beforeend", teamPage.otherPlayerInfoTableRow(player))
+      );
 
       const navButtons = document.querySelector(".nav-links");
 
@@ -106,13 +136,18 @@ window.addEventListener("DOMContentLoaded", function (e) {
       });
     });
 });
+*/
 
 /////////////////////////////////////////////////////////////////////////////
 
 const testTeam = apiTestData.allTeamsActive.filter((obj) => obj.Key === teamKey)[0];
 console.log(testTeam);
+console.log(apiTestData.playerDetailsByTeam[0]);
 
-// document.body.textContent = testTeam.Key + ": " + testTeam.FullName;
+// Change title of the page to the name of the selected team
+document.querySelector("title").textContent = `${testTeam.FullName}`;
+
+/* --------- Main Section Starts --------- */
 
 // Create and Insert Main section to Body
 const main = document.createElement("main");
@@ -129,6 +164,7 @@ navLinks.classList.add("nav-links");
 navLinks.innerHTML = teamPage.navLinksHTML();
 main.appendChild(navLinks);
 
+// Create teamInfo section and add all necessary HTML
 const teamInfoSection = document.createElement("section");
 teamInfoSection.classList.add("team-info");
 
@@ -145,25 +181,48 @@ stadiumDetailsSection.insertAdjacentHTML("afterbegin", teamPage.stadiumDetailsHT
 teamInfoSectionContainer.appendChild(coachingDetailsSection);
 teamInfoSectionContainer.appendChild(stadiumDetailsSection);
 teamInfoSection.appendChild(teamInfoSectionContainer);
-teamInfoSection.classList.add("hidden");
 main.appendChild(teamInfoSection);
 
-// Create playerList section and add all necessary HTML
+// Create teamRoster section and add all necessary HTML
+const photoNameContainer = document.createElement("div");
+photoNameContainer.classList.add("photo-name-container");
+const photoNameTable = document.createElement("table");
+photoNameTable.classList.add("photo-name-table");
+photoNameContainer.appendChild(photoNameTable);
+
+const otherPlayerInfoContainer = document.createElement("div");
+otherPlayerInfoContainer.classList.add("other-player-info-container");
+const otherPlayerInfoTable = document.createElement("table");
+otherPlayerInfoTable.classList.add("other-player-info-table");
+otherPlayerInfoContainer.appendChild(otherPlayerInfoTable);
+
+const teamRosterSectionContainer = document.createElement("div");
+teamRosterSectionContainer.classList.add("team-roster-container");
+teamRosterSectionContainer.appendChild(photoNameContainer);
+teamRosterSectionContainer.appendChild(otherPlayerInfoContainer);
+
 const teamRosterSection = document.createElement("section");
 teamRosterSection.classList.add("team-roster");
 teamRosterSection.classList.add("hidden");
-const teamRosterSectionContainer = document.createElement("div");
-teamRosterSectionContainer.classList.add("team-roster-container");
-teamRosterSectionContainer.insertAdjacentHTML("afterbegin", teamPage.teamRosterHeadings());
-const teamRosterRows = document.createElement("div");
-teamRosterRows.classList.add("team-roster-grid");
-teamRosterRows.classList.add("rows");
-teamRosterSectionContainer.insertAdjacentElement("beforeend", teamRosterRows);
 teamRosterSection.appendChild(teamRosterSectionContainer);
+
 main.appendChild(teamRosterSection);
 
 //////////////////////////////////////////////////////////////////
 
+const players = apiTestData.playerDetailsByTeam;
+
+players.forEach((player) => console.log(player));
+
+// const photoNameTable = document.querySelector(".photo-name-table");
+photoNameTable.insertAdjacentHTML("afterbegin", teamPage.playerPhotoNameTableHeading());
+players.forEach((player) => photoNameTable.insertAdjacentHTML("beforeend", teamPage.playerPhotoNameTableRow(player)));
+
+// const otherPlayerInfoTable = document.querySelector(".other-player-info-table");
+otherPlayerInfoTable.insertAdjacentHTML("afterbegin", teamPage.otherPlayerInfoTableHeading());
+players.forEach((player) =>
+  otherPlayerInfoTable.insertAdjacentHTML("beforeend", teamPage.otherPlayerInfoTableRow(player))
+);
 const navButtons = document.querySelector(".nav-links");
 
 navButtons.addEventListener("click", function (e) {
@@ -177,5 +236,5 @@ navButtons.addEventListener("click", function (e) {
     document.querySelector(".team-roster").classList.remove("hidden");
   }
 });
-*/
+
 /* --------- Main Section Ends --------- */
