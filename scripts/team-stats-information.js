@@ -2,6 +2,7 @@
 import * as apiTestData from "../modules/api-test-data.js";
 import * as teamPage from "../modules/team-stats-information-module.js";
 let teamKey;
+let team;
 
 const teamPageQueryList = window.location.search;
 const teamPageQueryParams = new URLSearchParams(teamPageQueryList);
