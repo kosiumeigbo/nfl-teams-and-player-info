@@ -387,10 +387,10 @@ header {
   tr {
     display: grid;
     grid-template-columns: repeat(7, calc(100% / 7));
+  }
 
-    &:nth-child(even) {
-      background-color: $header-background-color;
-    }
+  tbody:nth-child(even) {
+    background-color: $header-background-color;
   }
 
   .heading {
