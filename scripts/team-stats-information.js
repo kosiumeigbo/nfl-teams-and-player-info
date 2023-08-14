@@ -14,7 +14,6 @@ if (teamPageQueryParams.has("key")) {
   window.location.href = "../index.html";
 }
 
-/*
 // Event Listener to fetch api to get selected team
 window.addEventListener("DOMContentLoaded", function (e) {
   fetch("https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=ffb7852aadbe4662a351fad874b411ce")
@@ -136,19 +135,18 @@ window.addEventListener("DOMContentLoaded", function (e) {
       });
     });
 });
-*/
 
 /////////////////////////////////////////////////////////////////////////////
-
+/*
 const testTeam = apiTestData.allTeamsActive.filter((obj) => obj.Key === teamKey)[0];
 console.log(testTeam);
 console.log(apiTestData.playerDetailsByTeam[0]);
 
 // Change title of the page to the name of the selected team
 document.querySelector("title").textContent = `${testTeam.FullName}`;
-
+*/
 /* --------- Main Section Starts --------- */
-
+/*
 // Create and Insert Main section to Body
 const main = document.createElement("main");
 document.body.insertAdjacentElement("afterbegin", main);
@@ -236,5 +234,5 @@ navButtons.addEventListener("click", function (e) {
     document.querySelector(".team-roster").classList.remove("hidden");
   }
 });
-
+*/
 /* --------- Main Section Ends --------- */
