@@ -136,8 +136,7 @@ header .primary-color {
 /* -------- Nav Links Buttons section -------- */
 .nav-links {
   width: 100%;
-  padding-top: 5rem;
-  padding-bottom: 1rem;
+  padding: 2rem 0;
 }
 
 .nav-links-container {
@@ -166,6 +165,7 @@ header .primary-color {
 .nav-links-container button:hover, .nav-links-container button:focus {
   background-color: blue;
   color: white;
+  cursor: pointer;
 }
 @media (max-width: 26.25rem) {
   .nav-links-container button {
@@ -177,6 +177,7 @@ header .primary-color {
 .team-info {
   width: 100%;
   padding: 2rem 0;
+  background-color: #f3f3f3;
 }
 
 .team-info-container {
@@ -187,12 +188,36 @@ header .primary-color {
 .cards-section {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
+  padding: 2rem 0;
 }
 .cards-section h2 {
   text-transform: uppercase;
+  text-align: center;
+  font-size: 1.5rem;
   margin-bottom: 2rem;
+  width: 100%;
+}
+@media (max-width: 26.25rem) {
+  .cards-section h2 {
+    margin-bottom: 1rem;
+  }
+}
+.cards-section .stadium {
+  width: 70%;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 48rem) {
+  .cards-section .stadium {
+    width: 90%;
+  }
+}
+.cards-section .stadium img {
   width: 100%;
 }
 .cards-section .cards-container {
@@ -216,6 +241,109 @@ header .primary-color {
 .cards-section .cards-container .card h3 {
   text-transform: uppercase;
   margin-bottom: 0.5rem;
+  font-size: 1.17rem;
+}
+.cards-section .cards-container .card p {
+  font-size: 1rem;
+}
+
+/* -------- Team Roster section -------- */
+.team-roster {
+  width: 100%;
+  padding: 2rem 0rem;
+  background-color: #f3f3f3;
+}
+
+.team-roster-container {
+  width: min(90%, 90rem);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  background-color: white;
+  border: 1px solid #b9c1ba;
+}
+@media (max-width: 64rem) {
+  .team-roster-container {
+    grid-template-columns: 19.2rem 1fr;
+  }
+}
+@media (max-width: 26.25rem) {
+  .team-roster-container {
+    grid-template-columns: 100%;
+  }
+}
+
+.photo-name-container {
+  overflow-x: auto;
+  border-right: 1px solid #b9c1ba;
+}
+.photo-name-container table {
+  width: 100%;
+  border-spacing: 0;
+  text-align: left;
+}
+.photo-name-container th,
+.photo-name-container td {
+  padding: 0.5rem 0.5rem;
+  border-bottom: 1px solid #b9c1ba;
+}
+.photo-name-container th,
+.photo-name-container tr,
+.photo-name-container td {
+  width: 100%;
+}
+.photo-name-container .heading {
+  height: 4rem;
+  font-size: 1.3rem;
+}
+.photo-name-container .row {
+  height: 8rem;
+  font-size: 1rem;
+}
+.photo-name-container a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+}
+.photo-name-container img {
+  margin-right: 1.5rem;
+}
+
+.other-player-info-container {
+  overflow-x: auto;
+}
+@media (max-width: 26.25rem) {
+  .other-player-info-container {
+    display: none;
+  }
+}
+.other-player-info-container table {
+  width: max(100%, 51.2rem);
+  border-spacing: 0;
+  text-align: left;
+}
+.other-player-info-container th,
+.other-player-info-container td {
+  padding: 0.5rem 0.5rem;
+  border-bottom: 1px solid #b9c1ba;
+  display: flex;
+  align-items: center;
+}
+.other-player-info-container tr {
+  display: grid;
+  grid-template-columns: repeat(7, 14.2857142857%);
+}
+.other-player-info-container tbody:nth-child(even) {
+  background-color: #f3f3f3;
+}
+.other-player-info-container .heading {
+  height: 4rem;
+  font-size: 1.3rem;
+}
+.other-player-info-container .row {
+  height: 8rem;
+  font-size: 1rem;
 }
 
 /* -------- Error section -------- */
