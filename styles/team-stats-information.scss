@@ -5,6 +5,7 @@ $screen-s: 26.25rem; // 420px
 $nfc-color: #003069;
 $afc-color: #d60303;
 $header-background-color: #f3f3f3;
+$player-roster-border: #b9c1ba;
 
 @font-face {
   font-family: AdidasFont;
@@ -178,8 +179,7 @@ header {
 /* -------- Nav Links Buttons section -------- */
 .nav-links {
   width: 100%;
-  padding-top: 5rem;
-  padding-bottom: 1rem;
+  padding: 2rem 0;
 }
 
 .nav-links-container {
@@ -208,6 +208,7 @@ header {
     &:focus {
       background-color: blue;
       color: white;
+      cursor: pointer;
     }
 
     @include respond-s() {
@@ -221,6 +222,7 @@ header {
 .team-info {
   width: 100%;
   padding: 2rem 0;
+  background-color: $header-background-color;
 }
 
 .team-info-container {
