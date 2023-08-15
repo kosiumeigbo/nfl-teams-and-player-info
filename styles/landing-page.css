@@ -481,6 +481,7 @@
 }
 .info-cards-player-form-section .player-search-container form {
   width: 100%;
+  margin-bottom: 3rem;
 }
 .info-cards-player-form-section .player-search-container form label {
   display: block;
@@ -554,6 +555,105 @@
   color: white;
   background-image: linear-gradient(to right, #003069, #d60303);
   border: 2px solid rgb(171, 103, 146);
+}
+
+/* ------------ Player List Section -------------- */
+.player-list {
+  width: 100%;
+  padding: 2rem 0rem;
+  background-color: #f3f3f3;
+}
+
+.player-list-container {
+  width: min(90%, 90rem);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  background-color: white;
+  border: 1px solid #b9c1ba;
+}
+@media (max-width: 64rem) {
+  .player-list-container {
+    grid-template-columns: 19.2rem 1fr;
+  }
+}
+@media (max-width: 26.25rem) {
+  .player-list-container {
+    grid-template-columns: 100%;
+  }
+}
+
+.photo-name-container {
+  overflow-x: auto;
+  border-right: 1px solid #b9c1ba;
+}
+.photo-name-container table {
+  width: 100%;
+  border-spacing: 0;
+  text-align: left;
+}
+.photo-name-container th,
+.photo-name-container td {
+  padding: 0.5rem 0.5rem;
+  border-bottom: 1px solid #b9c1ba;
+}
+.photo-name-container th,
+.photo-name-container tr,
+.photo-name-container td {
+  width: 100%;
+}
+.photo-name-container .heading {
+  height: 4rem;
+  font-size: 1.3rem;
+}
+.photo-name-container .row {
+  height: 8rem;
+  font-size: 1rem;
+}
+.photo-name-container a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+}
+.photo-name-container img {
+  margin-right: 1.5rem;
+}
+
+.other-player-info-container {
+  overflow-x: auto;
+}
+@media (max-width: 26.25rem) {
+  .other-player-info-container {
+    display: none;
+  }
+}
+.other-player-info-container table {
+  width: max(100%, 51.2rem);
+  border-spacing: 0;
+  text-align: left;
+}
+.other-player-info-container th,
+.other-player-info-container td {
+  padding: 0.5rem 0.5rem;
+  border-bottom: 1px solid #b9c1ba;
+  display: flex;
+  align-items: center;
+}
+.other-player-info-container tr {
+  display: grid;
+  grid-template-columns: repeat(7, 14.2857142857%);
+}
+.other-player-info-container tbody:nth-child(even) {
+  background-color: #f3f3f3;
+}
+.other-player-info-container .heading {
+  height: 4rem;
+  font-size: 1.3rem;
+}
+.other-player-info-container .row {
+  height: 8rem;
+  font-size: 1rem;
 }
 
 /* Hidden Class */
