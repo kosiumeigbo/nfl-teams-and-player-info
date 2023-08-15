@@ -8,7 +8,7 @@ export const headerHTML = function (teamObj) {
     <h3>${teamObj.Conference} ${teamObj.Division}</h3>
   </div>
   <div class="team-logo">
-    <img src="${teamObj.WikipediaLogoUrl}" alt="" />
+    <img src="${teamObj.WikipediaLogoUrl}" alt="${teamObj.FullName} Team Logo" />
   </div>
 </div>
 <div class="header-color"></div>
