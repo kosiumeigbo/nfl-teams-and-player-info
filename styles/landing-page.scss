@@ -6,6 +6,8 @@ $nfc-color: #003069;
 $afc-color: #d60303;
 $button-border-color: rgb(171, 103, 146);
 $button-background-image: linear-gradient(to right, $nfc-color, $afc-color);
+$header-background-color: #f3f3f3;
+$player-roster-border: #b9c1ba;
 
 @font-face {
   font-family: AdidasFont;
@@ -514,6 +516,115 @@ $button-background-image: linear-gradient(to right, $nfc-color, $afc-color);
         }
       }
     }
+  }
+}
+
+/* ------------ Player List Section -------------- */
+
+.player-list {
+  width: 100%;
+  padding: 2rem 0rem;
+  background-color: #f3f3f3;
+}
+
+.player-list-container {
+  width: min(90%, $screen-xl);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  background-color: white;
+  border: 1px solid $player-roster-border;
+
+  @include respond-l() {
+    grid-template-columns: calc($screen-l * 0.3) 1fr;
+  }
+
+  @include respond-s() {
+    grid-template-columns: 100%;
+  }
+}
+
+.photo-name-container {
+  overflow-x: auto;
+  border-right: 1px solid $player-roster-border;
+  table {
+    width: 100%;
+    border-spacing: 0;
+    text-align: left;
+  }
+
+  th,
+  td {
+    padding: 0.5rem 0.5rem;
+    border-bottom: 1px solid $player-roster-border;
+  }
+
+  th,
+  tr,
+  td {
+    width: 100%;
+  }
+
+  .heading {
+    height: 4rem;
+    font-size: 1.3rem;
+  }
+
+  .row {
+    height: 8rem;
+    font-size: 1rem;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-decoration: none;
+  }
+
+  img {
+    margin-right: 1.5rem;
+  }
+}
+
+.other-player-info-container {
+  overflow-x: auto;
+
+  @include respond-s() {
+    display: none;
+  }
+
+  table {
+    width: max(100%, calc($screen-l * 0.8));
+    border-spacing: 0;
+    text-align: left;
+  }
+
+  th,
+  td {
+    padding: 0.5rem 0.5rem;
+    border-bottom: 1px solid $player-roster-border;
+    display: flex;
+    align-items: center;
+  }
+
+  tr {
+    display: grid;
+    grid-template-columns: repeat(7, calc(100% / 7));
+  }
+
+  tbody:nth-child(even) {
+    background-color: $header-background-color;
+  }
+
+  .heading {
+    height: 4rem;
+    font-size: 1.3rem;
+  }
+
+  .row {
+    height: 8rem;
+    font-size: 1rem;
   }
 }
 
