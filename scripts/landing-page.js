@@ -20,11 +20,11 @@ const exploreTeams = document.querySelector(".team-stats-data-btn");
 const explorePlayers = document.querySelector(".player-stats-data-btn");
 const infoCardsPlayerFormSection = document.querySelector(".info-cards-player-form-section");
 const infoCardsContainer = document.querySelector(".info-cards-container");
-const teamsTable = document.querySelector(".teams-table");
 const playerSearchContainer = document.querySelector(".player-search-container");
 const playerSearchForm = document.querySelector("#player-search-form");
 const playerSearchArea = document.querySelector("#player-search");
 const playerSearchBtn = document.querySelector("#player-search-btn");
+const playerSearchResultsContainer = document.querySelector(".player-search-results");
 
 /* 
 const request1 = new XMLHttpRequest();
