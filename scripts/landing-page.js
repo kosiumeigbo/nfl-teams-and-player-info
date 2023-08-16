@@ -56,5 +56,25 @@ explorePlayers.addEventListener("click", function () {
 
 playerSearchBtn.addEventListener("click", function (e) {
   e.preventDefault();
-  console.log(playerSearchArea.value.trim());
+
+  if (playerSearchArea.value.trim() === "") {
+    playerSearchResultsContainer.innerHTML = "";
+    playerSearchResultsContainer.innerHTML = noEnteredPlayers();
+    return;
+  }
+
+  const searchEntriesArray = playerSearchArea.value.trim().split(" ");
+
+  if (searchEntriesArray.length >= 3) {
+    playerSearchResultsContainer.innerHTML = "";
+    playerSearchResultsContainer.innerHTML = noPlayersFoundHTML();
+  }
+
+  if (searchEntriesArray.length === 2) {
+    return;
+  }
+
+  if (searchEntriesArray.length === 1) {
+    return;
+  }
 });
