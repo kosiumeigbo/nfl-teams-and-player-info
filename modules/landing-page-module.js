@@ -5,6 +5,13 @@ export const noPlayersFoundHTML = function () {
     `;
 };
 
+export const noEnteredPlayers = function () {
+  return `
+    <h3>NO VALID ENTRY</h3>
+    <p>Please enter a valid value</p>
+    `;
+};
+
 export const playerPhotoNameTableHeading = function () {
   return `
     <tr class="heading">
