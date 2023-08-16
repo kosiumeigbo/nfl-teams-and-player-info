@@ -1,5 +1,15 @@
 "use strict";
 import * as apiTestData from "../modules/api-test-data.js";
+import {
+  playerPhotoNameTableHeading,
+  playerPhotoNameTableRow,
+  otherPlayerInfoTableHeading,
+  otherPlayerInfoTableRow,
+  noPlayersFoundHTML,
+  noEnteredPlayers
+} from "../modules/landing-page-module.js";
+
+let playerSearchResult = [];
 
 // Team Information and Player Information Web Pages Locations
 const playerStatsInformationPage = "./player-stats-information/player-stats-information.html";
