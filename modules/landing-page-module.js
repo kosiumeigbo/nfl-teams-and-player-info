@@ -1,3 +1,10 @@
+export const noPlayersFoundHTML = function () {
+  return `
+    <h3>NO PLAYERS FOUND</h3>
+    <p>No results. Try a different search.</p>
+    `;
+};
+
 export const playerPhotoNameTableHeading = function () {
   return `
     <tr class="heading">
