@@ -80,7 +80,7 @@ $player-roster-border: #b9c1ba;
   }
 
   .header-container {
-    width: min(95%, 90rem);
+    width: min(95%, $screen-xl);
     margin-inline: auto;
     height: 100%;
     display: flex;
@@ -138,7 +138,7 @@ $player-roster-border: #b9c1ba;
   width: 100%;
 
   .info-cards-container {
-    width: min(95%, 90rem);
+    width: min(95%, $screen-xl);
     margin-inline: auto;
 
     @include respond-s() {
@@ -434,7 +434,7 @@ $player-roster-border: #b9c1ba;
   }
 
   .player-search-container {
-    width: min(95%, 90rem);
+    width: min(95%, $screen-xl);
     margin-inline: auto;
     padding: 10rem 0rem;
 
