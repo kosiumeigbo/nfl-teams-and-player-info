@@ -7,7 +7,7 @@ export const noPlayersFoundHTML = function () {
 
 export const noEnteredPlayers = function () {
   return `
-    <h3>NO VALID ENTRY</h3>
+    <h3>NOT A VALID ENTRY</h3>
     <p>Please enter a valid value</p>
     `;
 };
