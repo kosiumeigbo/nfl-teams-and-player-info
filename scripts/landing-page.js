@@ -9,8 +9,6 @@ import {
   noEnteredPlayers
 } from "../modules/landing-page-module.js";
 
-let playerSearchResult = [];
-
 // Team Information and Player Information Web Pages Locations
 const playerStatsInformationPage = "./player-stats-information/player-stats-information.html";
 const teamStatsInformationPage = "./team-stats-information/team-stats-information.html";
@@ -71,6 +69,48 @@ playerSearchBtn.addEventListener("click", function (e) {
   }
 
   if (searchEntriesArray.length === 2) {
+    const [searchFirstName, searchLastName] = searchEntriesArray;
+
+    fetch("https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=ffb7852aadbe4662a351fad874b411ce")
+      .then((res) => res.json())
+      .then(async (allTeams) => {
+        const playerSearchResults = await [];
+
+        allTeams.forEach(async (team) => {
+          fetch(`https://api.sportsdata.io/v3/nfl/scores/json/Players/${team.Key}?key=ffb7852aadbe4662a351fad874b411ce`)
+            .then((res) => res.json())
+            .then((players) => {
+              players.forEach(async (player) => {
+                if (
+                  player.FirstName.toLowerCase() === searchFirstName.toLowerCase() &&
+                  player.LastName.toLowerCase() === searchLastName.toLowerCase()
+                ) {
+                  await playerSearchResults.push(player);
+                }
+              });
+            });
+        });
+        console.log(playerSearchResults);
+
+        // for (let x in allTeams) {
+        //   fetch(
+        //     `https://api.sportsdata.io/v3/nfl/scores/json/Players/${allTeams[x].Key}?key=ffb7852aadbe4662a351fad874b411ce`
+        //   )
+        //     .then((res) => res.json())
+        //     .then((players) => {
+        //       players.forEach((player) => {
+        //         if (
+        //           player.FirstName.toLowerCase() === searchFirstName.toLowerCase() &&
+        //           player.LastName.toLowerCase() === searchLastName.toLowerCase()
+        //         ) {
+        //           playerSearchResults.push(player);
+        //         }
+        //       });
+        //       console.log(playerSearchResults);
+        //     });
+        // }
+      });
+
     return;
   }
 
