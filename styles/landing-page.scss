@@ -551,7 +551,7 @@ $player-roster-border: #b9c1ba;
 }
 
 .player-list-container {
-  width: min(90%, $screen-xl);
+  width: 100%;
   margin-inline: auto;
   display: grid;
   grid-template-columns: 30% 70%;
