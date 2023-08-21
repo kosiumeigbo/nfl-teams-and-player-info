@@ -66,3 +66,70 @@ export const otherPlayerInfoTableRow = function (playerObj) {
     </tr>
     `;
 };
+
+export const getAllTeamsArray = async function (urlAllTeams) {
+  const response = await fetch(urlAllTeams);
+  const allTeamsArray = await response.json();
+
+  return allTeamsArray;
+};
+
+export const searchAllTeamsForFirstAndLastNames = async function (teamsArr, searchFirstName, searchLastName) {
+  let searchResults = [];
+
+  for (let team of teamsArr) {
+    const teamSearchResults = await searchTeamForFirstAndLastNames(
+      `https://api.sportsdata.io/v3/nfl/scores/json/Players/${team.Key}?key=ffb7852aadbe4662a351fad874b411ce`,
+      searchFirstName,
+      searchLastName
+    );
+    searchResults.push(...teamSearchResults);
+  }
+
+  return searchResults;
+};
+
+export const searchAllTeamsForStringInput = async function (teamsArr, searchString) {
+  let searchResults = [];
+
+  for (let team of teamsArr) {
+    const teamSearchResults = await searchTeamForStringInput(
+      `https://api.sportsdata.io/v3/nfl/scores/json/Players/${team.Key}?key=ffb7852aadbe4662a351fad874b411ce`,
+      searchString
+    );
+    searchResults.push(...teamSearchResults);
+  }
+
+  return searchResults;
+};
+
+export const searchTeamForFirstAndLastNames = async function (urlTeam, searchFirstName, searchLastName) {
+  let searchResultsTeamArray = [];
+  const resTeam = await fetch(urlTeam);
+  const playersForTeam = await resTeam.json();
+
+  playersForTeam.forEach((player) => {
+    if (
+      player.FirstName.toLowerCase() === searchFirstName.toLowerCase() &&
+      player.LastName.toLowerCase() === searchLastName.toLowerCase()
+    ) {
+      searchResultsTeamArray.push(player);
+    }
+  });
+
+  return searchResultsTeamArray;
+};
+
+export const searchTeamForStringInput = async function (urlTeam, searchString) {
+  let searchResultsTeamArray = [];
+  const resTeam = await fetch(urlTeam);
+  const playersForTeam = await resTeam.json();
+
+  playersForTeam.forEach((player) => {
+    if (player.FirstName.toLowerCase().includes(searchString) || player.LastName.toLowerCase().includes(searchString)) {
+      searchResultsTeamArray.push(player);
+    }
+  });
+
+  return searchResultsTeamArray;
+};
