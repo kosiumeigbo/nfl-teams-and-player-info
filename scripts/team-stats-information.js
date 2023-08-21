@@ -13,7 +13,7 @@ if (teamPageQueryParams.has("key")) {
 } else {
   window.location.href = "../index.html";
 }
-
+/*
 // Event Listener to fetch api to get selected team
 window.addEventListener("DOMContentLoaded", function (e) {
   fetch("https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=ffb7852aadbe4662a351fad874b411ce")
@@ -135,6 +135,7 @@ window.addEventListener("DOMContentLoaded", function (e) {
       });
     });
 });
+*/
 
 /////////////////////////////////////////////////////////////////////////////
 /*
