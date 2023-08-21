@@ -74,50 +74,100 @@ playerSearchBtn.addEventListener("click", function (e) {
   if (searchEntriesArray.length === 2) {
     const [searchFirstName, searchLastName] = searchEntriesArray;
 
-    fetch("https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=ffb7852aadbe4662a351fad874b411ce")
-      .then((res) => res.json())
-      .then(async (allTeams) => {
-        const playerSearchResults = await [];
+    getAllTeamsArray("https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=ffb7852aadbe4662a351fad874b411ce")
+      .then((teams) => {
+        console.log(teams);
+        return searchAllTeamsForFirstAndLastNames(teams, searchFirstName, searchLastName);
+      })
+      .then((resArray) => {
+        console.log(resArray);
+        if (resArray.length === 0) {
+          playerSearchResultsContainer.innerHTML = "";
+          playerSearchResultsContainer.innerHTML = noPlayersFoundHTML();
+        } else {
+          playerSearchResultsContainer.innerHTML = "";
 
-        allTeams.forEach(async (team) => {
-          fetch(`https://api.sportsdata.io/v3/nfl/scores/json/Players/${team.Key}?key=ffb7852aadbe4662a351fad874b411ce`)
-            .then((res) => res.json())
-            .then((players) => {
-              players.forEach(async (player) => {
-                if (
-                  player.FirstName.toLowerCase() === searchFirstName.toLowerCase() &&
-                  player.LastName.toLowerCase() === searchLastName.toLowerCase()
-                ) {
-                  await playerSearchResults.push(player);
-                }
-              });
-            });
-        });
-        console.log(playerSearchResults);
+          const photoNameContainer = document.createElement("div");
+          photoNameContainer.classList.add("photo-name-container");
+          const photoNameTable = document.createElement("table");
+          photoNameTable.classList.add("photo-name-table");
+          photoNameContainer.appendChild(photoNameTable);
 
-        // for (let x in allTeams) {
-        //   fetch(
-        //     `https://api.sportsdata.io/v3/nfl/scores/json/Players/${allTeams[x].Key}?key=ffb7852aadbe4662a351fad874b411ce`
-        //   )
-        //     .then((res) => res.json())
-        //     .then((players) => {
-        //       players.forEach((player) => {
-        //         if (
-        //           player.FirstName.toLowerCase() === searchFirstName.toLowerCase() &&
-        //           player.LastName.toLowerCase() === searchLastName.toLowerCase()
-        //         ) {
-        //           playerSearchResults.push(player);
-        //         }
-        //       });
-        //       console.log(playerSearchResults);
-        //     });
-        // }
+          const otherPlayerInfoContainer = document.createElement("div");
+          otherPlayerInfoContainer.classList.add("other-player-info-container");
+          const otherPlayerInfoTable = document.createElement("table");
+          otherPlayerInfoTable.classList.add("other-player-info-table");
+          otherPlayerInfoContainer.appendChild(otherPlayerInfoTable);
+
+          const playerListSectionContainer = document.createElement("div");
+          playerListSectionContainer.classList.add("player-list-container");
+          playerListSectionContainer.appendChild(photoNameContainer);
+          playerListSectionContainer.appendChild(otherPlayerInfoContainer);
+
+          photoNameTable.insertAdjacentHTML("afterbegin", playerPhotoNameTableHeading());
+          resArray.forEach((player) => photoNameTable.insertAdjacentHTML("beforeend", playerPhotoNameTableRow(player)));
+
+          otherPlayerInfoTable.insertAdjacentHTML("afterbegin", otherPlayerInfoTableHeading());
+          resArray.forEach((player) =>
+            otherPlayerInfoTable.insertAdjacentHTML("beforeend", otherPlayerInfoTableRow(player))
+          );
+
+          const playerListSection = document.createElement("section");
+          playerListSection.classList.add("player-list");
+          playerListSection.appendChild(playerListSectionContainer);
+
+          playerSearchResultsContainer.appendChild(playerListSection);
+        }
       });
-
-    return;
   }
 
   if (searchEntriesArray.length === 1) {
-    return;
+    const [searchName] = searchEntriesArray;
+
+    getAllTeamsArray("https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=ffb7852aadbe4662a351fad874b411ce")
+      .then((teams) => {
+        console.log(teams);
+        return searchAllTeamsForStringInput(teams, searchName);
+      })
+      .then((resArray) => {
+        console.log(resArray);
+        if (resArray.length === 0) {
+          playerSearchResultsContainer.innerHTML = "";
+          playerSearchResultsContainer.innerHTML = noPlayersFoundHTML();
+        } else {
+          playerSearchResultsContainer.innerHTML = "";
+
+          const photoNameContainer = document.createElement("div");
+          photoNameContainer.classList.add("photo-name-container");
+          const photoNameTable = document.createElement("table");
+          photoNameTable.classList.add("photo-name-table");
+          photoNameContainer.appendChild(photoNameTable);
+
+          const otherPlayerInfoContainer = document.createElement("div");
+          otherPlayerInfoContainer.classList.add("other-player-info-container");
+          const otherPlayerInfoTable = document.createElement("table");
+          otherPlayerInfoTable.classList.add("other-player-info-table");
+          otherPlayerInfoContainer.appendChild(otherPlayerInfoTable);
+
+          const playerListSectionContainer = document.createElement("div");
+          playerListSectionContainer.classList.add("player-list-container");
+          playerListSectionContainer.appendChild(photoNameContainer);
+          playerListSectionContainer.appendChild(otherPlayerInfoContainer);
+
+          photoNameTable.insertAdjacentHTML("afterbegin", playerPhotoNameTableHeading());
+          resArray.forEach((player) => photoNameTable.insertAdjacentHTML("beforeend", playerPhotoNameTableRow(player)));
+
+          otherPlayerInfoTable.insertAdjacentHTML("afterbegin", otherPlayerInfoTableHeading());
+          resArray.forEach((player) =>
+            otherPlayerInfoTable.insertAdjacentHTML("beforeend", otherPlayerInfoTableRow(player))
+          );
+
+          const playerListSection = document.createElement("section");
+          playerListSection.classList.add("player-list");
+          playerListSection.appendChild(playerListSectionContainer);
+
+          playerSearchResultsContainer.appendChild(playerListSection);
+        }
+      });
   }
 });
