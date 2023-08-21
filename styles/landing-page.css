@@ -557,15 +557,37 @@
   border: 2px solid rgb(171, 103, 146);
 }
 
+.player-search-results {
+  width: 100%;
+}
+
+.player-search-results h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+@media (max-width: 26.25rem) {
+  .player-search-results h3 {
+    font-size: 1.28rem;
+  }
+}
+.player-search-results p {
+  font-size: 1rem;
+}
+@media (max-width: 26.25rem) {
+  .player-search-results p {
+    font-size: 0.9rem;
+  }
+}
+
 /* ------------ Player List Section -------------- */
 .player-list {
   width: 100%;
-  padding: 2rem 0rem;
   background-color: #f3f3f3;
 }
 
 .player-list-container {
-  width: min(90%, 90rem);
+  width: 100%;
   margin-inline: auto;
   display: grid;
   grid-template-columns: 30% 70%;
