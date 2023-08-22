@@ -5,6 +5,13 @@ export const noPlayersFoundHTML = function () {
     `;
 };
 
+export const errorMessageHTML = function (errMessage) {
+  return `
+    <h3>REQUEST ERROR</h3>
+    <p>${errMessage}</p>
+    `;
+};
+
 export const noEnteredPlayers = function () {
   return `
     <h3>NOT A VALID ENTRY</h3>
