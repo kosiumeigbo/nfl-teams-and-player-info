@@ -1,3 +1,5 @@
+export const errMessage = "There was a problem getting the requested information from the server. Please try again.";
+
 export const noPlayersFoundHTML = function () {
   return `
     <h3>NO PLAYERS FOUND</h3>
