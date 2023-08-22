@@ -6,6 +6,8 @@ import {
   otherPlayerInfoTableHeading,
   otherPlayerInfoTableRow,
   noPlayersFoundHTML,
+  errorMessageHTML,
+  errMessage,
   noEnteredPlayers,
   getAllTeamsArray,
   searchAllTeamsForFirstAndLastNames,
