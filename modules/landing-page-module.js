@@ -77,68 +77,108 @@ export const otherPlayerInfoTableRow = function (playerObj) {
 };
 
 export const getAllTeamsArray = async function (urlAllTeams) {
-  const response = await fetch(urlAllTeams);
-  const allTeamsArray = await response.json();
+  try {
+    const response = await fetch(urlAllTeams);
+    const allTeamsArray = await response.json();
 
-  return allTeamsArray;
+    return allTeamsArray;
+  } catch (e) {
+    console.log(e);
+    e.message = errMessage;
+    return e;
+  }
 };
 
 export const searchAllTeamsForFirstAndLastNames = async function (teamsArr, searchFirstName, searchLastName) {
-  let searchResults = [];
+  try {
+    let teamPromises = [];
 
-  for (let team of teamsArr) {
-    const teamSearchResults = await searchTeamForFirstAndLastNames(
-      `https://api.sportsdata.io/v3/nfl/scores/json/Players/${team.Key}?key=ffb7852aadbe4662a351fad874b411ce`,
-      searchFirstName,
-      searchLastName
-    );
-    searchResults.push(...teamSearchResults);
+    for (let team of teamsArr) {
+      teamPromises.push(
+        searchTeamForFirstAndLastNames(
+          `https://api.sportsdata.io/v3/nfl/scores/json/Players/${team.Key}?key=ffb7852aadbe4662a351fad874b411ce`,
+          searchFirstName,
+          searchLastName
+        )
+      );
+    }
+
+    const searchResults = (await Promise.all([teamPromises])).flat();
+
+    return searchResults;
+  } catch (e) {
+    console.log(e);
+    e.message = errMessage;
+    return e;
   }
-
-  return searchResults;
 };
 
 export const searchAllTeamsForStringInput = async function (teamsArr, searchString) {
-  let searchResults = [];
+  try {
+    let teamPromises = [];
 
-  for (let team of teamsArr) {
-    const teamSearchResults = await searchTeamForStringInput(
-      `https://api.sportsdata.io/v3/nfl/scores/json/Players/${team.Key}?key=ffb7852aadbe4662a351fad874b411ce`,
-      searchString
-    );
-    searchResults.push(...teamSearchResults);
+    for (let team of teamsArr) {
+      teamPromises.push(
+        searchTeamForStringInput(
+          `https://api.sportsdata.io/v3/nfl/scores/json/Players/${team.Key}?key=ffb7852aadbe4662a351fad874b411ce`,
+          searchString
+        )
+      );
+    }
+    console.log(teamPromises);
+
+    const searchResults = (await Promise.all([teamPromises])).flat();
+
+    return searchResults;
+  } catch (e) {
+    console.log(e);
+    e.message = errMessage;
+    return e;
   }
-
-  return searchResults;
 };
 
 export const searchTeamForFirstAndLastNames = async function (urlTeam, searchFirstName, searchLastName) {
-  let searchResultsTeamArray = [];
-  const resTeam = await fetch(urlTeam);
-  const playersForTeam = await resTeam.json();
+  try {
+    let searchResultsTeamArray = [];
+    const resTeamPlayers = await fetch(urlTeam);
+    const playersForTeam = await resTeamPlayers.json();
 
-  playersForTeam.forEach((player) => {
-    if (
-      player.FirstName.toLowerCase() === searchFirstName.toLowerCase() &&
-      player.LastName.toLowerCase() === searchLastName.toLowerCase()
-    ) {
-      searchResultsTeamArray.push(player);
-    }
-  });
+    await playersForTeam.forEach((player) => {
+      if (
+        player.FirstName.toLowerCase() === searchFirstName.toLowerCase() &&
+        player.LastName.toLowerCase() === searchLastName.toLowerCase()
+      ) {
+        searchResultsTeamArray.push(player);
+      }
+    });
 
-  return searchResultsTeamArray;
+    return searchResultsTeamArray;
+  } catch (e) {
+    console.log(e);
+    e.message = errMessage;
+    return e;
+  }
 };
 
-export const searchTeamForStringInput = async function (urlTeam, searchString) {
-  let searchResultsTeamArray = [];
-  const resTeam = await fetch(urlTeam);
-  const playersForTeam = await resTeam.json();
+export const searchTeamForStringInput = async function (urlTeamPlayers, searchString) {
+  try {
+    let searchResultsTeamArray = [];
+    const resTeamPlayers = await fetch(urlTeamPlayers);
+    const playersForTeam = await resTeamPlayers.json();
 
-  playersForTeam.forEach((player) => {
-    if (player.FirstName.toLowerCase().includes(searchString) || player.LastName.toLowerCase().includes(searchString)) {
-      searchResultsTeamArray.push(player);
-    }
-  });
+    await playersForTeam.forEach((player) => {
+      if (
+        player.FirstName.toLowerCase().includes(searchString.toLowerCase()) ||
+        player.LastName.toLowerCase().includes(searchString.toLowerCase())
+      ) {
+        searchResultsTeamArray.push(player);
+      }
+    });
 
-  return searchResultsTeamArray;
+    return searchResultsTeamArray;
+  } catch (e) {
+    console.log(e);
+    e.message = errMessage;
+    return e;
+  }
 };
