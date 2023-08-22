@@ -78,10 +78,16 @@ playerSearchBtn.addEventListener("click", function (e) {
 
     getAllTeamsArray("https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=ffb7852aadbe4662a351fad874b411ce")
       .then((teams) => {
+        if (teams.name === "Error" && teams.message) {
+          throw Error(`${teams.message}`);
+        }
         console.log(teams);
         return searchAllTeamsForFirstAndLastNames(teams, searchFirstName, searchLastName);
       })
       .then((resArray) => {
+        if (resArray.name === "Error" && resArray.message) {
+          throw Error(`${resArray.message}`);
+        }
         console.log(resArray);
         if (resArray.length === 0) {
           playerSearchResultsContainer.innerHTML = "";
@@ -120,6 +126,10 @@ playerSearchBtn.addEventListener("click", function (e) {
 
           playerSearchResultsContainer.appendChild(playerListSection);
         }
+      })
+      .catch((err) => {
+        playerSearchResultsContainer.innerHTML = "";
+        playerSearchResultsContainer.innerHTML = errorMessageHTML(err.message);
       });
   }
 
@@ -128,10 +138,16 @@ playerSearchBtn.addEventListener("click", function (e) {
 
     getAllTeamsArray("https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=ffb7852aadbe4662a351fad874b411ce")
       .then((teams) => {
+        if (teams.message) {
+          throw Error(`${teams.message}`);
+        }
         console.log(teams);
         return searchAllTeamsForStringInput(teams, searchName);
       })
       .then((resArray) => {
+        if (resArray.name === "Error" && resArray.message) {
+          throw Error(`${resArray.message}`);
+        }
         console.log(resArray);
         if (resArray.length === 0) {
           playerSearchResultsContainer.innerHTML = "";
@@ -170,6 +186,10 @@ playerSearchBtn.addEventListener("click", function (e) {
 
           playerSearchResultsContainer.appendChild(playerListSection);
         }
+      })
+      .catch((err) => {
+        playerSearchResultsContainer.innerHTML = "";
+        playerSearchResultsContainer.innerHTML = errorMessageHTML(err.message);
       });
   }
 });
