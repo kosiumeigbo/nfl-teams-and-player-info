@@ -78,15 +78,15 @@ playerSearchBtn.addEventListener("click", function (e) {
 
     getAllTeamsArray("https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=ffb7852aadbe4662a351fad874b411ce")
       .then((teams) => {
-        if (teams.name === "Error" && teams.message) {
-          throw Error(`${teams.message}`);
+        if (teams instanceof Error) {
+          throw teams;
         }
         console.log(teams);
         return searchAllTeamsForFirstAndLastNames(teams, searchFirstName, searchLastName);
       })
       .then((resArray) => {
-        if (resArray.name === "Error" && resArray.message) {
-          throw Error(`${resArray.message}`);
+        if (resArray instanceof Error) {
+          throw resArray;
         }
         console.log(resArray);
         if (resArray.length === 0) {
@@ -138,15 +138,15 @@ playerSearchBtn.addEventListener("click", function (e) {
 
     getAllTeamsArray("https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=ffb7852aadbe4662a351fad874b411ce")
       .then((teams) => {
-        if (teams.message) {
-          throw Error(`${teams.message}`);
+        if (teams instanceof Error) {
+          throw teams;
         }
         console.log(teams);
         return searchAllTeamsForStringInput(teams, searchName);
       })
       .then((resArray) => {
-        if (resArray.name === "Error" && resArray.message) {
-          throw Error(`${resArray.message}`);
+        if (resArray instanceof Error) {
+          throw resArray;
         }
         console.log(resArray);
         if (resArray.length === 0) {
