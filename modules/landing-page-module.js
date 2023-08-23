@@ -91,17 +91,13 @@ export const getAllTeamsArray = async function (urlAllTeams) {
 
 export const searchAllTeamsForFirstAndLastNames = async function (teamsArr, searchFirstName, searchLastName) {
   try {
-    let teamPromises = [];
-
-    for (let team of teamsArr) {
-      teamPromises.push(
-        searchTeamForFirstAndLastNames(
-          `https://api.sportsdata.io/v3/nfl/scores/json/Players/${team.Key}?key=ffb7852aadbe4662a351fad874b411ce`,
-          searchFirstName,
-          searchLastName
-        )
+    const teamPromises = teamsArr.map((team) => {
+      return searchTeamForFirstAndLastNames(
+        `https://api.sportsdata.io/v3/nfl/scores/json/Players/${team.Key}?key=ffb7852aadbe4662a351fad874b411ce`,
+        searchFirstName,
+        searchLastName
       );
-    }
+    });
 
     const searchResults = (await Promise.all([teamPromises])).flat();
 
@@ -115,17 +111,12 @@ export const searchAllTeamsForFirstAndLastNames = async function (teamsArr, sear
 
 export const searchAllTeamsForStringInput = async function (teamsArr, searchString) {
   try {
-    let teamPromises = [];
-
-    for (let team of teamsArr) {
-      teamPromises.push(
-        searchTeamForStringInput(
-          `https://api.sportsdata.io/v3/nfl/scores/json/Players/${team.Key}?key=ffb7852aadbe4662a351fad874b411ce`,
-          searchString
-        )
+    const teamPromises = teamsArr.map((team) => {
+      return searchTeamForStringInput(
+        `https://api.sportsdata.io/v3/nfl/scores/json/Players/${team.Key}?key=ffb7852aadbe4662a351fad874b411ce`,
+        searchString
       );
-    }
-    console.log(teamPromises);
+    });
 
     const searchResults = (await Promise.all([teamPromises])).flat();
 
