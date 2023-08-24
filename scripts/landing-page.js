@@ -81,14 +81,12 @@ playerSearchBtn.addEventListener("click", function (e) {
         if (teams instanceof Error) {
           throw teams;
         }
-        console.log(teams);
         return searchAllTeamsForFirstAndLastNames(teams, searchFirstName, searchLastName);
       })
       .then((resArray) => {
         if (resArray instanceof Error) {
           throw resArray;
         }
-        console.log(resArray);
         if (resArray.length === 0) {
           playerSearchResultsContainer.innerHTML = "";
           playerSearchResultsContainer.innerHTML = noPlayersFoundHTML();
@@ -141,14 +139,12 @@ playerSearchBtn.addEventListener("click", function (e) {
         if (teams instanceof Error) {
           throw teams;
         }
-        console.log(teams);
         return searchAllTeamsForStringInput(teams, searchName);
       })
       .then((resArray) => {
         if (resArray instanceof Error) {
           throw resArray;
         }
-        console.log(resArray);
         if (resArray.length === 0) {
           playerSearchResultsContainer.innerHTML = "";
           playerSearchResultsContainer.innerHTML = noPlayersFoundHTML();
