@@ -1,0 +1,177 @@
+$screen-xl: 90rem; // 1440px
+$screen-l: 64rem; // 1024px
+$screen-m: 48rem; // 768px
+$screen-s: 26.25rem; // 420px
+$nfc-color: #003069;
+$afc-color: #d60303;
+$header-background-color: #f3f3f3;
+$player-roster-border: #b9c1ba;
+
+@font-face {
+  font-family: AdidasFont;
+  src: url(../AdihausDIN.ttf);
+}
+
+@mixin respond-xl {
+  @media (max-width: $screen-xl) {
+    @content;
+  }
+}
+
+@mixin respond-l {
+  @media (max-width: $screen-l) {
+    @content;
+  }
+}
+
+@mixin respond-m {
+  @media (max-width: $screen-m) {
+    @content;
+  }
+}
+
+@mixin respond-s {
+  @media (max-width: $screen-s) {
+    @content;
+  }
+}
+
+@mixin respond-any($size) {
+  @media (max-width: $size) {
+    @content;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: AdidasFont, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.01rem;
+}
+
+body {
+  width: 100%;
+}
+
+/* -------- Main section -------- */
+
+main {
+  width: 100%;
+}
+
+/* -------- Header section -------- */
+
+header {
+  height: auto;
+  width: 100%;
+  padding: 5rem 0rem;
+  position: relative;
+  border-bottom: 2px solid black;
+
+  @include respond-m() {
+    padding-bottom: 0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-container {
+    width: min(90%, $screen-xl);
+    margin-inline: auto;
+    padding-right: 10rem;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include respond-m() {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      flex-direction: column;
+      padding-right: 0rem;
+    }
+
+    .player-header-info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+
+      @include respond-m() {
+        align-items: center;
+      }
+
+      h1 {
+        font-size: 3rem;
+      }
+    }
+
+    .player-photo {
+      background-color: transparent;
+      width: 10rem;
+      height: 10rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include respond-m() {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+
+      @include respond-s() {
+        width: 8rem;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .header-color {
+    position: absolute;
+    z-index: -3;
+    left: 0;
+    top: 0;
+    background-color: $header-background-color;
+    width: 100%;
+    height: 100%;
+  }
+
+  .secondary-color {
+    position: absolute;
+    z-index: -2;
+    left: 50%;
+    top: 0;
+    width: 50%;
+    height: 100%;
+
+    @include respond-m() {
+      position: static;
+      transform: none;
+      width: 100%;
+      height: 1rem;
+    }
+  }
+
+  .primary-color {
+    position: absolute;
+    z-index: -1;
+    left: 60%;
+    top: 0;
+    width: 40%;
+    height: 100%;
+
+    @include respond-m() {
+      position: static;
+      transform: none;
+      width: 100%;
+      height: 1rem;
+    }
+  }
+}

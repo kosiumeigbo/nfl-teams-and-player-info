@@ -1,1 +1,134 @@
-/*# sourceMappingURL=player-stats-information.css.map */
+@font-face {
+  font-family: AdidasFont;
+  src: url(../AdihausDIN.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: AdidasFont, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.01rem;
+}
+
+body {
+  width: 100%;
+}
+
+/* -------- Main section -------- */
+main {
+  width: 100%;
+}
+
+/* -------- Header section -------- */
+header {
+  height: auto;
+  width: 100%;
+  padding: 5rem 0rem;
+  position: relative;
+  border-bottom: 2px solid black;
+}
+@media (max-width: 48rem) {
+  header {
+    padding-bottom: 0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+header .header-container {
+  width: min(90%, 90rem);
+  margin-inline: auto;
+  padding-right: 10rem;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 48rem) {
+  header .header-container {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    flex-direction: column;
+    padding-right: 0rem;
+  }
+}
+header .header-container .player-header-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+@media (max-width: 48rem) {
+  header .header-container .player-header-info {
+    align-items: center;
+  }
+}
+header .header-container .player-header-info h1 {
+  font-size: 3rem;
+}
+header .header-container .player-photo {
+  background-color: transparent;
+  width: 10rem;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 48rem) {
+  header .header-container .player-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+}
+@media (max-width: 26.25rem) {
+  header .header-container .player-photo {
+    width: 8rem;
+  }
+}
+header .header-container .player-photo img {
+  width: 100%;
+}
+header .header-color {
+  position: absolute;
+  z-index: -3;
+  left: 0;
+  top: 0;
+  background-color: #f3f3f3;
+  width: 100%;
+  height: 100%;
+}
+header .secondary-color {
+  position: absolute;
+  z-index: -2;
+  left: 50%;
+  top: 0;
+  width: 50%;
+  height: 100%;
+}
+@media (max-width: 48rem) {
+  header .secondary-color {
+    position: static;
+    transform: none;
+    width: 100%;
+    height: 1rem;
+  }
+}
+header .primary-color {
+  position: absolute;
+  z-index: -1;
+  left: 60%;
+  top: 0;
+  width: 40%;
+  height: 100%;
+}
+@media (max-width: 48rem) {
+  header .primary-color {
+    position: static;
+    transform: none;
+    width: 100%;
+    height: 1rem;
+  }
+}/*# sourceMappingURL=player-stats-information.css.map */
