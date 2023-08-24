@@ -7,7 +7,7 @@ import {
   otherPlayerInfoTableRow,
   noPlayersFoundHTML,
   errorMessageHTML,
-  errMessage,
+  buildPlayerListSection,
   noEnteredPlayers,
   getAllTeamsArray,
   searchAllTeamsForFirstAndLastNames,
@@ -92,37 +92,7 @@ playerSearchBtn.addEventListener("click", function (e) {
           playerSearchResultsContainer.innerHTML = noPlayersFoundHTML();
         } else {
           playerSearchResultsContainer.innerHTML = "";
-
-          const photoNameContainer = document.createElement("div");
-          photoNameContainer.classList.add("photo-name-container");
-          const photoNameTable = document.createElement("table");
-          photoNameTable.classList.add("photo-name-table");
-          photoNameContainer.appendChild(photoNameTable);
-
-          const otherPlayerInfoContainer = document.createElement("div");
-          otherPlayerInfoContainer.classList.add("other-player-info-container");
-          const otherPlayerInfoTable = document.createElement("table");
-          otherPlayerInfoTable.classList.add("other-player-info-table");
-          otherPlayerInfoContainer.appendChild(otherPlayerInfoTable);
-
-          const playerListSectionContainer = document.createElement("div");
-          playerListSectionContainer.classList.add("player-list-container");
-          playerListSectionContainer.appendChild(photoNameContainer);
-          playerListSectionContainer.appendChild(otherPlayerInfoContainer);
-
-          photoNameTable.insertAdjacentHTML("afterbegin", playerPhotoNameTableHeading());
-          resArray.forEach((player) => photoNameTable.insertAdjacentHTML("beforeend", playerPhotoNameTableRow(player)));
-
-          otherPlayerInfoTable.insertAdjacentHTML("afterbegin", otherPlayerInfoTableHeading());
-          resArray.forEach((player) =>
-            otherPlayerInfoTable.insertAdjacentHTML("beforeend", otherPlayerInfoTableRow(player))
-          );
-
-          const playerListSection = document.createElement("section");
-          playerListSection.classList.add("player-list");
-          playerListSection.appendChild(playerListSectionContainer);
-
-          playerSearchResultsContainer.appendChild(playerListSection);
+          playerSearchResultsContainer.appendChild(buildPlayerListSection(resArray));
         }
       })
       .catch((err) => {
@@ -150,37 +120,7 @@ playerSearchBtn.addEventListener("click", function (e) {
           playerSearchResultsContainer.innerHTML = noPlayersFoundHTML();
         } else {
           playerSearchResultsContainer.innerHTML = "";
-
-          const photoNameContainer = document.createElement("div");
-          photoNameContainer.classList.add("photo-name-container");
-          const photoNameTable = document.createElement("table");
-          photoNameTable.classList.add("photo-name-table");
-          photoNameContainer.appendChild(photoNameTable);
-
-          const otherPlayerInfoContainer = document.createElement("div");
-          otherPlayerInfoContainer.classList.add("other-player-info-container");
-          const otherPlayerInfoTable = document.createElement("table");
-          otherPlayerInfoTable.classList.add("other-player-info-table");
-          otherPlayerInfoContainer.appendChild(otherPlayerInfoTable);
-
-          const playerListSectionContainer = document.createElement("div");
-          playerListSectionContainer.classList.add("player-list-container");
-          playerListSectionContainer.appendChild(photoNameContainer);
-          playerListSectionContainer.appendChild(otherPlayerInfoContainer);
-
-          photoNameTable.insertAdjacentHTML("afterbegin", playerPhotoNameTableHeading());
-          resArray.forEach((player) => photoNameTable.insertAdjacentHTML("beforeend", playerPhotoNameTableRow(player)));
-
-          otherPlayerInfoTable.insertAdjacentHTML("afterbegin", otherPlayerInfoTableHeading());
-          resArray.forEach((player) =>
-            otherPlayerInfoTable.insertAdjacentHTML("beforeend", otherPlayerInfoTableRow(player))
-          );
-
-          const playerListSection = document.createElement("section");
-          playerListSection.classList.add("player-list");
-          playerListSection.appendChild(playerListSectionContainer);
-
-          playerSearchResultsContainer.appendChild(playerListSection);
+          playerSearchResultsContainer.appendChild(buildPlayerListSection(resArray));
         }
       })
       .catch((err) => {
