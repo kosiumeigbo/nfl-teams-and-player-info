@@ -171,3 +171,34 @@ export const searchTeamForStringInput = async function (urlTeamPlayers, searchSt
     return e;
   }
 };
+
+export const buildPlayerListSection = function (players) {
+  const photoNameContainer = document.createElement("div");
+  photoNameContainer.classList.add("photo-name-container");
+  const photoNameTable = document.createElement("table");
+  photoNameTable.classList.add("photo-name-table");
+  photoNameContainer.appendChild(photoNameTable);
+
+  const otherPlayerInfoContainer = document.createElement("div");
+  otherPlayerInfoContainer.classList.add("other-player-info-container");
+  const otherPlayerInfoTable = document.createElement("table");
+  otherPlayerInfoTable.classList.add("other-player-info-table");
+  otherPlayerInfoContainer.appendChild(otherPlayerInfoTable);
+
+  const playerListSectionContainer = document.createElement("div");
+  playerListSectionContainer.classList.add("player-list-container");
+  playerListSectionContainer.appendChild(photoNameContainer);
+  playerListSectionContainer.appendChild(otherPlayerInfoContainer);
+
+  photoNameTable.insertAdjacentHTML("afterbegin", playerPhotoNameTableHeading());
+  players.forEach((player) => photoNameTable.insertAdjacentHTML("beforeend", playerPhotoNameTableRow(player)));
+
+  otherPlayerInfoTable.insertAdjacentHTML("afterbegin", otherPlayerInfoTableHeading());
+  players.forEach((player) => otherPlayerInfoTable.insertAdjacentHTML("beforeend", otherPlayerInfoTableRow(player)));
+
+  const playerListSection = document.createElement("section");
+  playerListSection.classList.add("player-list");
+  playerListSection.appendChild(playerListSectionContainer);
+
+  return playerListSection;
+};
