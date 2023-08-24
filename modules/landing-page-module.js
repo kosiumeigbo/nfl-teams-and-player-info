@@ -99,9 +99,8 @@ export const searchAllTeamsForFirstAndLastNames = async function (teamsArr, sear
       );
     });
 
-    const searchResults = (await Promise.all([teamPromises])).flat();
-
-    return searchResults;
+    const searchResults = await Promise.all(teamPromises);
+    return searchResults.flat();
   } catch (e) {
     console.log(e);
     e.message = errMessage;
@@ -118,9 +117,8 @@ export const searchAllTeamsForStringInput = async function (teamsArr, searchStri
       );
     });
 
-    const searchResults = (await Promise.all([teamPromises])).flat();
-
-    return searchResults;
+    const searchResults = await Promise.all(teamPromises);
+    return searchResults.flat();
   } catch (e) {
     console.log(e);
     e.message = errMessage;
