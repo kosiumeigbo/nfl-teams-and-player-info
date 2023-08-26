@@ -140,6 +140,40 @@ window.addEventListener("DOMContentLoaded", function (e) {
           document.querySelector(".team-roster").classList.remove("hidden");
         }
       });
+    })
+    .catch((err) => {
+      console.error(err);
+      if (err.message === errMessageTeamsAPI) {
+        const errorContainer = document.createElement("div");
+        errorContainer.classList.add("error-container");
+        errorContainer.insertAdjacentHTML("afterbegin", teamPage.errorMessageHTML(err.message));
+
+        const main = document.createElement("main");
+        main.appendChild(errorContainer);
+        document.body.insertAdjacentElement("afterbegin", main);
+      }
+
+      if (err.message === errMessagePlayersAPI) {
+        const errorContainer = document.createElement("div");
+        errorContainer.classList.add("error-container");
+        errorContainer.insertAdjacentHTML("afterbegin", teamPage.errorMessageHTML(err.message));
+
+        document.querySelector(".team-roster").insertAdjacentElement("afterbegin", errorContainer);
+
+        const navButtons = document.querySelector(".nav-links");
+
+        navButtons.addEventListener("click", function (e) {
+          if (e.target.dataset.btn === "team-info") {
+            document.querySelector(".team-roster").classList.add("hidden");
+            document.querySelector(".team-info").classList.remove("hidden");
+          }
+
+          if (e.target.dataset.btn === "team-roster") {
+            document.querySelector(".team-info").classList.add("hidden");
+            document.querySelector(".team-roster").classList.remove("hidden");
+          }
+        });
+      }
     });
 });
 */
