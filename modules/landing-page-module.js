@@ -34,7 +34,7 @@ export const playerPhotoNameTableRow = function (playerObj) {
     <tr class="row">
       <td>
         <a
-          href="../player-stats-information/player-stats-information.html?key=${playerObj.PlayerID}"
+          href="../player-stats-information/player-stats-information.html?key=${playerObj.PlayerID}&team=${playerObj.Team}"
           target="_blank"
         >
           <img
