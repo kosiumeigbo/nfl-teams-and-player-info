@@ -128,10 +128,10 @@ export const buildPlayerPage = async function (playerID, teamKey) {
     const errorContainer = document.createElement("div");
 
     errorContainer.classList.add("error-container");
-    errorContainer.insertAdjacentHTML(errorMessageHTML(e.message));
+    errorContainer.insertAdjacentHTML('afterbegin', errorMessageHTML(e.message));
 
     main.appendChild(errorContainer);
-    
+
     return main;
   }
 };
