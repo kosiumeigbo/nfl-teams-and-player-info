@@ -347,6 +347,30 @@ header .primary-color {
 }
 
 /* -------- Error section -------- */
+.error-container {
+  width: min(90%, 90rem);
+  margin: 5rem auto;
+}
+
+.error-container h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+@media (max-width: 26.25rem) {
+  .error-container h3 {
+    font-size: 1.28rem;
+  }
+}
+.error-container p {
+  font-size: 1rem;
+}
+@media (max-width: 26.25rem) {
+  .error-container p {
+    font-size: 0.9rem;
+  }
+}
+
 /* -------- Hidden Class -------- */
 .hidden {
   display: none;
