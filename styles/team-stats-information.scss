@@ -406,6 +406,31 @@ header {
 
 /* -------- Error section -------- */
 
+.error-container {
+  width: min(90%, $screen-xl);
+  margin: 5rem auto;
+}
+
+.error-container {
+  h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+
+    @include respond-s() {
+      font-size: calc(1.6rem * 0.8);
+    }
+  }
+
+  p {
+    font-size: 1rem;
+
+    @include respond-s() {
+      font-size: calc(1rem * 0.9);
+    }
+  }
+}
+
 /* -------- Hidden Class -------- */
 
 .hidden {
