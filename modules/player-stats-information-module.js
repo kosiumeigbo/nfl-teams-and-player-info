@@ -2,7 +2,7 @@ import { playerDetailsByPlayer, allTeamsActive } from "../modules/api-test-data.
 
 const playerActBackgroundColor = "rgb(14, 183, 14)";
 const playerNonActBackgroundColor = "rgb(197, 53, 13)";
-const errMessage = "There was a problem getting the requested information from the server. Please try again.";
+const errMessage = "There was a problem getting the requested information from the server";
 
 export const headerHTML = function (playerObj, teamObj) {
   return `
