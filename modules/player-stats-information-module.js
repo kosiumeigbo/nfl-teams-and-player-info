@@ -2,6 +2,7 @@ import { playerDetailsByPlayer, allTeamsActive } from "../modules/api-test-data.
 
 const playerActBackgroundColor = "rgb(14, 183, 14)";
 const playerNonActBackgroundColor = "rgb(197, 53, 13)";
+const errMessage = "There was a problem getting the requested information from the server. Please try again.";
 
 export const headerHTML = function (playerObj, teamObj) {
   return `
@@ -37,6 +38,98 @@ export const headerSection = function (playerObj, teamObj) {
   return header;
 };
 
-export const buildPlayerPage = async function (playerID) {
-  return;
+export const playerInfoHTML = function (playerObj) {
+  return `
+    <h2>Player Details and Information</h2>
+    <div class="cards-container">
+      <div class="card">
+          <h3>Age</h3>
+          <p>${playerObj.Age}</p>
+      </div>
+      <div class="card">
+          <h3>Date of Birth</h3>
+          <p>${playerObj.BirthDateString}</p>
+      </div>
+      <div class="card">
+          <h3>College</h3>
+          <p>${playerObj.College}</p>
+      </div>
+      <div class="card">
+          <h3>Experience</h3>
+          <p>${playerObj.ExperienceString}</p>
+      </div>
+      <div class="card">
+          <h3>Height</h3>
+          <p>${playerObj.HeightFeet}ft ${playerObj.HeightInches}in</p>
+      </div>
+      <div class="card">
+          <h3>Weight</h3>
+          <p>${playerObj.Weight}lbs</p>
+      </div>
+    </div>
+    `;
+};
+
+export const playerInfoSection = function (playerObj) {
+  const infoSection = document.createElement("section");
+  infoSection.classList.add("player-info");
+
+  const infoSectionContainer = document.createElement("div");
+  infoSectionContainer.classList.add("player-info-container");
+
+  const playerDetailsSection = document.createElement("div");
+  playerDetailsSection.classList.add("cards-section");
+
+  playerDetailsSection.insertAdjacentHTML("afterbegin", playerInfoHTML(playerObj));
+  infoSectionContainer.appendChild(playerDetailsSection);
+  infoSection.appendChild(infoSectionContainer);
+
+  return infoSection;
+};
+
+export const errorMessageHTML = function (errMessage) {
+  return `
+      <h3>REQUEST ERROR</h3>
+      <p>${errMessage}</p>
+      `;
+};
+
+/* ------------------------------------------------------------------------------------------------------- */
+
+export const buildPlayerPage = async function (playerID, teamKey) {
+  try {
+    const playerPromise = fetch(
+      `https://api.sportsdata.io/v3/nfl/scores/json/Player/${playerID}?key=4dd38d14fccd43aa9f383a426166a3ce`
+    ).then((res) => res.json());
+
+    const teamsPromise = fetch(
+      `https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=4dd38d14fccd43aa9f383a426166a3ce`
+    ).then((res) => res.json());
+
+    const [player, teams] = await Promise.all([playerPromise, teamsPromise]);
+    const team = teams.find((obj) => obj.Key === teamKey);
+
+    const main = document.createElement("main");
+
+    const pageHeader = headerSection(player, team);
+    const pageInfoSection = playerInfoSection(player);
+
+    main.appendChild(pageHeader);
+    main.appendChild(pageInfoSection);
+
+    return main;
+  } catch (e) {
+    console.error(e);
+    e.message = errMessage;
+
+    const main = document.createElement("main");
+    const errorContainer = document.createElement("div");
+
+    errorContainer.classList.add("error-container");
+    errorContainer.insertAdjacentHTML(errorMessageHTML(e.message));
+
+    main.appendChild(errorContainer);
+    
+    return main;
+  }
 };
