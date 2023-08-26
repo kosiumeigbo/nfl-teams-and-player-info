@@ -111,6 +111,8 @@ export const buildPlayerPage = async function (playerID, teamKey) {
     const [player, teams] = await Promise.all([playerPromise, teamsPromise]);
     const team = teams.find((obj) => obj.Key === teamKey);
 
+    document.title = `${player.Name}`;
+
     const main = document.createElement("main");
 
     const pageHeader = headerSection(player, team);
@@ -128,7 +130,7 @@ export const buildPlayerPage = async function (playerID, teamKey) {
     const errorContainer = document.createElement("div");
 
     errorContainer.classList.add("error-container");
-    errorContainer.insertAdjacentHTML('afterbegin', errorMessageHTML(e.message));
+    errorContainer.insertAdjacentHTML("afterbegin", errorMessageHTML(e.message));
 
     main.appendChild(errorContainer);
 
