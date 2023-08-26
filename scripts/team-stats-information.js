@@ -6,21 +6,24 @@ let team;
 
 const teamPageQueryList = window.location.search;
 const teamPageQueryParams = new URLSearchParams(teamPageQueryList);
+const errMessageTeamsAPI = "Server could not be reached.";
+const errMessageWeatherAPI = "Weather API Server could not be reached.";
+const errMessagePlayersAPI = "Team Players server could not be reached.";
 
 if (teamPageQueryParams.has("key")) {
   teamKey = teamPageQueryParams.get("key");
   console.log(teamKey);
-  document.querySelector("title").textContent = teamKey;
-  document.body.textContent = teamKey;
+  // document.querySelector("title").textContent = teamKey;
+  // document.body.textContent = teamKey;
 } else {
   window.location.href = "../index.html";
 }
-/*
+
 // Event Listener to fetch api to get selected team
 window.addEventListener("DOMContentLoaded", function (e) {
   fetch("https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=ffb7852aadbe4662a351fad874b411ce")
     .then((res) => {
-      if (!res.ok) throw new Error(errMessageTeamsAPI);
+      if (!res.ok || res.status != 200) throw new Error(errMessageTeamsAPI);
       return res.json();
     })
     .then((data) => {
@@ -96,7 +99,7 @@ window.addEventListener("DOMContentLoaded", function (e) {
       );
     })
     .then((res) => {
-      if (!res.ok) throw new Error(errMessageWeatherAPI);
+      if (!res.ok || res.status != 200) throw new Error(errMessageWeatherAPI);
       return res.json();
     })
     .then((weather) => {
@@ -111,7 +114,7 @@ window.addEventListener("DOMContentLoaded", function (e) {
       );
     })
     .then((res) => {
-      if (!res.ok) throw new Error(errMessagePlayersAPI);
+      if (!res.ok || res.status != 200) throw new Error(errMessagePlayersAPI);
       return res.json();
     })
     .then((players) => {
@@ -176,7 +179,6 @@ window.addEventListener("DOMContentLoaded", function (e) {
       }
     });
 });
-*/
 
 /////////////////////////////////////////////////////////////////////////////
 /*
