@@ -12,6 +12,7 @@
 
 body {
   width: 100%;
+  background-color: #f3f3f3;
 }
 
 /* -------- Main section -------- */
@@ -161,5 +162,88 @@ header .primary-color {
     transform: none;
     width: 100%;
     height: 1rem;
+  }
+}
+
+/* -------- Player Info section -------- */
+.player-info {
+  width: 100%;
+  padding: 2rem 0;
+  background-color: #f3f3f3;
+}
+
+.player-info-container {
+  width: min(90%, 90rem);
+  margin-inline: auto;
+}
+
+.cards-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 0;
+}
+.cards-section h2 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+@media (max-width: 26.25rem) {
+  .cards-section h2 {
+    margin-bottom: 1rem;
+  }
+}
+.cards-section .cards-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 2rem;
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+}
+@media (max-width: 48rem) {
+  .cards-section .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 26.25rem) {
+  .cards-section .cards-container {
+    grid-template-columns: 1fr;
+  }
+}
+.cards-section .cards-container .card h3 {
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  font-size: 1.17rem;
+}
+.cards-section .cards-container .card p {
+  font-size: 1rem;
+}
+
+/* -------- Error section -------- */
+.error-container {
+  width: min(90%, 90rem);
+  margin: 5rem auto;
+}
+
+.error-container h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+@media (max-width: 26.25rem) {
+  .error-container h3 {
+    font-size: 1.28rem;
+  }
+}
+.error-container p {
+  font-size: 1rem;
+}
+@media (max-width: 26.25rem) {
+  .error-container p {
+    font-size: 0.9rem;
   }
 }/*# sourceMappingURL=player-stats-information.css.map */
