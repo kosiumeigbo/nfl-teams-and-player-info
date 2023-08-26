@@ -19,7 +19,10 @@ if (teamPageQueryParams.has("key")) {
 // Event Listener to fetch api to get selected team
 window.addEventListener("DOMContentLoaded", function (e) {
   fetch("https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=ffb7852aadbe4662a351fad874b411ce")
-    .then((res) => res.json())
+    .then((res) => {
+      if (!res.ok) throw new Error(errMessageTeamsAPI);
+      return res.json();
+    })
     .then((data) => {
       team = data.find((obj) => obj.Key === teamKey);
       console.log(team);
@@ -92,7 +95,10 @@ window.addEventListener("DOMContentLoaded", function (e) {
         `http://api.weatherapi.com/v1/current.json?key=6e08ab4df3fa41fb8e690211230808&q=${team.StadiumDetails.GeoLat},${team.StadiumDetails.GeoLong}`
       );
     })
-    .then((res) => res.json())
+    .then((res) => {
+      if (!res.ok) throw new Error(errMessageWeatherAPI);
+      return res.json();
+    })
     .then((weather) => {
       // console.log(weather);
 
@@ -104,7 +110,10 @@ window.addEventListener("DOMContentLoaded", function (e) {
         `https://api.sportsdata.io/v3/nfl/scores/json/Players/${teamKey}?key=ffb7852aadbe4662a351fad874b411ce`
       );
     })
-    .then((res) => res.json())
+    .then((res) => {
+      if (!res.ok) throw new Error(errMessagePlayersAPI);
+      return res.json();
+    })
     .then((players) => {
       console.log(players);
 
