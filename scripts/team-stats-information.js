@@ -115,10 +115,6 @@ window.addEventListener("DOMContentLoaded", function (e) {
       return res.json();
     })
     .then((players) => {
-      console.log(players);
-
-      players.forEach((player) => console.log(player));
-
       const photoNameTable = document.querySelector(".photo-name-table");
       photoNameTable.insertAdjacentHTML("afterbegin", teamPage.playerPhotoNameTableHeading());
       players.forEach((player) =>
