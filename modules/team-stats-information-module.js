@@ -149,3 +149,10 @@ export const otherPlayerInfoTableRow = function (playerObj) {
   </tr>
   `;
 };
+
+export const errorMessageHTML = function (errMessage) {
+  return `
+      <h3>REQUEST ERROR</h3>
+      <p>${errMessage}</p>
+      `;
+};
