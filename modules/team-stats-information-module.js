@@ -196,6 +196,49 @@ export const otherPlayerInfoTableRow = function (playerObj) {
   `;
 };
 
+export const rosterSection = function (playersPar) {
+  const teamRoster = document.createElement("section");
+  teamRoster.classList.add("team-roster");
+  teamRoster.classList.add("hidden");
+
+  if (playersPar instanceof Array) {
+    const photoNameContainer = document.createElement("div");
+    photoNameContainer.classList.add("photo-name-container");
+    const photoNameTable = document.createElement("table");
+    photoNameTable.classList.add("photo-name-table");
+    photoNameContainer.appendChild(photoNameTable);
+
+    const otherPlayerInfoContainer = document.createElement("div");
+    otherPlayerInfoContainer.classList.add("other-player-info-container");
+    const otherPlayerInfoTable = document.createElement("table");
+    otherPlayerInfoTable.classList.add("other-player-info-table");
+    otherPlayerInfoContainer.appendChild(otherPlayerInfoTable);
+
+    photoNameTable.insertAdjacentHTML("afterbegin", playerPhotoNameTableHeading());
+    playersPar.forEach((player) => photoNameTable.insertAdjacentHTML("beforeend", playerPhotoNameTableRow(player)));
+
+    otherPlayerInfoTable.insertAdjacentHTML("afterbegin", otherPlayerInfoTableHeading());
+    playersPar.forEach((player) =>
+      otherPlayerInfoTable.insertAdjacentHTML("beforeend", otherPlayerInfoTableRow(player))
+    );
+
+    const teamRosterContainer = document.createElement("div");
+    teamRosterContainer.classList.add("team-roster-container");
+    teamRosterContainer.appendChild(photoNameContainer);
+    teamRosterContainer.appendChild(otherPlayerInfoContainer);
+
+    teamRoster.appendChild(teamRosterContainer);
+  } else {
+    const errorContainer = document.createElement("div");
+    errorContainer.classList.add("error-container");
+    errorContainer.insertAdjacentHTML("afterbegin", playersPar);
+
+    teamRoster.insertAdjacentElement("afterbegin", errorContainer);
+  }
+
+  return teamRoster;
+};
+
 export const errorMessageHTML = function (errMessage) {
   return `
       <h3>REQUEST ERROR</h3>
