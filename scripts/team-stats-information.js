@@ -9,8 +9,6 @@ const teamPageQueryParams = new URLSearchParams(teamPageQueryList);
 if (teamPageQueryParams.has("key")) {
   teamKey = teamPageQueryParams.get("key");
   console.log(teamKey);
-  // document.querySelector("title").textContent = teamKey;
-  // document.body.textContent = teamKey;
 } else {
   window.location.href = "../index.html";
 }

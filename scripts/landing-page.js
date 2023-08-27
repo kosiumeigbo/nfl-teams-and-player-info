@@ -1,10 +1,6 @@
 "use strict";
 import * as apiTestData from "../modules/api-test-data.js";
 import {
-  playerPhotoNameTableHeading,
-  playerPhotoNameTableRow,
-  otherPlayerInfoTableHeading,
-  otherPlayerInfoTableRow,
   noPlayersFoundHTML,
   errorMessageHTML,
   buildPlayerListSection,
@@ -13,10 +9,6 @@ import {
   searchAllTeamsForFirstAndLastNames,
   searchAllTeamsForStringInput
 } from "../modules/landing-page-module.js";
-
-// Team Information and Player Information Web Pages Locations
-const playerStatsInformationPage = "./player-stats-information/player-stats-information.html";
-const teamStatsInformationPage = "./team-stats-information/team-stats-information.html";
 
 // Landing Page Sections
 const exploreTeams = document.querySelector(".team-stats-data-btn");
@@ -28,19 +20,6 @@ const playerSearchForm = document.querySelector("#player-search-form");
 const playerSearchArea = document.querySelector("#player-search");
 const playerSearchBtn = document.querySelector("#player-search-btn");
 const playerSearchResultsContainer = document.querySelector(".player-search-results");
-
-/* 
-const request1 = new XMLHttpRequest();
-
-request1.open("GET", "https://api.sportsdata.io/v3/nfl/scores/json/Stadiums?key=ffb7852aadbe4662a351fad874b411ce");
-
-request1.send();
-
-request1.addEventListener("load", function () {
-  const data = JSON.parse(this.responseText);
-  console.log(data);
-});
-*/
 
 exploreTeams.addEventListener("click", function () {
   playerSearchContainer.classList.add("hidden");
