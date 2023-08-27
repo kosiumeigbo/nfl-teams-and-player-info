@@ -17,6 +17,12 @@ export const headerHTML = function (teamObj) {
     `;
 };
 
+export const headerSection = function (teamObj) {
+  const header = document.createElement("header");
+  header.innerHTML = headerHTML(teamObj);
+  return header;
+};
+
 /* Nav Section */
 export const navLinksHTML = function () {
   return `
@@ -25,6 +31,14 @@ export const navLinksHTML = function () {
     <button data-btn="team-roster">Team Roster</button>
   </div>
   `;
+};
+
+export const navLinksSection = function () {
+  const navLinks = document.createElement("section");
+  navLinks.classList.add("nav-links");
+  navLinks.innerHTML = navLinksHTML();
+
+  return navLinks;
 };
 
 /* Team Info Section */
@@ -93,6 +107,30 @@ export const stadiumDetailsHTML = function (teamObj) {
     </div>
   </div>
   `;
+};
+
+export const infoSection = function (teamObj) {
+  const teamInfo = document.createElement("section");
+  teamInfo.classList.add("team-info");
+
+  const teamInfoContainer = document.createElement("div");
+  teamInfoContainer.classList.add("team-info-container");
+
+  const [coachingDetailsSection, stadiumDetailsSection] = [
+    document.createElement("div"),
+    document.createElement("div")
+  ];
+  coachingDetailsSection.classList.add("cards-section");
+  stadiumDetailsSection.classList.add("cards-section");
+
+  coachingDetailsSection.insertAdjacentHTML("afterbegin", coachingDetailsHTML(teamObj));
+  stadiumDetailsSection.insertAdjacentHTML("afterbegin", stadiumDetailsHTML(teamObj, weatherObj));
+
+  teamInfoContainer.appendChild(coachingDetailsSection);
+  teamInfoContainer.appendChild(stadiumDetailsSection);
+  teamInfo.appendChild(teamInfoContainer);
+
+  return teamInfo;
 };
 
 export const playerPhotoNameTableHeading = function () {
