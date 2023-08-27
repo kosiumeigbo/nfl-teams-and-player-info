@@ -22,9 +22,6 @@ if (playerPageQueryParams.has("key")) {
   window.location.href = "../index.html";
 }
 
-// document.body.appendChild(headerSection(player, team));
-// document.body.appendChild(playerInfoSection(player));
-
 window.addEventListener("DOMContentLoaded", function () {
   buildPlayerPage(playerKey, teamKey).then((mainSection) => {
     document.body.insertAdjacentElement("afterbegin", mainSection);
