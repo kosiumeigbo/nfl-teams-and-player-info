@@ -1,3 +1,7 @@
+const errMessageTeamsAPI = "Server could not be reached.";
+const errMessageWeatherAPI = "Weather API Server could not be reached.";
+const errMessagePlayersAPI = "Team Players server could not be reached.";
+
 /* Header Section */
 
 export const headerHTML = function (teamObj) {
