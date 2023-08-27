@@ -245,3 +245,81 @@ export const errorMessageHTML = function (errMessage) {
       <p>${errMessage}</p>
       `;
 };
+
+export const getWeatherData = async function (teamObj) {
+  try {
+    const weatherRes = await fetch(
+      `http://api.weatherapi.com/v1/current.json?key=6e08ab4df3fa41fb8e690211230808&q=${teamObj.StadiumDetails.GeoLat},${teamObj.StadiumDetails.GeoLong}`
+    );
+    const weatherObj = await weatherRes.json();
+    console.log(weatherObj);
+    return weatherObj;
+  } catch (e) {
+    console.error(e);
+    return errMessageWeatherAPI;
+  }
+};
+
+export const getTeamPlayers = async function (teamKey) {
+  try {
+    const teamPlayersRes = await fetch(
+      `https://api.sportsdata.io/v3/nfl/scores/json/Players/${teamKey}?key=ffb7852aadbe4662a351fad874b411ce`
+    );
+    const teamPlayersArray = await teamPlayersRes.json();
+    return teamPlayersArray;
+  } catch (e) {
+    console.error(e);
+    return errorMessageHTML(errMessagePlayersAPI);
+  }
+};
+
+export const buildTeamPage = async function (teamKey) {
+  try {
+    const teamsRes = await fetch(
+      "https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=ffb7852aadbe4662a351fad874b411ce"
+    );
+    const teamsArr = await teamsRes.json();
+    const team = teamsArr.find((obj) => obj.Key === teamKey);
+
+    const [weatherObj, teamPlayers] = await Promise.all([getWeatherData(team), getTeamPlayers(teamKey)]);
+
+    document.title = `${team.FullName}`;
+
+    const main = document.createElement("main");
+
+    const teamHeaderSection = headerSection(team);
+    const teamNavLinksSection = navLinksSection();
+    const teamInfoSection = infoSection(team, weatherObj);
+    const teamRosterSection = rosterSection(teamPlayers);
+
+    teamNavLinksSection.addEventListener("click", function (e) {
+      if (e.target.dataset.btn === "team-info") {
+        teamRosterSection.classList.add("hidden");
+        teamInfoSection.classList.remove("hidden");
+      }
+
+      if (e.target.dataset.btn === "team-roster") {
+        teamInfoSection.classList.add("hidden");
+        teamRosterSection.classList.remove("hidden");
+      }
+    });
+
+    main.appendChild(teamHeaderSection);
+    main.appendChild(teamNavLinksSection);
+    main.appendChild(teamInfoSection);
+    main.appendChild(teamRosterSection);
+
+    return main;
+  } catch (e) {
+    console.error(e);
+
+    const main = document.createElement("main");
+
+    const errorContainer = document.createElement("div");
+    errorContainer.classList.add("error-container");
+    errorContainer.insertAdjacentHTML("afterbegin", errorMessageHTML(errMessageTeamsAPI));
+    main.appendChild(errorContainer);
+
+    return main;
+  }
+};
