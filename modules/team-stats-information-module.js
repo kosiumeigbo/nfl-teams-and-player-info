@@ -74,7 +74,7 @@ export const coachingDetailsHTML = function (teamObj) {
   `;
 };
 
-export const stadiumDetailsHTML = function (teamObj) {
+export const stadiumDetailsHTML = function (teamObj, weatherObj) {
   return `
   <h2>Stadium Details</h2>
   <div class="stadium">
@@ -103,13 +103,17 @@ export const stadiumDetailsHTML = function (teamObj) {
     </div>
     <div class="card">
       <h3>Current Weather Details</h3>
-      <p id="stadium-weather">Weather details are currently unavailable</p>
+      <p id="stadium-weather">${
+        weatherObj instanceof String
+          ? weatherObj
+          : `${weatherObj.current.temp_c}ºC and ${weatherObj.current.condition.text}`
+      }</p>
     </div>
   </div>
   `;
 };
 
-export const infoSection = function (teamObj) {
+export const infoSection = function (teamObj, weatherObj) {
   const teamInfo = document.createElement("section");
   teamInfo.classList.add("team-info");
 
