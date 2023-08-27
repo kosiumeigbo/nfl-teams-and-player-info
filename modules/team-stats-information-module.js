@@ -108,7 +108,7 @@ export const stadiumDetailsHTML = function (teamObj, weatherObj) {
     <div class="card">
       <h3>Current Weather Details</h3>
       <p id="stadium-weather">${
-        weatherObj instanceof String
+        !weatherObj.hasOwnProperty("current") && !weatherObj.hasOwnProperty("location")
           ? weatherObj
           : `${weatherObj.current.temp_c}ºC and ${weatherObj.current.condition.text}`
       }</p>
