@@ -10,7 +10,9 @@ export const headerHTML = function (playerObj, teamObj) {
         <div class="player-header-info">
             <h2 class="name">${playerObj.Name}</h2>
             <div class="pos-number">
-            <span><strong>${playerObj.Position}</strong></span> &#8226; <span>#${playerObj.Number ? playerObj.Number : 'N/A'}</span>
+            <span><strong>${playerObj.Position}</strong></span> &#8226; <span>#${
+    playerObj.Number === 0 || playerObj.Number ? playerObj.Number : "N/A"
+  }</span>
             </div>
             <a href="../team-stats-information/team-stats-information.html?key=${teamObj.Key}" target="_blank">${
     teamObj.FullName

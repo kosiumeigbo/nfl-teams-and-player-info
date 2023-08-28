@@ -185,7 +185,7 @@ export const otherPlayerInfoTableHeading = function () {
 export const otherPlayerInfoTableRow = function (playerObj) {
   return `
   <tr class="row">
-    <td>${playerObj.Number ? playerObj.Number : "N/A"}</td>
+    <td>${playerObj.Number === 0 || playerObj.Number ? playerObj.Number : "N/A"}</td>
     <td>${playerObj.Position}</td>
     <td>${playerObj.Active ? "ACT" : "NON-ACT"}</td>
     <td>${playerObj.HeightFeet}ft ${playerObj.HeightInches}in</td>
