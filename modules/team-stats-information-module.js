@@ -78,7 +78,7 @@ export const coachingDetailsHTML = function (teamObj) {
   `;
 };
 
-export const stadiumDetailsHTML = function (teamObj, weatherObj) {
+export const stadiumDetailsHTML = function (teamObj) {
   return `
   <h2>Stadium Details</h2>
   <div class="stadium">
@@ -107,17 +107,13 @@ export const stadiumDetailsHTML = function (teamObj, weatherObj) {
     </div>
     <div class="card">
       <h3>Current Weather Details</h3>
-      <p id="stadium-weather">${
-        !weatherObj.hasOwnProperty("current") && !weatherObj.hasOwnProperty("location")
-          ? weatherObj
-          : `${weatherObj.current.temp_c}ºC and ${weatherObj.current.condition.text}`
-      }</p>
+      <p id="stadium-weather">Loading...</p>
     </div>
   </div>
   `;
 };
 
-export const infoSection = function (teamObj, weatherObj) {
+export const infoSection = function (teamObj) {
   const teamInfo = document.createElement("section");
   teamInfo.classList.add("team-info");
 
@@ -132,7 +128,7 @@ export const infoSection = function (teamObj, weatherObj) {
   stadiumDetailsSection.classList.add("cards-section");
 
   coachingDetailsSection.insertAdjacentHTML("afterbegin", coachingDetailsHTML(teamObj));
-  stadiumDetailsSection.insertAdjacentHTML("afterbegin", stadiumDetailsHTML(teamObj, weatherObj));
+  stadiumDetailsSection.insertAdjacentHTML("afterbegin", stadiumDetailsHTML(teamObj));
 
   teamInfoContainer.appendChild(coachingDetailsSection);
   teamInfoContainer.appendChild(stadiumDetailsSection);
@@ -281,15 +277,15 @@ export const buildTeamPage = async function (teamKey) {
     const teamsArr = await teamsRes.json();
     const team = teamsArr.find((obj) => obj.Key === teamKey);
 
-    const [weatherObj, teamPlayers] = await Promise.all([getWeatherData(team), getTeamPlayers(teamKey)]);
-
     document.title = `${team.FullName}`;
+
+    const teamPlayers = await getTeamPlayers(teamKey);
 
     const main = document.createElement("main");
 
     const teamHeaderSection = headerSection(team);
     const teamNavLinksSection = navLinksSection();
-    const teamInfoSection = infoSection(team, weatherObj);
+    const teamInfoSection = infoSection(team);
     const teamRosterSection = rosterSection(teamPlayers);
 
     teamNavLinksSection.addEventListener("click", function (e) {
@@ -309,7 +305,7 @@ export const buildTeamPage = async function (teamKey) {
     main.appendChild(teamInfoSection);
     main.appendChild(teamRosterSection);
 
-    return main;
+    return [main, team];
   } catch (e) {
     console.error(e);
 
