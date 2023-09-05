@@ -78,7 +78,7 @@ export const coachingDetailsHTML = function (teamObj) {
   `;
 };
 
-const getState = function (abbr) {
+export const getState = function (abbr) {
   const key = abbr;
   switch (key) {
     case "AL":
