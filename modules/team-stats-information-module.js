@@ -245,7 +245,7 @@ export const errorMessageHTML = function (errMessage) {
 export const getWeatherData = async function (teamObj) {
   try {
     const weatherRes = await fetch(
-      `http://api.weatherapi.com/v1/current.json?key=6e08ab4df3fa41fb8e690211230808&q=${teamObj.StadiumDetails.GeoLat},${teamObj.StadiumDetails.GeoLong}`
+      `https://api.weatherapi.com/v1/current.json?key=6e08ab4df3fa41fb8e690211230808&q=${teamObj.StadiumDetails.GeoLat},${teamObj.StadiumDetails.GeoLong}`
     );
     const weatherObj = await weatherRes.json();
     console.log(weatherObj);
