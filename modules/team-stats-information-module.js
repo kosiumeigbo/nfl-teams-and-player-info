@@ -78,7 +78,7 @@ export const coachingDetailsHTML = function (teamObj) {
   `;
 };
 
-const getCountry = function (abbr) {
+const getState = function (abbr) {
   const key = abbr;
   switch (key) {
     case "AL":
@@ -209,7 +209,7 @@ export const stadiumDetailsHTML = function (teamObj) {
     </div>
     <div class="card">
       <h3>State</h3>
-      <p>${getCountry(teamObj.StadiumDetails.State)}</p>
+      <p>${getState(teamObj.StadiumDetails.State)}</p>
     </div>
     <div class="card">
       <h3>Playing Surface</h3>
