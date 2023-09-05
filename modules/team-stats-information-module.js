@@ -209,7 +209,7 @@ export const stadiumDetailsHTML = function (teamObj) {
     </div>
     <div class="card">
       <h3>State</h3>
-      <p>${teamObj.StadiumDetails.State}</p>
+      <p>${getCountry(teamObj.StadiumDetails.State)}</p>
     </div>
     <div class="card">
       <h3>Playing Surface</h3>
