@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded", function (e) {
       console.log(mainAndTeam);
       if(!Array.isArray(mainAndTeam)){
         document.body.appendChild(mainAndTeam);
-        throw new Error();
+        throw new Error(teamPage.errMessageTeamsAPI);
       }
       
       document.body.appendChild(mainAndTeam[0]);
@@ -34,5 +34,6 @@ window.addEventListener("DOMContentLoaded", function (e) {
       } else {
         weatherDetails.textContent = `${weatherObj.current.temp_c}ºC and ${weatherObj.current.condition.text}`;
       }
-    });
+    })
+    .catch((err) => console.error(err));
 });
