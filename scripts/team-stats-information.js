@@ -18,6 +18,11 @@ window.addEventListener("DOMContentLoaded", function (e) {
     .buildTeamPage(teamKey)
     .then((mainAndTeam) => {
       console.log(mainAndTeam);
+      if(!Array.isArray(mainAndTeam)){
+        document.body.appendChild(mainAndTeam);
+        throw new Error();
+      }
+      
       document.body.appendChild(mainAndTeam[0]);
 
       return teamPage.getWeatherData(mainAndTeam[1]);
