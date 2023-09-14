@@ -402,11 +402,13 @@ export const buildTeamPage = async function (teamKey) {
       if (e.target.dataset.btn === "team-info") {
         teamRosterSection.classList.add("hidden");
         teamInfoSection.classList.remove("hidden");
+        teamInfoSection.scrollIntoView({ behavior: "smooth"});
       }
 
       if (e.target.dataset.btn === "team-roster") {
         teamInfoSection.classList.add("hidden");
         teamRosterSection.classList.remove("hidden");
+        teamRosterSection.scrollIntoView({ behavior: "smooth"});
       }
     });
 
