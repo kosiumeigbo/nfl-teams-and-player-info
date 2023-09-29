@@ -1,9 +1,5 @@
 import { playerDetailsByPlayer, allTeamsActive } from "../modules/api-test-data.js";
-import {
-  headerSection,
-  playerInfoSection,
-  buildPlayerPage
-} from "../modules/player-stats-information-module.js";
+import { buildPlayerPage } from "../modules/player-stats-information-module.js";
 
 const playerPageQueryList = window.location.search;
 const playerPageQueryParams = new URLSearchParams(playerPageQueryList);
