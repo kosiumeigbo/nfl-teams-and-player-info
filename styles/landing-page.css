@@ -524,8 +524,7 @@
   }
 }
 .info-cards-player-form-section .player-search-container form div #player-search:focus {
-  outline: 1px solid transparent;
-  outline-offset: -1px;
+  outline-width: 0px;
   border: 2px solid rgb(171, 103, 146);
 }
 .info-cards-player-form-section .player-search-container form div #player-search-btn {
