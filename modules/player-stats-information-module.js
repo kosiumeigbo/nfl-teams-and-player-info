@@ -1,5 +1,3 @@
-import { playerDetailsByPlayer, allTeamsActive } from "../modules/api-test-data.js";
-
 const playerActBackgroundColor = "rgb(14, 183, 14)";
 const playerNonActBackgroundColor = "rgb(197, 53, 13)";
 const errMessage = "There was a problem getting the requested information from the server";
