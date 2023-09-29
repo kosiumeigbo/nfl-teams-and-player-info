@@ -14,6 +14,10 @@
   },
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kosiumeigbo/nfl-stats-and-data-api.git"
+  },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.9.3",
     "parcel": "^2.9.3",
