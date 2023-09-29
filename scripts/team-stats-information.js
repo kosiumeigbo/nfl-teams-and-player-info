@@ -1,5 +1,4 @@
 "use strict";
-import * as apiTestData from "../modules/api-test-data.js";
 import * as teamPage from "../modules/team-stats-information-module.js";
 let teamKey;
 
