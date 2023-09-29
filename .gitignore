@@ -1,2 +1,5 @@
 notes.txt
 .DS_Store
+node_modules
+server
+.parcel-cache
