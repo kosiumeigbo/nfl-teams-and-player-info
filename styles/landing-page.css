@@ -510,7 +510,7 @@
   background-color: transparent;
   border: 2px solid black;
   font-size: 1.5rem;
-  outline-width: 0px;
+  outline: none;
   border-radius: 0;
 }
 @media (max-width: 48rem) {
@@ -526,7 +526,7 @@
   }
 }
 .info-cards-player-form-section .player-search-container form div #player-search:focus {
-  outline-width: 0px;
+  outline: none;
   border: 2px solid rgb(171, 103, 146);
 }
 .info-cards-player-form-section .player-search-container form div #player-search-btn {
