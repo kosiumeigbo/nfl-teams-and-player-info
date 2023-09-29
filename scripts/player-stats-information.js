@@ -1,4 +1,3 @@
-import { playerDetailsByPlayer, allTeamsActive } from "../modules/api-test-data.js";
 import { buildPlayerPage } from "../modules/player-stats-information-module.js";
 
 const playerPageQueryList = window.location.search;
