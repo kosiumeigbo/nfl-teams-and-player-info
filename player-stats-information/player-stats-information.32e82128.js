@@ -46,9 +46,9 @@ let e,a;const t=function(e,a){let t=document.createElement("header");return t.in
           <p>${e.Weight}lbs</p>
       </div>
     </div>
-    `),t.appendChild(n),a.appendChild(t),a},s=async function(e,a){try{let s=await fetch(`https://api.sportsdata.io/v3/nfl/scores/json/Player/${e}?key=4dd38d14fccd43aa9f383a426166a3ce`),i=s.json(),r=await fetch("https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=4dd38d14fccd43aa9f383a426166a3ce"),o=r.json(),[d,c]=await Promise.all([i,o]),l=c.find(e=>e.Key===a);document.title=`${d.Name}`;let h=document.createElement("main"),m=t(d,l),p=n(d);return h.appendChild(m),h.appendChild(p),h}catch(t){var s;console.error(t),t.message="There was a problem getting the requested information from the server";let e=document.createElement("main"),a=document.createElement("div");return a.classList.add("error-container"),a.insertAdjacentHTML("afterbegin",(s=t.message,`
+    `),t.appendChild(n),a.appendChild(t),a},i=async function(e,a){try{let i=await fetch(`https://api.sportsdata.io/v3/nfl/scores/json/Player/${e}?key=4dd38d14fccd43aa9f383a426166a3ce`),s=i.json(),r=await fetch("https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=4dd38d14fccd43aa9f383a426166a3ce"),d=r.json(),[o,c]=await Promise.all([s,d]),l=c.find(e=>e.Key===a);document.title=`${o.Name}`;let h=document.createElement("main"),m=t(o,l),p=n(o);return h.appendChild(m),h.appendChild(p),h}catch(t){var i;console.error(t),t.message="There was a problem getting the requested information from the server";let e=document.createElement("main"),a=document.createElement("div");return a.classList.add("error-container"),a.insertAdjacentHTML("afterbegin",(i=t.message,`
       <h3>REQUEST ERROR</h3>
-      <p>${s}</p>
-      `)),e.appendChild(a),e}},i=window.location.search,r=new URLSearchParams(i),[o,d]=[playerDetailsByPlayer,allTeamsActive[20]];console.log(o),console.log(d),r.has("key")?(e=r.get("key"),a=r.get("team"),console.log(e),console.log(a)):window.location.href="../index.html",window.addEventListener("DOMContentLoaded",function(){s(e,a).then(e=>{document.body.insertAdjacentElement("afterbegin",e)})});//# sourceMappingURL=player-stats-information.3d927c4f.js.map
+      <p>${i}</p>
+      `)),e.appendChild(a),e}},s=window.location.search,r=new URLSearchParams(s);r.has("key")?(e=r.get("key"),a=r.get("team"),console.log(e),console.log(a)):window.location.href="../index.html",window.addEventListener("DOMContentLoaded",function(){i(e,a).then(e=>{document.body.insertAdjacentElement("afterbegin",e)})});//# sourceMappingURL=player-stats-information.32e82128.js.map
 
-//# sourceMappingURL=player-stats-information.3d927c4f.js.map
+//# sourceMappingURL=player-stats-information.32e82128.js.map
