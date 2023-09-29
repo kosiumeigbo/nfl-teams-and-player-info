@@ -1,4 +1,3 @@
-"use strict";
 import * as teamPage from "../modules/team-stats-information-module.js";
 let teamKey;
 
