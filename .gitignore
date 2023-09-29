@@ -1,6 +1,6 @@
 notes.txt
 .DS_Store
-.parcel-cache
 node_modules
 server
+.parcel-cache
 dist
