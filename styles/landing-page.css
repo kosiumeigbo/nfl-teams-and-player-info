@@ -531,10 +531,11 @@
 .info-cards-player-form-section .player-search-container form div #player-search-btn {
   width: 15rem;
   height: 4rem;
+  color: #000;
   margin-left: 1rem;
   font-size: 1.5rem;
   text-transform: uppercase;
-  background-color: transparent;
+  background-color: white;
   border: 2px solid black;
   transition: color 0.3s, border 0.3s;
 }
