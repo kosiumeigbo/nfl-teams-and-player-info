@@ -1,0 +1,153 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="https://kosiumeigbo.github.io/nfl-stats-and-data-api/index.5ec77460.css"><title>NFL Stats & Data API</title><link rel="icon" type="image/x-icon" href="https://kosiumeigbo.github.io/nfl-stats-and-data-api/favicon.571945ab.ico"><script type="module" src="https://kosiumeigbo.github.io/nfl-stats-and-data-api/team-stats-information/team-stats-information.a9653e0c.js"></script><script src="https://kosiumeigbo.github.io/nfl-stats-and-data-api/index.076ef97f.js" type="module" defer></script></head><body id="landing-page">  <section class="header"> <video autoplay loop muted> <source src="https://kosiumeigbo.github.io/nfl-stats-and-data-api/landingPage.5b7a6de9.mp4" type="video/mp4"> </video> <div class="overlay-container"></div> <div class="header-container"> <div class="stats-data-buttons"> <button type="button" class="team-stats-data-btn">Explore Teams</button> <button type="button" class="player-stats-data-btn">Search Players</button> </div> </div> </section>  <section class="hidden info-cards-player-form-section"> <div class="hidden info-cards-container"> <h2 class="instruction">Select a team image below</h2> <div class="teams-table">  </div> </div>  <div class="hidden player-search-container"> <form id="player-search-form" class="hidden"> <label for="player-search">Search by player name:</label> <div> <input type="text" id="player-search" name="player-search" autocomplete="off"> <button type="submit" id="player-search-btn">Find Players</button> </div> </form> <div class="player-search-results"></div> </div> </section> <script>const a=document.querySelector(".teams-table");a.insertAdjacentHTML("afterbegin",`
+      <div class="nfc">
+        <div class="nfc-logo">
+          <img src="./images/NFClogo.png" alt="" />
+          <h2>NFC</h2>
+        </div>
+        <div class="nfc-divisions">
+          <!- - NFC North - ->
+          <div class="nfc-north">
+            <h2><span>North</span></h2>
+            <a href="./team-stats-information/team-stats-information.html?key=CHI" target="_blank" class="team">
+              <img src="./images/teamsNFC/NFC-North/CHI.svg" alt="Chicago Bears" />
+            </a>
+            <a href="./team-stats-information/team-stats-information.html?key=DET" target="_blank" class="team">
+              <img src="./images/teamsNFC/NFC-North/DET.svg" alt="Detroit Lions" />
+            </a>
+            <a href="./team-stats-information/team-stats-information.html?key=GB" target="_blank" class="team">
+              <img src="./images/teamsNFC/NFC-North/GB.svg" alt="Green Bay Packers" />
+            </a>
+            <a href="./team-stats-information/team-stats-information.html?key=MIN" target="_blank" class="team">
+              <img src="./images/teamsNFC/NFC-North/MIN.svg" alt="Minnesota Vikings" />
+            </a>
+          </div>
+
+          <!- - NFC South - ->
+          <div class="nfc-south">
+            <h2><span>South</span></h2>
+            <a href="./team-stats-information/team-stats-information.html?key=ATL" target="_blank" class="team">
+              <img src="./images/teamsNFC/NFC-South/ATL.svg" alt="Atlanta Falcons" />
+            </a>
+            <a href="./team-stats-information/team-stats-information.html?key=CAR" target="_blank" class="team">
+              <img src="./images/teamsNFC/NFC-South/CAR.svg" alt="Carolina Panthers" />
+            </a>
+            <a href="./team-stats-information/team-stats-information.html?key=NO" target="_blank" class="team">
+              <img src="./images/teamsNFC/NFC-South/NO.svg" alt="New Orleans Saint" />
+            </a>
+            <a href="./team-stats-information/team-stats-information.html?key=TB" target="_blank" class="team">
+              <img src="./images/teamsNFC/NFC-South/TB.svg" alt="Tampa Bay Buccaneers" />
+            </a>
+          </div>
+
+          <!- - NFC East - ->
+          <div class="nfc-east">
+            <h2><span>East</span></h2>
+            <a href="./team-stats-information/team-stats-information.html?key=DAL" target="_blank" class="team">
+              <img src="./images/teamsNFC/NFC-East/DAL.svg" alt="Dallas Cowboys" />
+            </a>
+            <a href="./team-stats-information/team-stats-information.html?key=NYG" target="_blank" class="team">
+              <img src="./images/teamsNFC/NFC-East/NYG.svg" alt="New York Giants" />
+            </a>
+            <a href="./team-stats-information/team-stats-information.html?key=PHI" target="_blank" class="team">
+              <img src="./images/teamsNFC/NFC-East/PHI.svg" alt="Philadelphia Eagles" />
+            </a>
+            <a href="./team-stats-information/team-stats-information.html?key=WAS" target="_blank" class="team">
+              <img src="./images/teamsNFC/NFC-East/WAS.svg" alt="Washington Commanders" />
+            </a>
+          </div>
+
+          <!- - NFC West - ->
+          <div class="nfc-west">
+            <h2><span>West</span></h2>
+            <a href="./team-stats-information/team-stats-information.html?key=ARI" target="_blank" class="team">
+              <img src="./images/teamsNFC/NFC-West/ARI.svg" alt="Arizonal Cardinals" />
+            </a>
+            <a href="./team-stats-information/team-stats-information.html?key=LAR" target="_blank" class="team">
+              <img src="./images/teamsNFC/NFC-West/LAR.svg" alt="Los Angeles Rams" />
+            </a>
+            <a href="./team-stats-information/team-stats-information.html?key=SEA" target="_blank" class="team">
+              <img src="./images/teamsNFC/NFC-West/SEA.svg" alt="Seattle Seahawks" />
+            </a>
+            <a href="./team-stats-information/team-stats-information.html?key=SF" target="_blank" class="team">
+              <img src="./images/teamsNFC/NFC-West/SF.svg" alt="San Francisco 49ers" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="table-divider"></div>
+      <div class="afc">
+        <div class="afc-logo">
+          <img src="./images/AFClogo.png" alt="" />
+          <h2>AFC</h2>
+        </div>
+        <div class="afc-divisions">
+          <!- - AFC North - ->
+          <div class="afc-north">
+            <h2><span>North</span></h2>
+            <a href="./team-stats-information/team-stats-information.html?key=BAL" target="_blank" class="team">
+              <img src="./images/teamsAFC/AFC-North/BAL.svg" alt="Baltimore Ravens" />
+            </a>
+            <a href="./team-stats-information/team-stats-information.html?key=CIN" target="_blank" class="team">
+              <img src="./images/teamsAFC/AFC-North/CIN.svg" alt="Cincinnati Bengals" />
+            </a>
+            <a href="./team-stats-information/team-stats-information.html?key=CLE" target="_blank" class="team">
+              <img src="./images/teamsAFC/AFC-North/CLE.svg" alt="Cleveland Browns" />
+            </a>
+            <a href="./team-stats-information/team-stats-information.html?key=PIT" target="_blank" class="team">
+              <img src="./images/teamsAFC/AFC-North/PIT.svg" alt="Pittsburgh Steelers" />
+            </a>
+          </div>
+
+          <!- - AFC South - ->
+          <div class="afc-south">
+            <h2><span>South</span></h2>
+            <a href="./team-stats-information/team-stats-information.html?key=HOU" target="_blank" class="team">
+              <img src="./images/teamsAFC/AFC-South/HOU.svg" alt="Houston Texans" />
+            </a>
+            <a href="./team-stats-information/team-stats-information.html?key=IND" target="_blank" class="team">
+              <img src="./images/teamsAFC/AFC-South/IND.svg" alt="Indianapolis Colts" />
+            </a>
+            <a href="./team-stats-information/team-stats-information.html?key=JAX" target="_blank" class="team">
+              <img src="./images/teamsAFC/AFC-South/JAX.svg" alt="Jacksonville Jaguars" />
+            </a>
+            <a href="./team-stats-information/team-stats-information.html?key=TEN" target="_blank" class="team">
+              <img src="./images/teamsAFC/AFC-South/TEN.svg" alt="Tennessee Titans" />
+            </a>
+          </div>
+
+          <!- - AFC East - ->
+          <div class="afc-east">
+            <h2><span>East</span></h2>
+            <a href="./team-stats-information/team-stats-information.html?key=BUF" target="_blank" class="team">
+              <img src="./images/teamsAFC/AFC-East/BUF.svg" alt="Buffalo Bills" />
+            </a>
+            <a href="./team-stats-information/team-stats-information.html?key=MIA" target="_blank" class="team">
+              <img src="./images/teamsAFC/AFC-East/MIA.svg" alt="Miami Dolphins" />
+            </a>
+            <a href="./team-stats-information/team-stats-information.html?key=NE" target="_blank" class="team">
+              <img src="./images/teamsAFC/AFC-East/NE.svg" alt="New England Patriots" />
+            </a>
+            <a href="./team-stats-information/team-stats-information.html?key=NYJ" target="_blank" class="team">
+              <img src="./images/teamsAFC/AFC-East/NYJ.svg" alt="New York Jets" />
+            </a>
+          </div>
+
+          <!- - AFC West - ->
+          <div class="afc-west">
+            <h2><span>West</span></h2>
+            <a href="./team-stats-information/team-stats-information.html?key=DEN" target="_blank" class="team">
+              <img src="./images/teamsAFC/AFC-West/DEN.svg" alt="Denver Broncos" />
+            </a>
+            <a href="./team-stats-information/team-stats-information.html?key=KC" target="_blank" class="team">
+              <img src="./images/teamsAFC/AFC-West/KC.svg" alt="Kansas City Chiefs" />
+            </a>
+            <a href="./team-stats-information/team-stats-information.html?key=LAC" target="_blank" class="team">
+              <img src="./images/teamsAFC/AFC-West/LAC.svg" alt="Los Angeles Chargers" />
+            </a>
+            <a href="./team-stats-information/team-stats-information.html?key=LV" target="_blank" class="team">
+              <img src="./images/teamsAFC/AFC-West/LV.svg" alt="Las Vegas Raiders" />
+            </a>
+          </div>
+        </div>
+      </div
+      `);</script> </body></html>
