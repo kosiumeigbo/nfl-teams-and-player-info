@@ -510,6 +510,8 @@
   background-color: transparent;
   border: 2px solid black;
   font-size: 1.5rem;
+  outline-width: 0px;
+  border-radius: 0;
 }
 @media (max-width: 48rem) {
   .info-cards-player-form-section .player-search-container form div #player-search {
