@@ -480,8 +480,7 @@ $player-roster-border: #b9c1ba;
           }
 
           &:focus {
-            outline: 1px solid transparent;
-            outline-offset: -1px;
+            outline-width: 0px;
             border: 2px solid $button-border-color;
           }
         }
