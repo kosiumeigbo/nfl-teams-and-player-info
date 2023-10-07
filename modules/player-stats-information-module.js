@@ -99,12 +99,12 @@ export const errorMessageHTML = function (errMessage) {
 export const buildPlayerPage = async function (playerID, teamKey) {
   try {
     const playerRes = await fetch(
-      `https://api.sportsdata.io/v3/nfl/scores/json/Player/${playerID}?key=4dd38d14fccd43aa9f383a426166a3ce`
+      `https://api.sportsdata.io/v3/nfl/scores/json/Player/${playerID}?key=ffb7852aadbe4662a351fad874b411ce`
     );
     const playerPromise = playerRes.json();
 
     const teamsRes = await fetch(
-      `https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=4dd38d14fccd43aa9f383a426166a3ce`
+      `https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=ffb7852aadbe4662a351fad874b411ce`
     );
     const teamsPromise = teamsRes.json();
 
