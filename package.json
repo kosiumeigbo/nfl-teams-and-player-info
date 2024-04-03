@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "parcel index.html ./player-stats-information/player-stats-information.html ./team-stats-information/team-stats-information.html --open --dist-dir server",
-    "build": "parcel build index.html ./player-stats-information/player-stats-information.html ./team-stats-information/team-stats-information.html --public-url https://github.com/kosiumeigbo/nfl-teams-and-player-info.git/ --dist-dir dist",
+    "build": "parcel build index.html ./player-stats-information/player-stats-information.html ./team-stats-information/team-stats-information.html --public-url https://kosiumeigbo.github.io/nfl-teams-and-player-info/ --dist-dir dist",
     "deploy": "gh-pages -d dist"
   },
   "author": "",
