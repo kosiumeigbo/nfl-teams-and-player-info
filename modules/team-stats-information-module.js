@@ -355,7 +355,7 @@ export const errorMessageHTML = function (errMessage) {
 export const getWeatherData = async function (teamObj) {
   try {
     const weatherRes = await fetch(
-      `https://api.weatherapi.com/v1/current.json?key=6e08ab4df3fa41fb8e690211230808&q=${teamObj.StadiumDetails.GeoLat},${teamObj.StadiumDetails.GeoLong}`
+      `https://api.weatherapi.com/v1/current.json?key=${process.env.WEATHER_API_KEY}&q=${teamObj.StadiumDetails.GeoLat},${teamObj.StadiumDetails.GeoLong}`
     );
     const weatherObj = await weatherRes.json();
     console.log(weatherObj);
@@ -369,7 +369,7 @@ export const getWeatherData = async function (teamObj) {
 export const getTeamPlayers = async function (teamKey) {
   try {
     const teamPlayersRes = await fetch(
-      `https://api.sportsdata.io/v3/nfl/scores/json/Players/${teamKey}?key=ffb7852aadbe4662a351fad874b411ce`
+      `https://api.sportsdata.io/v3/nfl/scores/json/Players/${teamKey}?key=${process.env.SPORTSDATA_API_KEY}`
     );
     const teamPlayersArray = await teamPlayersRes.json();
     return teamPlayersArray;
@@ -382,7 +382,7 @@ export const getTeamPlayers = async function (teamKey) {
 export const buildTeamPage = async function (teamKey) {
   try {
     const teamsRes = await fetch(
-      "https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=ffb7852aadbe4662a351fad874b411ce"
+      `https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=${process.env.SPORTSDATA_API_KEY}`
     );
     const teamsArr = await teamsRes.json();
     const team = teamsArr.find((obj) => obj.Key === teamKey);
@@ -402,13 +402,13 @@ export const buildTeamPage = async function (teamKey) {
       if (e.target.dataset.btn === "team-info") {
         teamRosterSection.classList.add("hidden");
         teamInfoSection.classList.remove("hidden");
-        teamInfoSection.scrollIntoView({ behavior: "smooth"});
+        teamInfoSection.scrollIntoView({ behavior: "smooth" });
       }
 
       if (e.target.dataset.btn === "team-roster") {
         teamInfoSection.classList.add("hidden");
         teamRosterSection.classList.remove("hidden");
-        teamRosterSection.scrollIntoView({ behavior: "smooth"});
+        teamRosterSection.scrollIntoView({ behavior: "smooth" });
       }
     });
 

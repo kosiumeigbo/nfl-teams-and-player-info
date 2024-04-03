@@ -93,7 +93,7 @@ export const searchAllTeamsForFirstAndLastNames = async function (teamsArr, sear
   try {
     const teamPromises = teamsArr.map((team) => {
       return searchTeamForFirstAndLastNames(
-        `https://api.sportsdata.io/v3/nfl/scores/json/Players/${team.Key}?key=ffb7852aadbe4662a351fad874b411ce`,
+        `https://api.sportsdata.io/v3/nfl/scores/json/Players/${team.Key}?key=${process.env.SPORTSDATA_API_KEY}`,
         searchFirstName,
         searchLastName
       );
@@ -112,7 +112,7 @@ export const searchAllTeamsForStringInput = async function (teamsArr, searchStri
   try {
     const teamPromises = teamsArr.map((team) => {
       return searchTeamForStringInput(
-        `https://api.sportsdata.io/v3/nfl/scores/json/Players/${team.Key}?key=ffb7852aadbe4662a351fad874b411ce`,
+        `https://api.sportsdata.io/v3/nfl/scores/json/Players/${team.Key}?key=${process.env.SPORTSDATA_API_KEY}`,
         searchString
       );
     });
