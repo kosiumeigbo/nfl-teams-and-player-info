@@ -1,5 +1,5 @@
 {
-  "name": "nfl-stats-and-data-api",
+  "name": "nfl-teams-and-player-info",
   "version": "1.0.0",
   "description": "",
   "staticFiles": {
@@ -7,16 +7,15 @@
     "staticOutPath": "images"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel index.html ./player-stats-information/player-stats-information.html ./team-stats-information/team-stats-information.html --open --dist-dir server",
-    "build": "parcel build index.html ./player-stats-information/player-stats-information.html ./team-stats-information/team-stats-information.html --public-url https://kosiumeigbo.github.io/nfl-stats-and-data-api/ --dist-dir dist",
+    "build": "parcel build index.html ./player-stats-information/player-stats-information.html ./team-stats-information/team-stats-information.html --public-url https://github.com/kosiumeigbo/nfl-teams-and-player-info.git/ --dist-dir dist",
     "deploy": "gh-pages -d dist"
   },
   "author": "",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kosiumeigbo/nfl-stats-and-data-api.git"
+    "url": "https://github.com/kosiumeigbo/nfl-teams-and-player-info.git"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.9.3",
