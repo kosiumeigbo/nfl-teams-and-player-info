@@ -1,0 +1,20 @@
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  build-and-deploy-to-github-pages:
+    name: Build and Deploy to Github Pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install npm dependencies
+        run: npm install
+      - name: Create .env file
+        run: echo "SPORTSDATA_API_KEY=${{secrets.SPORTSDATA_API_KEY}}" >> .env && echo "WEATHER_API_KEY=${{secrets.WEATHER_API_KEY}}" >> .env
+      - name: Build project
+        run: npm run build
+      - name: Deploy to Github pages
+        run: npm run deploy
