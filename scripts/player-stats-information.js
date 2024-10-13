@@ -1,4 +1,5 @@
 import { buildPlayerPage } from "../modules/player-stats-information-module.js";
+import "dotenv/config";
 
 const playerPageQueryList = window.location.search;
 const playerPageQueryParams = new URLSearchParams(playerPageQueryList);

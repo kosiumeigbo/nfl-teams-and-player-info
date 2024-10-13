@@ -1,4 +1,5 @@
 import * as teamPage from "../modules/team-stats-information-module.js";
+import "dotenv/config";
 let teamKey;
 
 const teamPageQueryList = window.location.search;
