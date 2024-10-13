@@ -16,5 +16,7 @@ jobs:
         run: echo "SPORTSDATA_API_KEY=${{secrets.SPORTSDATA_API_KEY}}" >> .env && echo "WEATHER_API_KEY=${{secrets.WEATHER_API_KEY}}" >> .env
       - name: Build project
         run: npm run build
+      - name: Set git global config
+        run: git config --global user.email "kosiumeigbo@gmail.com" && git config --global user.name "Kosidinna Umeigbo"
       - name: Deploy to Github pages
         run: npm run deploy
