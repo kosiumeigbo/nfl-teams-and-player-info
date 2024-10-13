@@ -53,7 +53,7 @@ playerSearchBtn.addEventListener("click", function (e) {
   if (searchEntriesArray.length === 2) {
     const [searchFirstName, searchLastName] = searchEntriesArray;
 
-    getAllTeamsArray("https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=ffb7852aadbe4662a351fad874b411ce")
+    getAllTeamsArray(`https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=${process.env.SPORTSDATA_API_KEY}`)
       .then((teams) => {
         if (teams instanceof Error) {
           throw teams;
@@ -81,7 +81,7 @@ playerSearchBtn.addEventListener("click", function (e) {
   if (searchEntriesArray.length === 1) {
     const [searchName] = searchEntriesArray;
 
-    getAllTeamsArray("https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=ffb7852aadbe4662a351fad874b411ce")
+    getAllTeamsArray(`https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=${process.env.SPORTSDATA_API_KEY}`)
       .then((teams) => {
         if (teams instanceof Error) {
           throw teams;
