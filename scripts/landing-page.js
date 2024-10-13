@@ -7,6 +7,7 @@ import {
   searchAllTeamsForFirstAndLastNames,
   searchAllTeamsForStringInput
 } from "../modules/landing-page-module.js";
+import "dotenv/config";
 
 // Landing Page Sections
 const exploreTeams = document.querySelector(".team-stats-data-btn");
